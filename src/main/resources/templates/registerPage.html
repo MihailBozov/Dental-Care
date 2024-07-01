@@ -25,8 +25,8 @@
                        placeholder="First Name"
                        aria-current=""
                        th:errorclass="is-invalid"
-                       th:field="*{firstName}"
-                >
+                       th:field="*{firstName}">
+                
                 <div th:if="${#fields.hasErrors('firstName')}" class="invalid-feedback">
                     <small class="d-inline-block bg-danger text-light rounded mt-1"
                            th:text=" ${#fields.errors('firstName').getFirst()}">

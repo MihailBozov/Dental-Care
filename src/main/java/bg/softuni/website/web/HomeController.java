@@ -29,6 +29,7 @@ public class HomeController {
     private TestimonialService testimonialService;
     private NewsletterService newsletterService;
     
+    
     public HomeController(TeamService teamService, TreatmentService treatmentService, TestimonialService testimonialService, NewsletterService newsletterService) {
         this.teamService = teamService;
         this.treatmentService = treatmentService;
@@ -51,33 +52,35 @@ public class HomeController {
         return this.testimonialService.getAllTestimonials();
     }
     
-    @GetMapping("/")
-    public String home(Model model) {
-        model.addAttribute("currentPage", "homePage");
-        model.addAttribute("currentUrl", "/");
-        return "index";
-    }
-    
     @ModelAttribute("newsletterDto")
     public NewsletterDto newsletterDto() {
         return new NewsletterDto();
     }
+
     
+    @GetMapping("/")
+    public String home(Model model) {
+        model.addAttribute("currentPage", "homePage");
+        model.addAttribute("currentPageUrl", "/");
+        return "index";
+    }
+    
+//    -------------------     footer     -------------------
+    
+
     @PostMapping("/")
     public String newsletter(@Valid NewsletterDto newsletterDto,
                              BindingResult bindingResult,
-                             RedirectAttributes redirectAttributes,
-                             Model model) {
-        
+                             RedirectAttributes redirectAttributes) {
+
         if (bindingResult.hasErrors()) {
             redirectAttributes.addFlashAttribute("newsletterDto", newsletterDto);
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.newsletterDto", bindingResult);
             return "redirect:/#footer";
         }
         redirectAttributes.addFlashAttribute("success", "Great! You're now subscribed to our newsletter.");
-        
+
         this.newsletterService.persistEmail(newsletterDto.getNewsletterEmail());
-        
         return "redirect:/#footer";
     }
 }

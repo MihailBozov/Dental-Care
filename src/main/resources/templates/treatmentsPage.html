@@ -6,7 +6,46 @@
 <th:block th:include="~{/fragments/window_background}"></th:block>
 
 
-<th:block th:include="~{/fragments/treatmentsSection}"></th:block>
+<!--<th:block th:include="~{/fragments/treatmentsSection}"></th:block>-->
+
+
+<section class="treatmentSection" xmlns:th="http://www.thymeleaf.org">
+    <h2 th:if="${currentPage == 'homePage'}">Some of our <span>Treatments</span></h2>
+    <h2 th:if="${currentPage != 'homePage'}">Our <span>Treatments</span></h2>
+    <div class="subtitle">From routine cleanings and preventive care to advanced restorative and cosmetic procedures,
+        our dedicated team is committed to providing exceptional care tailored to your individual needs.
+    </div>
+
+    <div class="treatment_container">
+
+        <a class="treatment_unit d-flex flex-column justify-content-center align-items-center"
+           th:if="${currentPage} == treatmentsPage"
+           data-toggle="modal"
+           data-target="#newTreatmentModal"
+           href="/treatments#exampleModal">
+            <img class="treatment_icon m-0"
+                 th:src="@{/images/icons/add_new.svg}"
+                 width="80"
+                 height="80"
+                 alt="">
+            <h2 class="treatment_title">New Treatment</h2>
+        </a>
+        
+        <th:block th:include="~{fragments/addTreatmentSection}"></th:block>
+
+        <a class="treatment_unit" href="#" th:each="treatment : ${allTreatments}">
+            <img class="treatment_icon" th:src="${treatment.getImageUrl()}" alt="">
+            <h2 class="treatment_title" th:text="${treatment.getName()}"></h2>
+            <div class="treatment_description">
+                <p th:text="${treatment.getDescription()}"></p>
+            </div>
+        </a>
+
+    </div>
+
+    <a href="/treatments" class="all_testimonials" th:if="${currentPage == 'homePage'}">All Testimonials →</a>
+</section>
+
 
 <th:block th:include="~{/fragments/footer}"></th:block>
 

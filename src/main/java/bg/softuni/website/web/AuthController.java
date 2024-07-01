@@ -1,11 +1,14 @@
 package bg.softuni.website.web;
 
 import bg.softuni.website.models.dtos.LoginDto;
+import bg.softuni.website.models.dtos.NewsletterDto;
 import bg.softuni.website.models.dtos.RegisterDto;
 import bg.softuni.website.services.AuthService;
+import bg.softuni.website.services.NewsletterService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -18,11 +21,17 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class AuthController {
     
     private AuthService authService;
+    private NewsletterService newsletterService;
     
     @Autowired
-    public AuthController(AuthService authService) {
+    public AuthController(AuthService authService, NewsletterService newsletterService) {
         this.authService = authService;
+        this.newsletterService = newsletterService;
     }
+    
+
+//    -------------------     register     -------------------
+
     
     @ModelAttribute("registerDto")
     public RegisterDto initRegisterDto() {
@@ -30,7 +39,8 @@ public class AuthController {
     }
     
     @GetMapping("/register")
-    public String register() {
+    public String register(Model model) {
+        model.addAttribute("currentUrl", "/register");
         
         if (this.authService.isLoggedIn()) {
             return "redirect:/";
@@ -58,13 +68,14 @@ public class AuthController {
         
         return "redirect:/login";
     }
+
+
+//    -------------------     login     -------------------
     
-    
-//    --------    login    --------
     
     @GetMapping("/login")
-    public String login() {
-        
+    public String login(Model model) {
+        model.addAttribute("currentUrl", "/login");
         if (this.authService.isLoggedIn()) {
             return "redirect:/";
         }
@@ -78,7 +89,7 @@ public class AuthController {
     }
     
     
-    @PostMapping("/login") 
+    @PostMapping("/login")
     public String login(@Valid LoginDto loginDto,
                         BindingResult bindingResult,
                         RedirectAttributes redirectAttributes) {
@@ -86,7 +97,7 @@ public class AuthController {
         if (this.authService.isLoggedIn()) {
             return "redirect:/";
         }
-
+        
         if (bindingResult.hasErrors()) {
             redirectAttributes.addFlashAttribute("loginDto", loginDto);
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.loginDto", bindingResult);
@@ -95,7 +106,7 @@ public class AuthController {
         }
         
         this.authService.loginUser(loginDto);
-
+        
         return "redirect:/";
     }
     
@@ -109,8 +120,8 @@ public class AuthController {
         this.authService.logoutUser();
         return "index";
     }
+    
 }
-
 
 
 

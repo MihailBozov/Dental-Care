@@ -1,0 +1,58 @@
+<div class="modal fade" id="newTreatmentModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">New Treatment</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form th:action="@{/treatments/newTreatment}"
+                      th:method="post"
+                      th:object="${newTreatmentDto}">
+                    <div class="mb-3 input_unit">
+                        <label for="treatment_name" class="treatment_label col-form-label ">Name</label>
+                        <input type="text"
+                               class="form-control"
+                               placeholder="name"
+                               id="treatment_name"
+                               th:field="*{name}">
+                    </div>
+                    <div class="mb-3 input_unit">
+                        <label for="treatment_description"
+                               class="treatment_label col-form-label">Description</label>
+                        <textarea type="text"
+                                  placeholder="description"
+                                  class="form-control"
+                                  id="treatment_description"
+                                  rows="4"
+                                  th:field="*{description}"></textarea>
+                    </div>
+                    <div class="mb-3 input_unit">
+                        <label for="treatment_price" class="treatment_label col-form-label">Price</label>
+                        <input type="number"
+                               name="price"
+                               class="form-control"
+                               placeholder="price"
+                               id="treatment_price"
+                               th:field="*{price}">
+                    </div>
+                    <div class="mb-3 input_unit">
+                        <label for="treatment_image" class="treatment_label col-form-label">Chose an
+                            image</label>
+                        <input type="file"
+                               name="image"
+                               step="0.01"
+                               class="form-control"
+                               id="treatment_image"
+                               th:field="*{image}">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="close btn btn-secondary " data-dismiss="modal" aria-label="Close">Close</button>
+                <button type="button" class="btn btn-primary">Send message</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -16,7 +16,6 @@ public class NewsletterService {
     }
     
     public void persistEmail(String newsletterEmail) {
-        Newsletter newsletter = new Newsletter(newsletterEmail);
-        this.newsletterRepository.save(newsletter);
+        this.newsletterRepository.save(new Newsletter(newsletterEmail));
     }
 }

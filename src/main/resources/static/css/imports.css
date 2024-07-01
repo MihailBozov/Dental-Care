@@ -7,13 +7,14 @@
 @import url("authentication.css");
 @import url("footer.css");
 @import url("info.css");
+@import url("newTreatment.css");
 
 
 /*                    fonts                    */
 
 
 /*Fredoka*/
-/* USED -> login and register error messages*/
+/* USED -> login, register and newsletter error messages*/
 /* USED -> testimonials author names*/
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
 

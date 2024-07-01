@@ -133,6 +133,11 @@ INSERT INTO images(name, url)
 VALUES ('doctor.jpg', '/images/pictures/doctor.jpg');
 INSERT INTO image_categories_images(image_category_id, image_id)
 VALUES (6, 24);
+INSERT INTO images(name, url)
+VALUES ('add_new.svg', '/images/icons/add_new.svg');
+INSERT INTO image_categories_images(image_category_id, image_id)
+VALUES (3, 25);
+
 
 
 # ---------------------------     Testimonials     ---------------------------
@@ -167,7 +172,8 @@ INSERT INTO users (email, first_name, last_name, password, image_id, testimonial
 VALUES ('emma@sofia.com', 'Emma', 'Sofia', '1212', 24, 2);
 INSERT INTO users (email, first_name, last_name, password, image_id, testimonial_id)
 VALUES ('kale@sofia.com', 'Kale', 'Sofia', '1212', 25, 3);
-
+INSERT INTO users (email, first_name, last_name, password)
+VALUES ('sandy@petrov.com', 'Sandy', 'Petrov', '1212');
 
 # ---------------------------     Users Roles     ---------------------------
 
@@ -196,13 +202,14 @@ INSERT INTO user_roles(user, roles)
 VALUES ('6', '1');
 INSERT INTO user_roles(user, roles)
 VALUES ('6', '4');
-
 INSERT INTO user_roles(user, roles)
 VALUES ('7', '1');
 INSERT INTO user_roles(user, roles)
 VALUES ('8', '1');
 INSERT INTO user_roles(user, roles)
 VALUES ('9', '1');
+INSERT INTO user_roles(user, roles)
+VALUES ('10', '1');
 
 
 # ---------------------------     Health Conditions     ---------------------------
