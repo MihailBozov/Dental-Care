@@ -6,12 +6,11 @@ import jakarta.validation.constraints.Pattern;
 
 @CheckPassword
 public class LoginDto {
-    
-    @Pattern(regexp = "^\\w+@\\w+\\.\\w+$", message = "Oops! That doesn't look like a valid email. Please try again.")
+
+    @Pattern(regexp = "^\\w+@\\w+\\.\\w+$", message = "Oops! That does not look like a valid email. Please try again.")
     @CheckEmailExistence
     String email;
-    
-    
+   
     String password;
     
     public String getEmail() {

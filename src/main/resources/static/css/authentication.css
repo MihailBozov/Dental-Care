@@ -14,7 +14,9 @@
 }
 
 .registration_form small {
-    padding: 4px;
+    font-family: 'Fredoka', sans-serif;
+    
+    padding: 5px;
     font-size: 0.8rem;
 }
 
@@ -31,6 +33,7 @@
 }
 
 .login_form small {
-    padding: 4px;
-    font-size: 0.8rem;
+    font-family: 'Fredoka', sans-serif;
+    padding: 5px 8px;
+    font-size: 0.9rem;
 }

@@ -17,10 +17,10 @@ public class CheckPasswordValidator implements ConstraintValidator<CheckPassword
     private PasswordEncoder passwordEncoder;
     
     @Autowired
-    public CheckPasswordValidator(PasswordEncoder passwordEncoder) {
+    public CheckPasswordValidator(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+        this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
     }
-    
     
     @Override
     public void initialize(CheckPassword constraintAnnotation) {

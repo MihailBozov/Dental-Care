@@ -76,9 +76,11 @@ public class AuthController {
         if (bindingResult.hasErrors()) {
             redirectAttributes.addFlashAttribute("loginDto", loginDto);
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.loginDto", bindingResult);
-
+            
             return "redirect:/login";
         }
+        
+        this.authService.loginUser(loginDto);
 
         return "redirect:/";
     }

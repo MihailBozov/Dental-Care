@@ -3,7 +3,7 @@
 <th:block th:include="~{/fragments/head}"></th:block>
 <body>
 
-<th:block th:include="~{/fragments/header}"></th:block>
+<th:block th:include="~{/fragments/navigation}"></th:block>
 <th:block th:include="~{/fragments/window_background}"></th:block>
 
 <form th:action="@{/register}"
@@ -108,7 +108,6 @@
                            th:each="error : ${#fields.globalErrors()}"
                            th:if="${error.toString().equals('Oops! Your passwords do not match.')}"
                            th:text="${error}">
-<!--                           th:text=" ${#fields.globalErrors().getFirst()}">-->
                     </small>
                 </div>
             </div>
