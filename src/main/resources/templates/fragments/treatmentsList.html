@@ -1,0 +1,69 @@
+<!DOCTYPEhtml>
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<th:block th:include="~{fragments/head}"></th:block>
+<body>
+
+<section class="treatmentSection">
+    <h2>Some of our <span>Treatments</span></h2>
+    <div class="subtitle">From routine cleanings and preventive care to advanced restorative and cosmetic procedures,
+        our dedicated team is committed to providing exceptional care tailored to your individual needs.
+    </div>
+
+
+    <div t class="treatment_container">
+        <a class="treatment_unit" href="#">
+            <img class="treatment_icon" th:src="@{/images/icons/cleansing.svg}" alt="">
+            <h2 class="treatment_title">Dental Cleaning</h2>
+            <div class="treatment_description">
+                <p>A routine procedure involving the removal of plaque and tartar from teeth to maintain oral health and
+                    prevent gum disease.</p>
+            </div>
+        </a>
+        <a class="treatment_unit" href="#">
+            <img class="treatment_icon" th:src="@{/images/icons/rootCanal.svg}" alt="">
+            <h2 class="treatment_title">Root Canal Treatment</h2>
+            <div class="treatment_description">
+                <p>A procedure to remove infected or damaged tissue from inside a tooth, clean and disinfect the area,
+                    and
+                    fill it to prevent further infection.</p>
+            </div>
+        </a>
+        <a class="treatment_unit" href="#">
+            <img class="treatment_icon" th:src="@{/images/icons/implant.svg}" alt="">
+            <h2 class="treatment_title">Dental Implant Placement</h2>
+            <div class="treatment_description">
+                <p>A surgical procedure where a titanium post is inserted into the jawbone to serve as a stable
+                    foundation
+                    for a replacement tooth or bridge.</p>
+            </div>
+        </a>
+
+        <a class="treatment_unit" href="#">
+            <img class="treatment_icon" th:src="@{/images/icons/clean.svg}" alt="">
+            <h2 class="treatment_title">Teeth Whitening</h2>
+            <div class="treatment_description">
+                <p>A cosmetic procedure to lighten the color of your teeth and remove stains, resulting in a brighter
+                    smile.</p>
+            </div>
+        </a>
+        <a class="treatment_unit" href="#">
+            <img class="treatment_icon" th:src="@{/images/icons/crown.svg}" alt="">
+            <h2 class="treatment_title">Dental Crowns</h2>
+            <div class="treatment_description">
+                <p>A cap placed over a damaged tooth to restore its shape, size, strength, and appearance.</p>
+            </div>
+        </a>
+        <a class="treatment_unit" href="#">
+            <img class="treatment_icon" th:src="@{/images/icons/brackets.svg}" alt="">
+            <h2 class="treatment_title">Orthodontic Braces</h2>
+            <div class="treatment_description">
+                <p>Devices used to correct misaligned teeth and jaws, gradually straightening teeth and improving bite
+                    over
+                    time.</p>
+            </div>
+        </a>
+    </div>
+    <a class="all_treatments">All Treatments →</a>
+</section>
+</body>

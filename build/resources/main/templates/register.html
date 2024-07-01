@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<th:block th:include="~{/fragments/head}"></th:block>
+<body>
+
+<th:block th:include="~{/fragments/backGround}"></th:block>
+
+<nav th:replace="~{/fragments/navs/navGuest}"></nav>
+
+<form  style="background-color: rgba(255,255,255,0.63); max-width: 500px; margin: 0 auto">
+        <div class="container justify-content-center 
+            align-items-center h-auto border border-1 border-info rounded-4
+            mt-md-5 p-md-4">
+            <h1 class="text-secondary pb-3">Make a registration</h1>
+            <div class="row flex-sm-wrap">
+
+                <div class="col-sm-6 pb-3" >
+                    <label for="fName" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="fName" placeholder="First Name">
+                </div>
+                <div class="col-sm-6 pb-3 flex-sm-wrap">
+                    <label for="lName" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="lName" placeholder="Last Name">
+                </div>
+            </div>
+            <div class="row pb-3">
+                <div>
+                    <label for="regEmail" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="regEmail" placeholder="name@example.com">
+                </div>
+            </div>
+
+            <div class="row col-3 pb-3">
+                <div>
+                    <label for="regGender">Gender</label>
+                    <select id="regGender" class="form-select" aria-label="Medium select example">
+                        <option selected></option>
+                        <option value="1">Male</option>
+                        <option value="2">Female</option>
+                        <option value="3">It is a Secret</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row col-6 pb-3">
+                <div>
+                    <label for="regPassword">Password</label>
+                    <input type="password" id="regPassword" placeholder="Password" class="form-control">
+                </div>
+            </div>
+            <div class="row pt-2">
+                <div>
+                    <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary">Submit
+                    </button>
+                </div>
+            </div>
+        </div>
+</form>
+
+<footer th:replace="~{/fragments/footer}"></footer>
+</body>
+</html>

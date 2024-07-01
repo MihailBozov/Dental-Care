@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:include="~{/fragments/head}"></th:block>
+
+<body>
+
+<nav th:replace="~{/fragments/navs/navGuest}"></nav>
+
+<th:block th:include="~{fragments/hero_background}"></th:block>
+
+<th:block th:include="~{/fragments/window_background}"></th:block>
+
+<th:block th:include="~{/fragments/hero}"></th:block>
+
+<th:block th:include="~{fragments/treatmentsList}"></th:block>
+
+<th:block th:include="~{fragments/teamList}"></th:block>
+
+<th:block th:include="~{fragments/testimonialsList}"></th:block>
+
+<footer th:replace="~{/fragments/footer}"></footer>
+
+</body>
+</html>
