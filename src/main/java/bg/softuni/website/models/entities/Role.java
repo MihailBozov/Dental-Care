@@ -14,11 +14,23 @@ public class Role {
     @Enumerated(EnumType.STRING)
     private UserRoles name;
     
+    @Basic
+    private String value;
+    
     public Role (){}
     
     public Role(UserRoles name) {
         this.name = name;
     }
+    
+    public String getValue() {
+        return value;
+    }
+    
+    public void setValue(String value) {
+        this.value = value;
+    }
+    
     public long getId() {
         return id;
     }

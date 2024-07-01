@@ -77,6 +77,10 @@ public class User {
     @OneToMany(mappedBy = "createdByUser", targetEntity = HealthCondition.class)
     private List<HealthCondition> createdHealthConditions;
     
+    @OneToOne
+    @JoinColumn(name = "testimonial_id", referencedColumnName = "id")
+    private Testimonial testimonial;
+    
     public User() {
         this.roles = new ArrayList<>();
         this.healthConditions = new HashSet<>();

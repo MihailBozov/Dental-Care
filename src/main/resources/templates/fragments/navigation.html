@@ -21,14 +21,14 @@
                     <a class="nav-link active" aria-current="page" th:href="@{/treatments}">Treatments</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" th:href="@{/aboutUs}">About us</a>
+                    <a class="nav-link active" aria-current="page" th:href="@{/team}">Team</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" th:href="@{/location}">Location</a>
                 </li>
                 <li class="nav-item"
                     th:each="role : ${@userSession.getRoles()}"
-                    th:if="${role.getName().toString().equals('DOCTOR')} or ${role.getName().toString().equals('MANAGER')} or ${role.getName().toString().equals('ADMIN')}">
+                    th:if="${role.getName().toString().equals('DENTAL_ASSISTANT')} or ${role.getName().toString().equals('DOCTOR')} or ${role.getName().toString().equals('MANAGER')} or ${role.getName().toString().equals('ADMIN')}">
                     <a class="nav-link active" aria-current="page" th:href="@{/users}">Users</a>
                 </li>
                 <li class="nav-item"
@@ -66,7 +66,7 @@
                 </li>
                 <li class="nav-item"
                     th:each="role : ${@userSession.getRoles()}"
-                    th:if="${role.getName().toString().equals('DOCTOR')} or ${role.getName().toString().equals('MANAGER')} or ${role.getName().toString().equals('ADMIN')}">
+                    th:if="${role.getName().toString().equals('DENTAL_ASSISTANT')} or ${role.getName().toString().equals('DOCTOR')} or ${role.getName().toString().equals('MANAGER')} or ${role.getName().toString().equals('ADMIN')}">
                     <a class="btn btn-primary" th:href="@{/dashboard}">Dashboard</a>
                 </li>
             </ul>
