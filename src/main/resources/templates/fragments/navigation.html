@@ -18,14 +18,18 @@
                     <a class="nav-link active" aria-current="page" th:href="@{/}">Home</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" th:href="@{/location}">Location</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link active" aria-current="page" th:href="@{/treatments}">Treatments</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" th:href="@{/team}">Team</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" th:href="@{/location}">Location</a>
+                    <a class="nav-link active" aria-current="page" th:href="@{/testimonials}">Clients</a>
                 </li>
+                
                 <li class="nav-item"
                     th:each="role : ${@userSession.getRoles()}"
                     th:if="${role.getName().toString().equals('DENTAL_ASSISTANT')} or ${role.getName().toString().equals('DOCTOR')} or ${role.getName().toString().equals('MANAGER')} or ${role.getName().toString().equals('ADMIN')}">

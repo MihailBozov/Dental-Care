@@ -26,8 +26,8 @@ public class TreatmentsController {
     }
     
     @GetMapping("/treatments")
-    public String treatments() {
-        
+    public String treatments(Model model) {
+        model.addAttribute("currentPage", "treatmentsPage");
         return "treatmentsPage";
     }
 }

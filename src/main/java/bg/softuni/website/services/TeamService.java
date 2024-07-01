@@ -32,7 +32,7 @@ public class TeamService {
             TeamDto memberDto = this.modelMapper.map(user, TeamDto.class);
             memberDto.setRole("UNKNOWN");
             for (Role role : user.getRoles()) {
-                if (!role.getName().equals(UserRoles.USER)) {
+                if (!role.getName().equals(UserRoles.USER) && !role.getName().equals(UserRoles.ADMIN)) {
                     memberDto.setRole(role.getValue());
                     memberDto.setPictureUrl(user.getImage().getUrl());
                 }

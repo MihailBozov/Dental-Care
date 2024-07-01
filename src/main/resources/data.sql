@@ -138,12 +138,12 @@ VALUES (6, 24);
 # ---------------------------     Testimonials     ---------------------------
 
 
-INSERT INTO testimonials(content)
-VALUES ('Fantastic experience! The clinic is state-of-the-art and the staff are extremely professional and caring. I highly recommend them.');
-INSERT INTO testimonials(content)
-VALUES ('From the moment I walked in, I felt welcomed and comfortable. The staff explained everything clearly and the service was top-notch.');
-INSERT INTO testimonials(content)
-VALUES ('I was nervous about my procedure, but the team was so reassuring and gentle. The results exceeded my expectations. Thank you!');
+INSERT INTO testimonials(content, count_stars)
+VALUES ('Fantastic experience! The clinic is state-of-the-art and the staff are extremely professional and caring. I highly recommend them.', 5);
+INSERT INTO testimonials(content, count_stars)
+VALUES ('From the moment I walked in, I felt welcomed and comfortable. The staff explained everything clearly and the service was top-notch.', 5);
+INSERT INTO testimonials(content, count_stars)
+VALUES ('I was nervous about my procedure, but the team was so reassuring and gentle. The results exceeded my expectations. Thank you!', 5);
 
 
 # ---------------------------     Users     ---------------------------
@@ -235,14 +235,3 @@ INSERT INTO messages (date_time, text, author_id, recipient_id)
 VALUES (TIMESTAMP(NOW()), 'What is up', 1, 2);
 INSERT INTO messages (date_time, text, author_id, recipient_id)
 VALUES (TIMESTAMP(NOW()), 'Im fine!', 2, 1);
-
-
-# ---------------------------     Testimonials     ---------------------------
-
-INSERT INTO testimonials(content) 
-VALUES ('Fantastic experience! The clinic is state-of-the-art and the staff are extremely professional and caring. I highly recommend them.');
-INSERT INTO testimonials(content)
-VALUES ('From the moment I walked in, I felt welcomed and comfortable. The staff explained everything clearly and the service was top-notch.');
-INSERT INTO testimonials(content)
-VALUES ('I was nervous about my procedure, but the team was so reassuring and gentle. The results exceeded my expectations. Thank you!');
-

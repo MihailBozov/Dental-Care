@@ -4,6 +4,7 @@ import bg.softuni.website.models.dtos.TeamDto;
 import bg.softuni.website.services.TeamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,7 +28,8 @@ public class TeamController {
     }
     
     @GetMapping("/team")
-    public String team() {
+    public String team(Model model) {
+        model.addAttribute("currentPage", "teamPage");
         return "teamPage";
     }
 }

@@ -239,4 +239,12 @@ public class User {
     public void setCreatedHealthConditions(List<HealthCondition> createdHealthConditions) {
         this.createdHealthConditions = createdHealthConditions;
     }
+    
+    public Testimonial getTestimonial() {
+        return testimonial;
+    }
+    
+    public void setTestimonial(Testimonial testimonial) {
+        this.testimonial = testimonial;
+    }
 }

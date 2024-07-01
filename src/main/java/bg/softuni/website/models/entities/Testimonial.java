@@ -14,6 +14,9 @@ public class Testimonial {
     @Basic
     private String content;
     
+    @Column(name="count_stars")
+    private int countStars;
+    
     @OneToOne(mappedBy = "testimonial", targetEntity = User.class)
     private User user;
     
@@ -39,5 +42,13 @@ public class Testimonial {
     
     public void setContent(String content) {
         this.content = content;
+    }
+    
+    public int getCountStars() {
+        return countStars;
+    }
+    
+    public void setCountStars(int countStars) {
+        this.countStars = countStars;
     }
 }

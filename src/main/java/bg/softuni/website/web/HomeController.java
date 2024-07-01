@@ -1,8 +1,10 @@
 package bg.softuni.website.web;
 
 import bg.softuni.website.models.dtos.TeamDto;
+import bg.softuni.website.models.dtos.TestimonialDto;
 import bg.softuni.website.models.dtos.TreatmentDto;
 import bg.softuni.website.services.TeamService;
+import bg.softuni.website.services.TestimonialService;
 import bg.softuni.website.services.TreatmentService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,10 +21,12 @@ public class HomeController {
     
     private TeamService teamService;
     private TreatmentService treatmentService;
+    private TestimonialService testimonialService;
     
-    public HomeController(TeamService teamService, TreatmentService treatmentService) {
+    public HomeController(TeamService teamService, TreatmentService treatmentService, TestimonialService testimonialService) {
         this.teamService = teamService;
         this.treatmentService = treatmentService;
+        this.testimonialService = testimonialService;
     }
     
     @ModelAttribute("allTreatments")
@@ -35,9 +39,14 @@ public class HomeController {
         return this.teamService.getAllTeamMembers();
     }
     
+    @ModelAttribute("allTestimonials")
+    public List<TestimonialDto> initTestimonialDto() {
+        return this.testimonialService.getAllTestimonials();
+    }
+    
     @GetMapping("/")
     public String home(Model model) {
-        model.addAttribute("currentPageHome", "homePage");
+        model.addAttribute("currentPage", "homePage");
         return "index";
     }
 }
