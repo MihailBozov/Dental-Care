@@ -67,13 +67,14 @@
     .treatment_icon {
         width: 50px;
         height: 50px;
+        margin: auto;
     }
 
 
     .treatment_title {
         color: #4a90e2;
         font-size: 1.5em;
-        margin: 1rem auto;
+        margin: 0 auto 1rem ;
     }
 
 
@@ -100,5 +101,5 @@ a[class="all_treatments"] {
 
 a[class="all_treatments"]:hover {
     color: #4a90e2;
-    transform: scale(102%);
+    transform: scale(105%);
 }

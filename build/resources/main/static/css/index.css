@@ -47,3 +47,7 @@ html, body {
     z-index: -1;
 }
 
+.hero_text span{
+    color: #50A0E2;
+}
+

@@ -40,9 +40,6 @@ public class User {
     @Column(name = "phone_number")
     private String phoneNumber;
     
-    @Column(name = "picture_url")
-    private String pictureUrl;
-    
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "user_health_conditions",
             joinColumns = @JoinColumn(name = "user"), 
@@ -60,6 +57,10 @@ public class User {
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "treatments_id"))
     private Set<Treatment> treatments;
+    
+    @ManyToOne
+    @JoinColumn(name = "image_id", referencedColumnName = "id")
+    private Image image;
     
     @OneToMany(mappedBy = "author", targetEntity = Message.class)
     private List<Message> sentMessages;
@@ -137,14 +138,6 @@ public class User {
     
     public void setEmail(String email) {
         this.email = email;
-    }
-    
-    public String getPictureUrl() {
-        return pictureUrl;
-    }
-    
-    public void setPictureUrl(String pictureUrl) {
-        this.pictureUrl = pictureUrl;
     }
     
     public Set<HealthCondition> getHealthConditions() {
@@ -227,4 +220,19 @@ public class User {
         this.addedImages = addedImages;
     }
     
+    public Image getImage() {
+        return image;
+    }
+    
+    public void setImage(Image image) {
+        this.image = image;
+    }
+    
+    public List<HealthCondition> getCreatedHealthConditions() {
+        return createdHealthConditions;
+    }
+    
+    public void setCreatedHealthConditions(List<HealthCondition> createdHealthConditions) {
+        this.createdHealthConditions = createdHealthConditions;
+    }
 }

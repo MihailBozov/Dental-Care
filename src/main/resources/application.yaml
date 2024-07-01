@@ -1,5 +1,8 @@
 spring.application.name: website
 
+server:
+  port: 8080
+
 spring:
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver

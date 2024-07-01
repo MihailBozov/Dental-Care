@@ -21,8 +21,8 @@ public class ImageCategory {
     
     @ManyToMany
     @JoinTable(name = "image_categories_images", 
-    joinColumns = @JoinColumn(name = "image_categories", referencedColumnName = "id"), 
-    inverseJoinColumns = @JoinColumn(name = "images", referencedColumnName = "id"))
+    joinColumns = @JoinColumn(name = "image_category_id", referencedColumnName = "id"), 
+    inverseJoinColumns = @JoinColumn(name = "image_id", referencedColumnName = "id"))
     private List<Image> images;
     
     public ImageCategory() {}

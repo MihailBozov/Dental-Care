@@ -25,7 +25,7 @@ public class RegisterDto {
     private String email;
     
     @Pattern(regexp = "^\\S+$", message = "Oops! Your password cannot contain whitespaces")
-    @Size(min = 2, message = "Oops! Your password is too short. Should be at least 4 characters.")
+    @Size(min = 4, message = "Oops! Your password is too short. Should be at least 4 characters.")
     @Size(max = 30, message = "Oops! Your password is too long. Should be less than 30 characters.")
     private String password;
     

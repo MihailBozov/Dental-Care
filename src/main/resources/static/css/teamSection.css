@@ -97,3 +97,17 @@
 
 }
 
+a[class="all_members"] {
+    font-size: 1rem;
+    display: block;
+    color: #5a6268;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+a[class="all_members"]:hover {
+    color: #4a90e2;
+    transform: scale(105%);
+}
+

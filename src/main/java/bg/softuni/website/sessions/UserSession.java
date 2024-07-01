@@ -24,7 +24,12 @@ public class UserSession {
     private String lastName;
     
    public UserSession() {
+       this.id = 0;
+       this.email = null;
        this.roles = new ArrayList<>();
+       this.firstName = null;
+       this.lastName = null;
+       
    }
     
     public void login(User user) {
@@ -38,7 +43,7 @@ public class UserSession {
     public void logout() {
         this.id = 0;
         this.email = null;
-        this.roles = null;
+        this.roles = new ArrayList<>();
         this.firstName = null;
         this.lastName = null;
     }

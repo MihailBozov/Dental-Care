@@ -46,4 +46,14 @@ public class AuthService {
         Optional<User> user = this.userRepository.findByEmail(loginDto.getEmail());
         this.userSession.login(user.get());
     }
+    
+    public void logoutUser() {
+        this.userSession.logout();
+    }
+    
+    public boolean isLoggedIn() {
+        
+        return this.userSession.getId() != 0;
+    }
 }
+

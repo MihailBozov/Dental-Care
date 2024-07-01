@@ -30,6 +30,10 @@ public class Treatment {
     @JoinColumn(name = "created_by_user_id", referencedColumnName = "id")
     User createdByUser;
     
+    @ManyToOne
+    @JoinColumn(name = "image_id", referencedColumnName = "id")
+    private Image image;
+    
     @Column(name = "creation_date")
     LocalDateTime creationDate;
     
@@ -96,5 +100,13 @@ public class Treatment {
     
     public void setCreationDate(LocalDateTime creationDate) {
         this.creationDate = creationDate;
+    }
+    
+    public Image getImage() {
+        return image;
+    }
+    
+    public void setImage(Image image) {
+        this.image = image;
     }
 }
