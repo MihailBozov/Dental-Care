@@ -1,0 +1,40 @@
+package bg.softuni.website.services;
+
+import bg.softuni.website.models.dtos.RegisterDto;
+import bg.softuni.website.models.entities.Role;
+import bg.softuni.website.models.entities.User;
+import bg.softuni.website.models.enums.UserRoles;
+import bg.softuni.website.repositories.RoleRepository;
+import bg.softuni.website.repositories.UserRepository;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class AuthService {
+    
+    private UserRepository userRepository;
+    private RoleRepository roleRepository;
+    private ModelMapper modelMapper;
+    private PasswordEncoder passwordEncoder;
+    
+    @Autowired
+    public AuthService(UserRepository userRepository, RoleRepository roleRepository, ModelMapper modelMapper, PasswordEncoder passwordEncoder) {
+        this.userRepository = userRepository;
+        this.roleRepository = roleRepository;
+        this.modelMapper = modelMapper;
+        this.passwordEncoder = passwordEncoder;
+    }
+    
+    public void registerUser(RegisterDto registerDto) {
+        User user = this.modelMapper.map(registerDto, User.class);
+        user.setPassword(this.passwordEncoder.encode(registerDto.getPassword()));
+        
+        Role role = this.roleRepository.findByName(UserRoles.USER);
+        user.getRoles().add(role);
+        this.userRepository.saveAndFlush(user);
+    }
+}

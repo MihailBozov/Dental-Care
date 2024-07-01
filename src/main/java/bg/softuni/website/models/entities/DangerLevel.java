@@ -1,24 +1,26 @@
 package bg.softuni.website.models.entities;
 
-import bg.softuni.website.models.enums.UserRoles;
+import bg.softuni.website.models.enums.DangerLevelName;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "roles")
-public class Role {
+@Table(name = "danger_levels")
+public class DangerLevel {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     
+    @Column
     @Enumerated(EnumType.STRING)
-    private UserRoles name;
+    private DangerLevelName name;
     
-    public Role (){}
-    
-    public Role(UserRoles name) {
+    public DangerLevel() {
+    }
+    public DangerLevel(DangerLevelName name) {
         this.name = name;
     }
+    
     public long getId() {
         return id;
     }
@@ -27,11 +29,11 @@ public class Role {
         this.id = id;
     }
     
-    public UserRoles getName() {
+    public DangerLevelName getName() {
         return name;
     }
     
-    public void setName(UserRoles name) {
+    public void setName(DangerLevelName name) {
         this.name = name;
     }
 }

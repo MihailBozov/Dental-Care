@@ -10,23 +10,23 @@ public class RegisterDto {
     
     @NotBlank(message = "Oops! Your first name cannot be blank")
     @Pattern(regexp = "[A-Za-z ]*", message = "Oops! Your first name can contain only letters")
-    @Size(min = 3, message = "Oops! Ensure your username exceeds 3 characters in length.")
-    @Size(max = 50, message = "Oops! Please ensure your first name is shorter than 50 characters.")
+    @Size(min = 2, message = "Oops! Your first name is too short. Should be at least 2 characters.")
+    @Size(max = 19, message = "Oops! Your first name is too long. Should be less than 20 characters.")
     private String firstName;
     
     @NotBlank(message = "Oops! Your last name cannot be blank")
     @Pattern(regexp = "[A-Za-z ]*", message = "Oops! Your last name can contain only letters")
-    @Size(min = 3, message = "Oops! Ensure your last name exceeds 3 characters in length.")
-    @Size(max = 50, message = "Oops! Please make sure your first name is shorter than 50 characters.")
+    @Size(min = 2, message = "Oops! Your last name is too short. Should be at least 2 characters.")
+    @Size(max = 20, message = "Oops! Your last name is too long. Should be less than 20 characters.")
     private String lastName;
     
     @Pattern(regexp = "^\\w+@\\w+\\.\\w+$", message = "Oops! That doesn't look like a valid email. Please try again.")
     @UniqueEmail(message = "Oops. This email is already taken.")
     private String email;
     
-    @NotBlank(message = "Oops! Your password cannot be blank")
-    @Size(min = 2, message = "Oops! Your password is too short. Please make sure it contains at least 4 characters.")
-    @Size(max = 30, message = "Oops! Your password is too long. Please make sure it is 30 characters or less.")
+    @Pattern(regexp = "^\\S+$", message = "Oops! Your password cannot contain whitespaces")
+    @Size(min = 2, message = "Oops! Your password is too short. Should be at least 4 characters.")
+    @Size(max = 30, message = "Oops! Your password is too long. Should be less than 30 characters.")
     private String password;
     
     

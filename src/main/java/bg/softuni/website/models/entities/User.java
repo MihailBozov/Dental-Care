@@ -23,12 +23,12 @@ public class User {
     private String lastName;
     
     @Basic
-    private int age;
+    private Integer age;
     
     @Basic
     private String gender;
     
-    @Basic
+    @Column(name = "registration_date")
     LocalDateTime registrationDate;
     
     @Column(nullable = false)
@@ -37,7 +37,10 @@ public class User {
     @Column(nullable = false, unique = true)
     private String email;
     
-    @Basic
+    @Column(name = "phone_number")
+    private String phoneNumber;
+    
+    @Column(name = "picture_url")
     private String pictureUrl;
     
     @ManyToMany(fetch = FetchType.EAGER)
@@ -50,7 +53,7 @@ public class User {
     @JoinTable(name = "user_roles",
             joinColumns = @JoinColumn(name = "user"),
             inverseJoinColumns = @JoinColumn(name = "roles"))
-    private Set<Role> roles;
+    private List<Role> roles;
     
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "user_treatments", 
@@ -64,12 +67,23 @@ public class User {
     @OneToMany(mappedBy = "recipient", targetEntity = Message.class)
     private List<Message> receivedMessages;
     
+    @OneToMany(mappedBy = "createdByUser", targetEntity = Treatment.class)
+    List<Treatment> createdTreatments; 
+    
+    @OneToMany(mappedBy = "addedByUser", targetEntity = Image.class)
+    List<Image> addedImages;
+    
+    @OneToMany(mappedBy = "createdByUser", targetEntity = HealthCondition.class)
+    private List<HealthCondition> createdHealthConditions;
+    
     public User() {
-        this.roles = new HashSet<>();
+        this.roles = new ArrayList<>();
         this.healthConditions = new HashSet<>();
         this.treatments = new HashSet<>();
         this.sentMessages = new ArrayList<>();
         this.receivedMessages = new ArrayList<>();
+        this.createdTreatments = new ArrayList<>();
+        this.addedImages = new ArrayList<>();
     }
     
     @PrePersist
@@ -101,11 +115,11 @@ public class User {
         this.lastName = lastName;
     }
     
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
     
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
     
@@ -141,11 +155,11 @@ public class User {
         this.healthConditions = healthConditions;
     }
     
-    public Set<Role> getRoles() {
+    public List<Role> getRoles() {
         return roles;
     }
     
-    public void setRoles(Set<Role> roles) {
+    public void setRoles(List<Role> roles) {
         this.roles = roles;
     }
     
@@ -185,7 +199,32 @@ public class User {
         return registrationDate;
     }
     
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+    
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+    
     public void setRegistrationDate(LocalDateTime registrationDate) {
         this.registrationDate = registrationDate;
     }
+    
+    public List<Treatment> getCreatedTreatments() {
+        return createdTreatments;
+    }
+    
+    public void setCreatedTreatments(List<Treatment> addedTreatments) {
+        this.createdTreatments = addedTreatments;
+    }
+    
+    public List<Image> getAddedImages() {
+        return addedImages;
+    }
+    
+    public void setAddedImages(List<Image> addedImages) {
+        this.addedImages = addedImages;
+    }
+    
 }

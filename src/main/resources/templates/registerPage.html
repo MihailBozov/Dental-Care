@@ -10,9 +10,8 @@
       th:method="post"
       th:object="${registerDto}"
       class="registration_form">
-    <div class="container justify-content-center 
-            align-items-center h-auto border border-1 border-info rounded-4
-            mt-md-5 p-md-4">
+    <div class=" container justify-content-center 
+            align-items-center h-auto border border-1 border-info rounded-4 p-md-4">
         <h2 class="text-secondary pb-3">Make a registration</h2>
 
         <div class="row flex-wrap">
@@ -33,7 +32,7 @@
                            th:text=" ${#fields.errors('firstName').getFirst()}">
 <!--                           th:each="error : ${#fields.errors('firstName')}"-->
 <!--                           th:text="${error}"-->
-                        
+
                     </small>
                 </div>
             </div>
@@ -49,7 +48,7 @@
 
                 <div th:if="${#fields.hasErrors('lastName')}" class="invalid-feedback">
                     <small class="d-inline-block bg-danger text-light rounded mt-1"
-                        th:text=" ${#fields.errors('lastName').getFirst()}">
+                           th:text=" ${#fields.errors('lastName').getFirst()}">
 <!--                           th:each="error : ${#fields.errors('lastName')}"-->
 <!--                           th:text="${error}">-->
                     </small>
@@ -97,25 +96,27 @@
             </div>
             <div class="mt-md-2">
                 <label for="regConfirmPassword">Confirm password</label>
-                <input type="password" 
-                       name="confirmPassword" 
+                <input type="password"
+                       name="confirmPassword"
                        id="regConfirmPassword"
-                       placeholder="Confirm Password" 
+                       placeholder="Confirm Password"
                        class="form-control"
                        th:field="*{confirmPassword}">
 
                 <div th:if="${#fields.hasGlobalErrors()}">
                     <small class="d-inline-block bg-danger text-light rounded mt-1"
-                           th:text=" ${#fields.globalErrors().getFirst()}">
-<!--                           th:each="error : ${#fields.globalErrors()}"-->
-<!--                           th:text="${error}">-->
+                           th:each="error : ${#fields.globalErrors()}"
+                           th:if="${error.toString().equals('Oops! Your passwords do not match.')}"
+                           th:text="${error}">
+<!--                           th:text=" ${#fields.globalErrors().getFirst()}">-->
                     </small>
                 </div>
             </div>
         </div>
         <div class="row col-6 py-md-2">
             <div>
-                <button th:type="submit" th:name="submit" th:value="true" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary">Submit
+                <button th:type="submit" th:name="submit" th:value="true" data-mdb-button-init data-mdb-ripple-init
+                        class="btn btn-primary">Submit
                 </button>
             </div>
         </div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <th:block th:include="~{/fragments/head}"></th:block>
 <body>
 
@@ -7,18 +7,35 @@
 
 <th:block th:include="~{/fragments/window_background}"></th:block>
 
-<form style="background-color: rgba(255,255,255,0.63); max-width: 400px; margin: 0 auto">
-    <div class="container justify-content-center align-items-center border border-1 border-info rounded-4 my-md-5 p-4  "
+<form class="login_form"
+      action="@{/login}"
+      th:method="post"
+      th:object="${loginDto}">
+    <div class="container_login_form container justify-content-center align-items-center border border-1 border-info rounded-4 p-4  "
          style="">
         <h2 class="text-secondary mb-3">Login to your profile</h2>
         <div class="form-group py-2">
             <label for="inputEmail">Email address</label>
-            <input type="email" class="form-control" id="inputEmail" placeholder="email">
+            <input type="email"
+                   class="form-control"
+                   id="inputEmail"
+                   placeholder="email"
+                   th:field="*{email}"
+                   th:errorclass="is-invalid">
+            <div th:if="${#fields.hasErrors()}">
+                <small class="d-inline-block bg-danger text-light rounded mt-1"
+                       th:text="${#fields.errors('firstName').getFirst()}">
+                </small>
+            </div>
         </div>
 
         <div class="form-group py-2 mb-3">
             <label for="loginPassword">Password</label>
-            <input type="password" class="form-control" id="loginPassword" placeholder="password">
+            <input type="password"
+                   class="form-control"
+                   id="loginPassword"
+                   placeholder="password"
+                   th:field="*{password}">
         </div>
 
         <div class="row justify-content-start align-items-center">
@@ -26,9 +43,14 @@
                 <button type="submit" class="btn btn-md btn-primary">Log in</button>
             </div>
             <div class="form-group form-check col-5 ">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <input type="checkbox"
+                       class="form-check-input"
+                       id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">Remember me</label>
             </div>
+        </div>
+        <div class="invalid-feedback">
+            "Oops! That doesn't look like a valid email or password."
         </div>
     </div>
 </form>

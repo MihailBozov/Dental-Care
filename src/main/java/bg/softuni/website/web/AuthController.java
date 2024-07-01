@@ -2,7 +2,9 @@ package bg.softuni.website.web;
 
 import bg.softuni.website.models.dtos.LoginDto;
 import bg.softuni.website.models.dtos.RegisterDto;
+import bg.softuni.website.services.AuthService;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -19,14 +21,16 @@ import java.util.List;
 @RequestMapping("/")
 public class AuthController {
     
-    @ModelAttribute
-    public RegisterDto initRegisterDto() {
-        return new RegisterDto();
+    private AuthService authService;
+    
+    @Autowired
+    public AuthController(AuthService authService) {
+        this.authService = authService;
     }
     
     @ModelAttribute
-    public LoginDto initLoginDto() {
-        return new LoginDto();
+    public RegisterDto initRegisterDto() {
+        return new RegisterDto();
     }
     
     @GetMapping("/register")
@@ -35,23 +39,62 @@ public class AuthController {
     }
     
     @PostMapping("/register")
-    public String doRegister (@Valid RegisterDto registerDto,
-                              BindingResult bindingResult,
-                              RedirectAttributes redirectAttributes) {
+    public String doRegister(@Valid RegisterDto registerDto,
+                             BindingResult bindingResult,
+                             RedirectAttributes redirectAttributes) {
         
         if (bindingResult.hasErrors()) {
-            
             redirectAttributes.addFlashAttribute("registerDto", registerDto);
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.registerDto", bindingResult);
             return "redirect:/register";
         }
         
-        System.out.println(registerDto.toString());
+        this.authService.registerUser(registerDto);
+        
         return "redirect:/login";
     }
     
+    
+//    --------    login    --------
+    
     @GetMapping("/login")
     public String login() {
-        return "loginPage"; 
+        return "loginPage";
     }
+    
+    @ModelAttribute
+    public LoginDto initLoginDto() {
+        return new LoginDto();
+    }
+    
+    
+    @PostMapping("/login") 
+    public String login(@Valid LoginDto loginDto,
+                        BindingResult bindingResult,
+                        RedirectAttributes redirectAttributes) {
+
+        if (bindingResult.hasErrors()) {
+            redirectAttributes.addFlashAttribute("loginDto", loginDto);
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.loginDto", bindingResult);
+
+            return "redirect:/login";
+        }
+
+        return "redirect:/";
+    }
+        
+        
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

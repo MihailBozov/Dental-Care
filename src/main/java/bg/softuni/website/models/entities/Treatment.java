@@ -2,6 +2,7 @@ package bg.softuni.website.models.entities;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,7 +15,7 @@ public class Treatment {
     private long id;
     
     @Column(nullable = false, unique = true)
-    private String name; 
+    private String name;
     
     @Column(columnDefinition = "TEXT")
     private String description;
@@ -25,8 +26,20 @@ public class Treatment {
     @ManyToMany(mappedBy = "treatments", targetEntity = User.class)
     private Set<User> users;
     
+    @ManyToOne
+    @JoinColumn(name = "created_by_user_id", referencedColumnName = "id")
+    User createdByUser;
+    
+    @Column(name = "creation_date")
+    LocalDateTime creationDate;
+    
     public Treatment() {
         this.users = new HashSet<>();
+    }
+    
+    @PrePersist
+    protected void onCreate() {
+        this.creationDate = LocalDateTime.now();
     }
     
     public long getId() {
@@ -67,5 +80,21 @@ public class Treatment {
     
     public void setUsers(Set<User> users) {
         this.users = users;
+    }
+    
+    public User getCreatedByUser() {
+        return createdByUser;
+    }
+    
+    public void setCreatedByUser(User addedByUser) {
+        this.createdByUser = addedByUser;
+    }
+    
+    public LocalDateTime getCreationDate() {
+        return creationDate;
+    }
+    
+    public void setCreationDate(LocalDateTime creationDate) {
+        this.creationDate = creationDate;
     }
 }

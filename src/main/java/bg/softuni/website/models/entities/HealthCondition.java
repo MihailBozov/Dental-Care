@@ -1,7 +1,9 @@
 package bg.softuni.website.models.entities;
 
-import bg.softuni.website.models.enums.DangerLevel;
+import bg.softuni.website.models.enums.DangerLevelName;
 import jakarta.persistence.*;
+
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "health_conditions")
@@ -16,10 +18,24 @@ public class HealthCondition {
     
     @Column(name = "danger_level")
     @Enumerated(EnumType.STRING)
-    DangerLevel dangerLevel;
+    DangerLevelName dangerLevelName;
     
     @Column(columnDefinition = "TEXT")
     private String description;
+    
+    @ManyToOne
+    @JoinColumn(name = "created_by_user_id", referencedColumnName = "id")
+    User createdByUser;
+    
+    @Column(name = "creation_date")
+    private LocalDateTime creationDate;
+    
+    public HealthCondition() {}
+    
+    @PrePersist
+    protected void onCreate() {
+        this.creationDate = LocalDateTime.now();
+    }
     
     public long getId() {
         return id;
@@ -37,11 +53,11 @@ public class HealthCondition {
         this.name = name;
     }
     
-    public DangerLevel getDangerLevel() {
-        return dangerLevel;
+    public DangerLevelName getDangerLevel() {
+        return dangerLevelName;
     }
     
-    public void setDangerLevel(DangerLevel dangerLevel) {
-        this.dangerLevel = dangerLevel;
+    public void setDangerLevel(DangerLevelName dangerLevelName) {
+        this.dangerLevelName = dangerLevelName;
     }
 }
