@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<th:block th:include="~{/fragments/head}"></th:block>
+<body>
+
+<th:block th:include="~{/fragments/header}"></th:block>
+<th:block th:include="~{/fragments/window_background}"></th:block>
+
+<div class="container-fluid ">
+
+    <div class="row sm-5  flex-wrap ">
+        <div class="col-md-6 p-4">
+            <img class="rounded-2 p-0 m-0" th:src="@{images/doctor.jpg}" style="max-height: 100%; width: 100%;" alt="">
+        </div>
+        <div class="col-sm-6 p-4 align-content-center">
+            <div class="text-black-50 display-6 p-2 ps-0">Professional Dr. Strange</div>
+            <p>Our team is dedicated to providing the most up-to-date general, orthodontic and family dentistry.</p>
+        </div>
+    </div>
+</div>
+
+<th:block th:include="~{/fragments/footer}"></th:block>
+
+</body>
+</html>

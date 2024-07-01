@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<th:block th:include="~{/fragments/head}"></th:block>
+<body>
+
+<th:block th:include="~{/fragments/header}"></th:block>
+
+<th:block th:include="~{/fragments/window_background}"></th:block>
+
+<form style="background-color: rgba(255,255,255,0.63); max-width: 400px; margin: 0 auto">
+    <div class="container justify-content-center align-items-center border border-1 border-info rounded-4 my-md-5 p-4  "
+         style="">
+        <h2 class="text-secondary mb-3">Login to your profile</h2>
+        <div class="form-group py-2">
+            <label for="inputEmail">Email address</label>
+            <input type="email" class="form-control" id="inputEmail" placeholder="email">
+        </div>
+
+        <div class="form-group py-2 mb-3">
+            <label for="loginPassword">Password</label>
+            <input type="password" class="form-control" id="loginPassword" placeholder="password">
+        </div>
+
+        <div class="row justify-content-start align-items-center">
+            <div class="col-4">
+                <button type="submit" class="btn btn-md btn-primary">Log in</button>
+            </div>
+            <div class="form-group form-check col-5 ">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Remember me</label>
+            </div>
+        </div>
+    </div>
+</form>
+
+<footer th:replace="~{/fragments/footer}"></footer>
+</body>
+</html>
+

@@ -22,6 +22,6 @@ public class TreatmentsController {
         model.addAttribute("treatment", treatments);
         
         
-        return "treatmentsList.html";
+        return "treatmentsList";
     }
 }

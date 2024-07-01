@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-transparent " style="z-index: 1">
+<nav class="navbar navbar-expand-lg">
 
     <div class="container-fluid">
         <a class="navbar-brand align-items-center" th:href="@{/}">
@@ -27,7 +27,10 @@
             </ul>
             <ul class="navbar-nav me-0 mb-2">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" th:href="@{/index}">Login</a>
+                    <a class="nav-link active" aria-current="page" th:href="@{/login}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" th:href="@{/register}">Register</a>
                 </li>
                 <li class="nav-item">
                     <a class="btn btn-primary" th:href="@{/appointment}">Make an Appointment</a>

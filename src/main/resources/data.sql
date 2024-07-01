@@ -36,10 +36,10 @@ INSERT INTO treatments(description, name, price)
 VALUES ('Devices used to correct misaligned teeth and jaws, gradually straightening teeth and improving bite over time.', 'Orthodontic Braces', '2000');
 
 
-INSERT INTO users (age, email, first_name, last_name, password, picture_url, username) 
-VALUES (18,'ggg@gmail.com', 'Mony', 'Petrov', 'a12345', 'urlP', 'moni');
-INSERT INTO users (age, email, first_name, last_name, password, picture_url, username)
-VALUES (18,'bbb@gmail.com', 'Alex', 'Ivanov', 'a12345', 'urlP', 'alex');
+INSERT INTO users (age, email, first_name, last_name, password, picture_url) 
+VALUES (18,'ggg@gmail.com', 'Mony', 'Petrov', 'a12345', 'urlP');
+INSERT INTO users (age, email, first_name, last_name, password, picture_url)
+VALUES (18,'bbb@gmail.com', 'Alex', 'Ivanov', 'a12345', 'urlP');
 
 INSERT INTO messages (date_time, text, author_id, recipient_id)
 VALUES (NOW(), 'What is up', 1, 2);

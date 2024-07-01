@@ -1,8 +1,10 @@
 
 @import url("index.css");
-@import url("treatmentsList.css");
-@import url("testimonialsList.css");
-@import url("teamList.css");
+@import url("treatmentsSection.css");
+@import url("testimonialsSection.css");
+@import url("teamSection.css");
+@import url("nav.css");
+@import url("authentication.css");
 
 
 /*                    fonts                    */

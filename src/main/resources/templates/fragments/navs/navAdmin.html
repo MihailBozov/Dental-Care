@@ -10,6 +10,7 @@
                 aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+        
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-2">
                 <li class="nav-item">
@@ -19,13 +20,13 @@
                     <a class="nav-link active" aria-current="page" th:href="@{/treatments}">Treatments</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" th:href="@{/aboutUs.html}">About us</a>
+                    <a class="nav-link active" aria-current="page" th:href="@{/aboutUs}">About us</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" th:href="@{/location}">Location</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" th:href="@{/users}"></a>
+                    <a class="nav-link active" aria-current="page" th:href="@{/users}">Users</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" th:href="@{/doctors}">Doctors</a>
@@ -34,10 +35,13 @@
                     <a class="nav-link active" aria-current="page" th:href="@{/managers}">Managers</a>
                 </li>
             </ul>
+            
             <ul class="navbar-nav me-0 mb-2">
-                \
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Logout</a>
+                    <a class="nav-link active" aria-current="page" th:href="@{/profile}">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" th:href="@{/logout}">Logout</a>
                 </li>
                 <li class="nav-item">
                     <a class="btn btn-primary" th:href="@{/dashboard}">Dashboard</a>

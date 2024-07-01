@@ -31,9 +31,6 @@ public class User {
     @Basic
     LocalDateTime registrationDate;
     
-    @Column(nullable = false, unique = true)
-    private String username;
-    
     @Column(nullable = false)
     private String password;
     
@@ -110,14 +107,6 @@ public class User {
     
     public void setAge(int age) {
         this.age = age;
-    }
-    
-    public String getUsername() {
-        return username;
-    }
-    
-    public void setUsername(String username) {
-        this.username = username;
     }
     
     public String getPassword() {
