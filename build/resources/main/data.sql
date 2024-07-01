@@ -20,9 +20,9 @@ VALUES ('USER', 'user');
 # ---------------------------     Newsletter     ---------------------------
 
 
-INSERT INTO newsletter (email, creation_date)
+INSERT INTO newsletter (newsletter_email, creation_date)
 VALUES ('mihailbozov001@gmail.com', TIMESTAMP(NOW()));
-INSERT INTO newsletter (email, creation_date)
+INSERT INTO newsletter (newsletter_email, creation_date)
 VALUES ('mihailbozov@hotmail.com', TIMESTAMP(NOW()));
 
 

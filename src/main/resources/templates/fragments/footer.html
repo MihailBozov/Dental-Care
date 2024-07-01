@@ -1,63 +1,69 @@
-<footer class="text-center text-lg-start mt-md-5 pt-4 bg-dark">
-    <div class="container p-4">
-        <div class="row">
-            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 text-light">
-                <h5 class="text-uppercase mb-4">OUR WORLD</h5>
-                <ul class="list-unstyled mb-4">
-                    <li>
-                        <a href="/" class="text-white">Home</a>
-                    </li>
-                    <li>
-                        <a href="/treatments" class="text-white">Treatments</a>
-                    </li>
-                    <li>
-                        <a href="/" class="text-white">Location</a>
-                    </li>
-                    <li>
-                        <a href="/team" class="text-white">Our Team</a>
-                    </li>
-                    <li>
-                        <a href="testimonials" class="text-white">Our Clients</a>
-                    </li>
+<footer xmlns:th="http://www.thymeleaf.org"
+        class="bg-dark">
+    <div class="footer_container">
+        <div class="first_column">
+            <img src="/images/main/logo_footer.svg" alt="">
+        </div>
+        <div class="second_column">
+            <h5 class="text-uppercase mb-4 text-light">Assistance</h5>
+            <ul class="list-unstyled">
+                <li>
+                    <a href="/info">All Information</a>
+                </li>
+                <li>
+                    <a href="/info/shippingInfo">Shipping Information</a>
+                </li>
+                <li>
+                    <a href="/info/returnsAndExchanges">Returns & Exchanges</a>
+                </li>
+                <li>
+                    <a href="/info/payment">Payment Information</a>
+                </li>
+            </ul>
+        </div>
+        <div class="third_column ">
+            <h5 class="text-uppercase mb-4 text-light">Careers</h5>
+            <ul class="list-unstyled">
+                <li>
+                    <a href="#" class="text-white">Jobs</a>
+                </li>
+            </ul>
+        </div>
+        <div class="fourth_column">
+            <form th:action="@{/}"
+                  th:method="post"
+                  th:object="${newsletterDto}"
+                  class="form-outline form-white mb-4">
+                <label class="form-label text-uppercase text-light bold" for="form5Example2">Newsletter</label>
+                <input type="email"
+                       name="newsletterEmail"
+                       id="form5Example2"
+                       placeholder="email"
+                       class="form-control"
+                       th:field="*{newsletterEmail}"
+                       th:errorclass="is-invalid"
+                       aria-describedby="newsletterHelp">
+                <div class="d-flex justify-content-center align-items-center" style="gap: 0.3em">
 
-                </ul>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                <h5 class="text-uppercase mb-4 text-light">Assistance</h5>
-                <ul class="list-unstyled">
-                    <li>
-                        <a href="#" class="text-white">Shipping Information</a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-white">Returns & Exchanges</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                <h5 class="text-uppercase mb-4 text-light">Careers</h5>
-                <ul class="list-unstyled">
-                    <li>
-                        <a href="#" class="text-white">Jobs</a>
-                    </li>
-                </ul>
-            </div>
-            <form class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                <div class="form-outline form-white mb-4">
-                    <label class="form-label text-uppercase text-light bold" for="form5Example2">Sign up for our
-                        newsletter</label>
-                    <input type="email" id="form5Example2" placeholder="email" class="form-control"
-                           aria-describedby="newsletterHelp">
-                    <button type="submit" class=" my-1 btn btn-outline-white btn-info">Subscribe</button>
-                    <small id="newsletterHelp" class="form-text text-light d-block">Who signs for newsletters these
-                        days,
-                        anyway?
-                    </small>/>
+                    
+                    <div th:if="${#fields.hasErrors('newsletterEmail')}" class="invalid-feedback">
+                        <small class="d-inline-block bg-danger text-light rounded mt-1"
+                               th:text=" ${#fields.errors('newsletterEmail').getFirst()}">
+                        </small>
+                    </div>
+                    <div th:if="${success != null}">
+                        <small class="d-inline-block bg-success text-light rounded mt-1"
+                               th:text="${success}"></small>
+                    </div>
+
+                    
+                    <button th:type="submit" th:name="submit" th:value="true" class="btn btn-outline-white btn-info">Subscribe</button>
+                    <small id="newsletterHelp" class="form-text text-light">Who signs for newsletters these days,
+                        anyway?</small>
                 </div>
             </form>
         </div>
     </div>
-    <div class="text-center p-3 border-top border-white text-light">
-        © 2020 Copyright:
-        <a class="text-white" href="/">Dental Care</a>
     </div>
+
 </footer>

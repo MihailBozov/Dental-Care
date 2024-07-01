@@ -1,0 +1,81 @@
+.all_terms_and_conditions_title {
+    font-family: 'Bacasime Antique', sans-serif;
+    text-transform: uppercase;
+    margin: 3rem auto 3rem;
+    text-align: center;
+}
+.all_terms_and_conditions_title h1 {
+    font-weight: 600;
+    font-size: 3em;
+    letter-spacing: 3px;
+}
+
+.info_section {
+    max-width: 1200px;
+    text-align: center;
+    padding: 20px 40px;
+    margin: 30px auto 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.info_section h2 {
+    padding-top: 1em;
+    padding-bottom: 0.2em;
+    font-size: 3em;
+    color: #333;
+}
+
+.info_section h2 span {
+    color: #4a90e2;
+}
+
+.info_section .subtitle {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #5a6268;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 1.5em;
+}
+
+.info_unit {
+    margin: 0 auto 2rem;
+    padding: 3rem;
+    max-width: 1000px;
+    background: rgba(255, 255, 255, 0.3);
+    text-align: left;
+    cursor: auto;
+    border-radius: 10px;
+    box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.1);
+    
+}
+
+.info_section h3 {
+    font-family: 'Fredoka', serif;
+    padding: 1.3em 0 1em;
+    
+}
+
+.row_unit {
+    padding-top: 0.7em;
+    font-family: 'Fredoka', serif;
+    color: #5a6268;
+    font-weight: 350;
+}
+
+.text_semibold {
+    font-weight: 450;
+    font-size: 1.2em;
+}
+
+a[class="all_info"] {
+    font-size: 1rem;
+    display: block;
+    color: #5a6268;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.4s ease;
+
+}

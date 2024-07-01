@@ -3,23 +3,27 @@ package bg.softuni.website.models.entities;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
 @Table(name = "newsletter")
-public class NewsLetter {
+public class Newsletter {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     
-    @Column(nullable = false, unique = true)
-    private String email;
+    @Column(name = "newsletter_email", nullable= false, unique = true)
+    private String newsletterEmail;
     
     @Column(name = "creation_date")
     private LocalDateTime creationDate;
     
-    public NewsLetter() {}
+    public Newsletter() {
+    }
+    
+    public Newsletter(String newsletterEmail) {
+        this.newsletterEmail = newsletterEmail;
+    }
     
     @PrePersist
     protected void onCreate() {
@@ -34,11 +38,19 @@ public class NewsLetter {
         this.id = id;
     }
     
-    public String getEmail() {
-        return email;
+    public String getNewsletterEmail() {
+        return newsletterEmail;
     }
     
-    public void setEmail(String email) {
-        this.email = email;
+    public void setNewsletterEmail(String newsletterEmail) {
+        this.newsletterEmail = newsletterEmail;
+    }
+    
+    public LocalDateTime getCreationDate() {
+        return creationDate;
+    }
+    
+    public void setCreationDate(LocalDateTime creationDate) {
+        this.creationDate = creationDate;
     }
 }

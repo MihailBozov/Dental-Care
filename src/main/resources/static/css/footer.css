@@ -1,0 +1,37 @@
+footer {
+    margin-top: 3rem;
+    padding: 1rem;
+}
+
+.footer_container {
+    margin: 0 auto;
+    padding: 2rem 0 4rem;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    justify-content: space-between;
+    align-items: start;
+    gap: 1rem;
+}
+
+.footer_container * {
+    color: white;
+}
+
+.footer_container a {
+    text-decoration: none;
+}
+
+.first_column {
+    align-self: center;
+}
+
+.first_column img {
+ width: 300px;
+}
+
+.fourth_column button {
+  
+    margin-top: 0.4rem;
+}
