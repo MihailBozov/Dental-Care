@@ -1,7 +1,5 @@
 package bg.softuni.website.models.dtos;
 
-import bg.softuni.website.models.entities.Image;
-
 public class TreatmentDto {
     
     private String name;

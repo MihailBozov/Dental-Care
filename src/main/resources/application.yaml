@@ -26,4 +26,19 @@ logging:
     org.hibernate.orm.jdbc.bind: TRACE
     org.springframework.security: TRACE
     
+    
+image:
+  upload:
+    formNewTreatmentDir: "C:\\Users\\MihailBozov\\IdeaProjects\\website\\src\\main\\resources\\static\\images\\treatments"
+    
+    
+#image:
+#  upload:
+#    dir: "C:\\Users\\MihailBozov\\IdeaProjects\\website\\src\\main\\resources\\static\\images"
+#    
+    
+#formNewTreatment:
+#  upload:
+#    dir: "C:\\Users\\MihailBozov\\IdeaProjects\\website\\src\\main\\resources\\static\\images\\treatments"
 
+    

@@ -1,7 +1,6 @@
 package bg.softuni.website.services;
 
 import bg.softuni.website.models.dtos.TeamDto;
-import bg.softuni.website.models.entities.Role;
 import bg.softuni.website.models.entities.User;
 import bg.softuni.website.models.enums.UserRoles;
 import bg.softuni.website.repositories.TeamRepository;
@@ -24,21 +23,31 @@ public class TeamService {
         this.teamRepository = teamRepository;
     }
     
-    public List<TeamDto> getAllTeamMembers() {
+    public List<TeamDto> getAllTeamMembersForDisplay() {
         List<User> users = this.teamRepository.findAllTeamMembers();
         List<TeamDto> members = new ArrayList<>();
         
-        for (User user : users) {
+        List<User> filteredUsers = users.
+                stream()
+                .filter(user -> user.getRoles()
+                        .stream()
+                        .filter(role ->
+                                role.getName() == UserRoles.DENTIST ||
+                                        role.getName() == UserRoles.DENTAL_ASSISTANT ||
+                                        role.getName() == UserRoles.MANAGER)
+                        .count() > 0)
+                .toList();
+        
+        
+        for (User user : filteredUsers) {
             TeamDto memberDto = this.modelMapper.map(user, TeamDto.class);
-            memberDto.setRole("UNKNOWN");
-            for (Role role : user.getRoles()) {
-                if (!role.getName().equals(UserRoles.USER) && !role.getName().equals(UserRoles.ADMIN)) {
-                    memberDto.setRole(role.getValue());
-                    memberDto.setPictureUrl(user.getImage().getUrl());
-                }
-            }
+            memberDto.setRoles(user.getRoles().stream()
+                    .filter(role -> !role.getName().equals(UserRoles.ADMIN) && !role.getName().equals(UserRoles.USER))
+                    .map(role -> role.getValue().toString()).toList());
+            memberDto.setPictureUrl(user.getImage().getUrl());
             members.add(memberDto);
         }
+        
         return members;
     }
 }

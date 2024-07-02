@@ -24,7 +24,7 @@ public class TeamController {
     
     @ModelAttribute("allTeamMembers")
     public List<TeamDto> initAllTeamMembers() {
-        return this.teamService.getAllTeamMembers();
+        return this.teamService.getAllTeamMembersForDisplay();
     }
     
     @GetMapping("/team")

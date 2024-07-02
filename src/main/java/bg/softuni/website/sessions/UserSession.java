@@ -23,6 +23,8 @@ public class UserSession {
     
     private String lastName;
     
+    private User user;
+    
    public UserSession() {
        this.id = 0;
        this.email = null;
@@ -38,6 +40,7 @@ public class UserSession {
         this.roles = user.getRoles();
         this.firstName = user.getFirstName();
         this.lastName = user.getLastName();
+        this.user = user;
     }
     
     public void logout() {
@@ -46,6 +49,7 @@ public class UserSession {
         this.roles = new ArrayList<>();
         this.firstName = null;
         this.lastName = null;
+        this.user = null;
     }
     
     public long getId() {
@@ -86,5 +90,13 @@ public class UserSession {
     
     public void setRoles(List<Role> roles) {
         this.roles = roles;
+    }
+    
+    public User getUser() {
+        return user;
+    }
+    
+    public void setUser(User user) {
+        this.user = user;
     }
 }

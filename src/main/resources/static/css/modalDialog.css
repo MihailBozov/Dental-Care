@@ -1,0 +1,22 @@
+.modal_container {
+    /*height: 100%;*/
+    /*overflow: hidden;*/
+}
+
+.modal_dialog {
+    /*overflow-y: auto;*/
+}
+
+.modal_body {
+    overflow-y: auto; 
+    max-height: 72vh;
+}
+
+form .input_unit {
+    text-align: start;
+
+}
+
+form .field_label {
+    font-family: 'Poppins', serif;
+}

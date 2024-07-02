@@ -119,8 +119,8 @@
 }
 
 a[class="all_testimonials"] {
-    font-size: 1rem;
-    display: block;
+    font-size: 1.1rem;
+    display: inline-block;
     color: #5a6268;
     text-decoration: none;
     cursor: pointer;

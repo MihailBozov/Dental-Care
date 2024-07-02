@@ -12,8 +12,10 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -31,7 +33,6 @@ public class TreatmentsController {
     }
     
     
-    
     @GetMapping("/treatments")
     public String treatments(Model model) {
         model.addAttribute("currentPage", "treatmentsPage");
@@ -45,18 +46,22 @@ public class TreatmentsController {
     public NewTreatmentDto initNewTreatmentDto() {
         return new NewTreatmentDto();
     }
-
     
     
     @PostMapping("/treatments/newTreatment")
     public String treatment(@Valid NewTreatmentDto newTreatmentDto,
                             BindingResult bindingResult,
-                            RedirectAttributes redirectAttributes,
-                            Model model) {
+                            RedirectAttributes redirectAttributes) throws IOException {
         
-        model.addAttribute("newTreatmentDto", initNewTreatmentDto());
+        if (bindingResult.hasErrors()) {
+            redirectAttributes.addFlashAttribute("newTreatmentDto", newTreatmentDto);
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.newTreatmentDto", bindingResult);
+            
+            return "redirect:/treatments";
+        }
         
-        return "redirect:/treatments";
+        this.treatmentService.addNewTreatment(newTreatmentDto);
+        
+        return "redirect:/treatments?success=true";
     }
-    
 }

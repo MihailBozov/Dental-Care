@@ -4,16 +4,20 @@
     <div class="subtitle">From routine cleanings and preventive care to advanced restorative and cosmetic procedures,
         our dedicated team is committed to providing exceptional care tailored to your individual needs.
     </div>
+    
+    
 
     <div class="treatment_container">
-        
+        <!--        th:each="role : ${@userSession.getRoles()}"-->
+        <!--        th:if="${role.getName().toString().equals('DENTAL_ASSISTANT')} or ${role.getName().toString().equals('DOCTOR')} or ${role.getName().toString().equals('MANAGER')} or ${role.getName().toString().equals('ADMIN')} and ${currentPage == 'treatmentsPage'}"-->
 
-        <a th:each="role : ${@userSession.getRoles()}"
-           th:if="${role.getName().toString().equals('DENTAL_ASSISTANT')} or ${role.getName().toString().equals('DOCTOR')} or ${role.getName().toString().equals('MANAGER')} or ${role.getName().toString().equals('ADMIN')} and ${currentPage == 'treatmentsPage'}"
-           class="treatment_unit d-flex flex-column justify-content-center align-items-center"
-           data-toggle="modal"
-           data-target="#newTreatmentModal"
-           href="/treatments#exampleModal">
+
+        <a
+                th:if="${currentPage == 'treatmentsPage'}"
+                class="treatment_unit d-flex flex-column justify-content-center align-items-center"
+                data-toggle="modal"
+                data-target="#newTreatmentModal"
+                href="/treatments/newTreatment">
             <img class="treatment_icon m-0"
                  th:src="@{/images/icons/add_new.svg}"
                  width="80"
@@ -32,7 +36,9 @@
             </div>
         </a>
 
+        <th:block th:include="~{fragments/success}"></th:block>
+
     </div>
 
-    <a href="/treatments" class="all_testimonials" th:if="${currentPage == 'homePage'}">All Testimonials →</a>
+    <a href="/treatments" class="all_treatments" th:if="${currentPage == 'homePage'}">All Treatments →</a>
 </section>

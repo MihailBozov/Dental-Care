@@ -11,13 +11,13 @@
             <img class="member_img" th:src="${member.getPictureUrl()}" alt="">
             <div class="details_member">
                 <div class="member_name" th:text="${member.getFirstName()}"></div>
-                <div class="member_role" th:text="${member.getRole()}">dentist</div>
+                <div class="member_role" th:text="${member.getRoles().getFirst()}"></div>
             </div>
         </div>
 
     </div>
 
 
-    <a href="/team" class="all_testimonials" th:if="${currentPage == 'homePage'}">All Testimonials →</a>
+    <a href="/team" class="all_members" th:if="${currentPage == 'homePage'}">All Members →</a>
 
 </section>
