@@ -1,0 +1,29 @@
+
+
+#success .modal-footer {
+    padding: 16px;
+}
+
+#failure .modal_body {
+    padding: 0.4em;
+    display: grid;
+    gap: 0;
+    align-items: center;
+}
+
+#failure .text_failure {
+    font-family: 'Readex Pro', sans-serif;
+    font-weight: 350;
+    color: var(--w_danger);
+    font-size: 2.5em;
+    letter-spacing: 0.05em;
+    margin-top: -5px;
+
+}
+
+#failure .modal_body svg {
+    margin: 0 auto -5px;
+    width: 90px;
+    height: auto;
+    fill: var(--w_danger);
+}

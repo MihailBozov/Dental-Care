@@ -24,15 +24,33 @@ function showSuccess() {
         const newUrl = window.location.href.split('?')[0];
         history.replaceState(null, null, newUrl);
     }
+    else if(success === false) {
+        $('#failure').modal('show');
+    }
 }
 
 
 function setDeleteUrl(link) {
+   
     let form = document.getElementById('deleteForm');
     form.action = link.getAttribute('href');
 }
 
 function submitDeleteForm() {
+    
     let form = document.getElementById('deleteForm');
     form.submit();
+}
+
+
+function getForm(button) {
+  
+    $('#confirmationModal').modal('show');
+    
+    let confirmButton = document.querySelector('#continueWithTheSubmitting');
+    confirmButton.addEventListener('click', submitForm);
+
+    function submitForm() {
+        button.closest('form').submit();
+    }
 }

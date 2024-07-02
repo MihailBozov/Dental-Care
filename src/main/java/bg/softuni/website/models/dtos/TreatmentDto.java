@@ -1,5 +1,6 @@
 package bg.softuni.website.models.dtos;
 
+import bg.softuni.website.models.entities.Image;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,6 +14,6 @@ public class TreatmentDto {
     
     private String description;
     
-    private String imageUrl;
+    private Image image;
     
 }

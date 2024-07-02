@@ -34,7 +34,7 @@ public class Treatment {
     @JoinColumn(name = "created_by_user_id", referencedColumnName = "id")
     UserEntity createdByUserEntity;
     
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "image_id", referencedColumnName = "id")
     private Image image;
     

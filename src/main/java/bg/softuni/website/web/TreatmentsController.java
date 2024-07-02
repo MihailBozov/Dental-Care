@@ -64,16 +64,20 @@ public class TreatmentsController {
         return "redirect:/treatments?success=true";
     }
     
-    @GetMapping("/treatments/{id}")
+    @PostMapping("/treatments/{id}")
     public String deleteTreatment(@PathVariable Long id, Model model) throws IOException {
-        boolean isDeleted = this.treatmentService.deleteTreatment(id);
         
-        if (isDeleted) {
-            model.addAttribute("success", "true");
-            return "redirect:/treatments?success=true";
-        }else {
-            return "redirect:/treatments";
+        try {
+            boolean isDeleted = this.treatmentService.deleteTreatment(id);
+            if (isDeleted) {
+                return "redirect:/treatments?success=true";
+            } else {
+                return "redirect:/treatments?success=false";
+            }
+        }catch (Exception e) {
+            return "redirect:/treatments?success=false";
         }
+        
 
 
 //        if (isDeleted) {
@@ -83,5 +87,5 @@ public class TreatmentsController {
 //        }
     }
     
- 
+    
 }

@@ -35,7 +35,6 @@ public class TreatmentService {
         
         for (Treatment treatment : allTreatments) {
             TreatmentDto treatmentDto = this.modelMapper.map(treatment, TreatmentDto.class);
-            treatmentDto.setImageUrl(treatment.getImage().getUrl());
             treatmentDtos.add(treatmentDto);
         }
         return treatmentDtos;

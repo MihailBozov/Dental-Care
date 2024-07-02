@@ -1,6 +1,7 @@
 .unit_link {
     position: absolute;
     background: transparent;
+
     left: 0;
     top: 0;
     right: 0;
@@ -14,6 +15,11 @@
     right: 10px;
     transition: var(--w_transition-4);
     overflow: hidden;
+}
+
+button[class="delete_icon"] {
+    border: none;
+    background: transparent;
 }
 
 .delete_icon svg {

@@ -48,11 +48,18 @@
     border-radius: 10px;
     box-shadow: var(--w_shadow-gray);
     transition: var(--w_transition-4);
+    max-height: 300px;
     position: relative;
     overflow: hidden;
 }
 
+.treatment_unit .treatment_description {
+    overflow: hidden;
+    max-height: 35%;
+}
 
+
+ 
 .treatment_container .treatment_unit:hover {
     background: var(--w_white);
     transform: var(--w_transform-scale-1);

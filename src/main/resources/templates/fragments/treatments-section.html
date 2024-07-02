@@ -39,30 +39,30 @@
         <th:block th:include="~{fragments/popups/add-treatment}"></th:block>
 
         <!--        @{/treatments/{id}(id=${treatment.id})}-->
+        <!--        data-toggle="modal"-->
+        <!--        data-target="#confirmationModal"-->
 
-
-        <div class="treatment_unit" href="#" th:each="treatment : ${allTreatments}">
+        <div class="treatment_unit" th:each="treatment : ${allTreatments}">
             <a href="#" class="unit_link"></a>
-            <img class="treatment_icon" th:src="${treatment.getImageUrl()}" alt="">
+            <img class="treatment_icon" th:src="${treatment.getImage().getUrl()}" alt="">
 
-            
-            <a sec:authorize="hasAnyRole('ADMIN', 'MANAGER', 'DENTIST', 'DENTAL_ASSISTANT')"
-               data-toggle="modal"
-               data-target="#confirmationModal"
-               onclick="setDeleteUrl(this)"
-               class="delete_icon">
-                <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px"
-                     fill="#000000">
-                    <path d="M366.35-314.77 480.5-430.54l115.15 115.77 34.54-35.15-114.15-115.77 114.15-116.16L595.65-617 480.5-501.23 366.35-617l-35.54 35.15 115.15 116.16-115.15 115.77 35.54 35.15ZM223.08-143.08V-741h-40.31v-43.61h168.92v-27.7h256.93v27.47h168.92V-741h-40.36v597.92h-514.1Zm43.84-43.84h426.46V-741H266.92v554.08Zm0-554.08v554.08V-741Z"/>
-                </svg>
-            </a>
+            <form id="deleteForm" sec:authorize="hasAnyRole('ADMIN', 'MANAGER', 'DENTIST', 'DENTAL_ASSISTANT')"
+                  th:method="post"
+                  th:action="@{/treatments/{id}(id=${treatment.getId()})}">
+                <!-- Other form fields can go here if needed -->
+                <button type="button" onclick="getForm(this)"  class="delete_icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#000000">
+                        <path d="M366.35-314.77 480.5-430.54l115.15 115.77 34.54-35.15-114.15-115.77 114.15-116.16L595.65-617 480.5-501.23 366.35-617l-35.54 35.15 115.15 116.16-115.15 115.77 35.54 35.15ZM223.08-143.08V-741h-40.31v-43.61h168.92v-27.7h256.93v27.47h168.92V-741h-40.36v597.92h-514.1Zm43.84-43.84h426.46V-741H266.92v554.08Zm0-554.08v554.08V-741Z"/>
+                    </svg>
+                </button>
+            </form>
             <h2 class="treatment_title" th:text="${treatment.getName()}"></h2>
             <div class="treatment_description">
                 <p th:text="${treatment.getDescription()}"></p>
             </div>
         </div>
 
-        <th:block th:include="~{fragments/popups/confirm}"></th:block>
+        <th:block th:include="~{fragments/popups/confirmDelete}"></th:block>
         <th:block th:include="~{fragments/popups/success}"></th:block>
     </div>
 
