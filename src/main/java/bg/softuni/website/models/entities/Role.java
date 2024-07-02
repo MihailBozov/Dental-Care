@@ -2,7 +2,11 @@ package bg.softuni.website.models.entities;
 
 import bg.softuni.website.models.enums.UserRole;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "roles")
 public class Role {
@@ -23,27 +27,4 @@ public class Role {
         this.name = name;
     }
     
-    public String getValue() {
-        return value;
-    }
-    
-    public void setValue(String value) {
-        this.value = value;
-    }
-    
-    public long getId() {
-        return id;
-    }
-    
-    public void setId(long id) {
-        this.id = id;
-    }
-    
-    public UserRole getName() {
-        return name;
-    }
-    
-    public void setName(UserRole name) {
-        this.name = name;
-    }
 }

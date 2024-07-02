@@ -29,48 +29,55 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" th:href="@{/testimonials}">Clients</a>
                 </li>
-                
-                <li class="nav-item"
-                    th:each="role : ${@userSession.getRoles()}"
-                    th:if="${role.getName().toString().equals('DENTAL_ASSISTANT')} or ${role.getName().toString().equals('DOCTOR')} or ${role.getName().toString().equals('MANAGER')} or ${role.getName().toString().equals('ADMIN')}">
-                    <a class="nav-link active" aria-current="page" th:href="@{/users}">Users</a>
+<!--                th:each="role : ${@userSession.getRoles()}"-->
+<!--                th:if="${role.getName().toString().equals('DENTAL_ASSISTANT')} or ${role.getName().toString().equals('DOCTOR')} or ${role.getName().toString().equals('MANAGER')} or ${role.getName().toString().equals('ADMIN')}"-->
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" th:href="@{/userEntities}">Users</a>
                 </li>
-                <li class="nav-item"
-                    th:each="role : ${@userSession.getRoles()}"
-                    th:if="${role.getName().toString().equals('MANAGER')} or ${role.getName().toString().equals('ADMIN')}">
+
+<!--                th:each="role : ${@userSession.getRoles()}"-->
+<!--                th:if="${role.getName().toString().equals('MANAGER')} or ${role.getName().toString().equals('ADMIN')}"-->
+                <li class="nav-item">
                     <a class="nav-link active" aria-current="page" th:href="@{/doctors}">Doctors</a>
                 </li>
-                <li class="nav-item"
-                    th:each="role : ${@userSession.getRoles()}"
-                    th:if="${role.getName().toString().equals('ADMIN')}">
+
+<!--                th:each="role : ${@userSession.getRoles()}"-->
+<!--                th:if="${role.getName().toString().equals('ADMIN')}"-->
+                <li class="nav-item">
                     <a class="nav-link active" aria-current="page" th:href="@{/managers}">Managers</a>
                 </li>
             </ul>
 
             <ul class="navbar-nav me-md-3 mb-2">
-                <li class="nav-item"
-                    th:if="${@userSession.getRoles().size() > 0}">
+                
+<!--                th:if="${@userSession.getRoles().size() > 0}"-->
+                <li class="nav-item">
                     <a class="nav-link active" aria-current="page" th:href="@{/profile}">Profile</a>
                 </li>
-                <li class="nav-item"
-                    th:if="${@userSession.getRoles().size() == 0}">
+                
+<!--                th:if="${@userSession.getRoles().size() == 0}"-->
+                <li class="nav-item">
                     <a class="nav-link active" aria-current="page" th:href="@{/login}">Login</a>
                 </li>
-                <li class="nav-item"
-                    th:if="${@userSession.getRoles().size() == 0}">
+
+<!--                th:if="${@userSession.getRoles().size() == 0}"-->
+                <li class="nav-item">
                     <a class="nav-link active" aria-current="page" th:href="@{/register}">Register</a>
                 </li>
-                <li class="nav-item"
-                    th:if="${@userSession.getRoles().size() > 0}">
+
+<!--                th:if="${@userSession.getRoles().size() > 0}"-->
+                <li class="nav-item">
                     <a class="nav-link active" aria-current="page" th:href="@{/logout}">Logout</a>
                 </li>
-                <li class="nav-item"
-                    th:if="${@userSession.getRoles().size() == 0} or ${@userSession.getRoles().size() == 1}">
+
+<!--                th:if="${@userSession.getRoles().size() == 0} or ${@userSession.getRoles().size() == 1}"-->
+                <li class="nav-item">
                     <a class="btn btn-outline-primary ms-md-2" th:href="@{/makeAppointment}">Make an appointment</a>
                 </li>
-                <li class="nav-item"
-                    th:each="role : ${@userSession.getRoles()}"
-                    th:if="${role.getName().toString().equals('DENTAL_ASSISTANT')} or ${role.getName().toString().equals('DOCTOR')} or ${role.getName().toString().equals('MANAGER')} or ${role.getName().toString().equals('ADMIN')}">
+
+<!--                th:each="role : ${@userSession.getRoles()}"-->
+<!--                th:if="${role.getName().toString().equals('DENTAL_ASSISTANT')} or ${role.getName().toString().equals('DOCTOR')} or ${role.getName().toString().equals('MANAGER')} or ${role.getName().toString().equals('ADMIN')}"-->
+                <li class="nav-item">
                     <a class="btn btn-primary" th:href="@{/dashboard}">Dashboard</a>
                 </li>
             </ul>

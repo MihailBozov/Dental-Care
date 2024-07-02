@@ -8,9 +8,9 @@
 
     <div class="treatment_container">
 
-        <a th:if="${role.getName().toString().equals('DENTAL_ASSISTANT')} or ${role.getName().toString().equals('DOCTOR')} or ${role.getName().toString().equals('MANAGER')} or ${role.getName().toString().equals('ADMIN')} and ${currentPage == 'treatmentsPage'}"
-           th:each="role : ${@userSession.getRoles()}"
-           class="treatment_unit new_treatment d-flex flex-column justify-content-center align-items-center"
+<!--        th:if="${role.getName().toString().equals('DENTAL_ASSISTANT')} or ${role.getName().toString().equals('DOCTOR')} or ${role.getName().toString().equals('MANAGER')} or ${role.getName().toString().equals('ADMIN')} and ${currentPage == 'treatmentsPage'}"-->
+<!--        th:each="role : ${@userSession.getRoles()}"-->
+        <a class="treatment_unit new_treatment d-flex flex-column justify-content-center align-items-center"
            data-toggle="modal"
            data-target="#newTreatmentModal"
            href="/treatments/newTreatment">
@@ -43,10 +43,9 @@
             <a href="#" class="unit_link"></a>
             <img class="treatment_icon" th:src="${treatment.getImageUrl()}" alt="">
 
-
-            <a th:if="${role.getName().toString().equals('DENTAL_ASSISTANT')} or ${role.getName().toString().equals('DOCTOR')} or ${role.getName().toString().equals('MANAGER')} or ${role.getName().toString().equals('ADMIN')} and ${currentPage == 'treatmentsPage'}"
-               th:each="role : ${@userSession.getRoles()}"
-               th:href="@{/treatments/{id}(id=${treatment.id})}"
+<!--            th:if="${role.getName().toString().equals('DENTAL_ASSISTANT')} or ${role.getName().toString().equals('DOCTOR')} or ${role.getName().toString().equals('MANAGER')} or ${role.getName().toString().equals('ADMIN')} and ${currentPage == 'treatmentsPage'}"-->
+<!--            th:each="role : ${@userSession.getRoles()}"-->
+            <a th:href="@{/treatments/{id}(id=${treatment.id})}"
                data-toggle="modal"
                data-target="#confirmationModal"
                onclick="setDeleteUrl(this)"

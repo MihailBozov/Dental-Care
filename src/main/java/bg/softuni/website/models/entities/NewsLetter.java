@@ -1,9 +1,13 @@
 package bg.softuni.website.models.entities;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "newsletter")
 public class Newsletter {
@@ -30,27 +34,4 @@ public class Newsletter {
         this.creationDate = LocalDateTime.now();
     }
     
-    public long getId() {
-        return id;
-    }
-    
-    public void setId(long id) {
-        this.id = id;
-    }
-    
-    public String getNewsletterEmail() {
-        return newsletterEmail;
-    }
-    
-    public void setNewsletterEmail(String newsletterEmail) {
-        this.newsletterEmail = newsletterEmail;
-    }
-    
-    public LocalDateTime getCreationDate() {
-        return creationDate;
-    }
-    
-    public void setCreationDate(LocalDateTime creationDate) {
-        this.creationDate = creationDate;
-    }
 }

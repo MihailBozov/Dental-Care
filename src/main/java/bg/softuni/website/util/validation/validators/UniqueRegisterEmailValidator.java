@@ -1,6 +1,6 @@
 package bg.softuni.website.util.validation.validators;
 
-import bg.softuni.website.models.entities.User;
+import bg.softuni.website.models.entities.UserEntity;
 import bg.softuni.website.repositories.UserRepository;
 import bg.softuni.website.util.validation.UniqueRegisterEmail;
 import jakarta.validation.ConstraintValidator;
@@ -26,7 +26,7 @@ public class UniqueRegisterEmailValidator implements ConstraintValidator<UniqueR
     @Override
     public boolean isValid(String email, ConstraintValidatorContext constraintValidatorContext) {
         
-        Optional<User> findUser = this.userRepository.findByEmail(email);
+        Optional<UserEntity> findUser = this.userRepository.findByEmail(email);
         
         if (findUser.isPresent()) {
             return false;

@@ -1,11 +1,14 @@
 package bg.softuni.website.models.entities;
 
 import jakarta.persistence.*;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "images")
 public class Image {
@@ -22,13 +25,13 @@ public class Image {
     
     @ManyToOne()
     @JoinColumn(name = "added_by_user_id", referencedColumnName = "id")
-    private User addedByUser;
+    private UserEntity addedByUserEntity;
     
     @ManyToMany(mappedBy = "images", targetEntity = ImageCategory.class)
     private List<ImageCategory> categories;
     
-    @OneToMany(mappedBy = "image", targetEntity = User.class)
-    private List<User> users;
+    @OneToMany(mappedBy = "image", targetEntity = UserEntity.class)
+    private List<UserEntity> userEntities;
     
     @OneToMany(mappedBy = "image", targetEntity = Treatment.class)
     private List<Treatment> treatments;
@@ -38,59 +41,4 @@ public class Image {
         this.categories = new ArrayList<>();
     }
     
-    public long getId() {
-        return id;
-    }
-    
-    public void setId(long id) {
-        this.id = id;
-    }
-    
-    public String getName() {
-        return name;
-    }
-    
-    public void setName(String name) {
-        this.name = name;
-    }
-    
-    public String getUrl() {
-        return url;
-    }
-    
-    public void setUrl(String url) {
-        this.url = url;
-    }
-    
-    public User getAddedByUser() {
-        return addedByUser;
-    }
-    
-    public void setAddedByUser(User addedByUser) {
-        this.addedByUser = addedByUser;
-    }
-    
-    public List<ImageCategory> getCategories() {
-        return categories;
-    }
-    
-    public void setCategories(List<ImageCategory> categories) {
-        this.categories = categories;
-    }
-    
-    public List<User> getUsers() {
-        return users;
-    }
-    
-    public void setUsers(List<User> users) {
-        this.users = users;
-    }
-    
-    public List<Treatment> getTreatments() {
-        return treatments;
-    }
-    
-    public void setTreatments(List<Treatment> treatments) {
-        this.treatments = treatments;
-    }
 }

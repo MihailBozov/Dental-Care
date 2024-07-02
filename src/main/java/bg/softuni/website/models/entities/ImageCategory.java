@@ -2,11 +2,15 @@ package bg.softuni.website.models.entities;
 
 import bg.softuni.website.models.enums.ImageCategoryName;
 import jakarta.persistence.*;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "image_categories")
 public class ImageCategory {
@@ -30,30 +34,6 @@ public class ImageCategory {
     public ImageCategory(ImageCategoryName name) {
         this.name = name;
         this.images = new ArrayList<>();
-    }
-    
-    public long getId() {
-        return id;
-    }
-    
-    public void setId(long id) {
-        this.id = id;
-    }
-    
-    public ImageCategoryName getName() {
-        return name;
-    }
-    
-    public void setName(ImageCategoryName name) {
-        this.name = name;
-    }
-    
-    public List<Image> getImages() {
-        return images;
-    }
-    
-    public void setImages(List<Image> images) {
-        this.images = images;
     }
     
 }

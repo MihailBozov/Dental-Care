@@ -1,7 +1,7 @@
 package bg.softuni.website.services;
 
 import bg.softuni.website.models.dtos.TeamDto;
-import bg.softuni.website.models.entities.User;
+import bg.softuni.website.models.entities.UserEntity;
 import bg.softuni.website.models.enums.UserRole;
 import bg.softuni.website.repositories.TeamRepository;
 import org.modelmapper.ModelMapper;
@@ -24,10 +24,10 @@ public class TeamService {
     }
     
     public List<TeamDto> getAllTeamMembers() {
-        List<User> users = this.teamRepository.findAllTeamMembers();
+        List<UserEntity> userEntities = this.teamRepository.findAllTeamMembers();
         List<TeamDto> members = new ArrayList<>();
         
-        List<User> filteredUsers = users.
+        List<UserEntity> filteredUserEntities = userEntities.
                 stream()
                 .filter(user -> user.getRoles()
                         .stream()
@@ -36,12 +36,12 @@ public class TeamService {
                 .toList();
         
         
-        for (User user : filteredUsers) {
-            TeamDto member = this.modelMapper.map(user, TeamDto.class);
-            member.setRoles(user.getRoles());
+        for (UserEntity userEntity : filteredUserEntities) {
+            TeamDto member = this.modelMapper.map(userEntity, TeamDto.class);
+            member.setRoles(userEntity.getRoles());
             
-            if (user.getImage() != null) {
-                member.setPictureUrl(user.getImage().getUrl());
+            if (userEntity.getImage() != null) {
+                member.setPictureUrl(userEntity.getImage().getUrl());
             }
             members.add(member);
         }

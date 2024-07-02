@@ -30,9 +30,9 @@ public class SecurityConfiguration {
                                 //  allow anyone to see the homepage, register page and logout page
                                 .requestMatchers(
                                         "/",
-                                        "/users/login",
-                                        "/users/register",
-                                        "/users/logout").permitAll()
+                                        "/login",
+                                        "/register",
+                                        "/logout").permitAll()
                                 //  all other requests are authenticated
                                 .anyRequest().authenticated())
                 .formLogin(
@@ -40,12 +40,12 @@ public class SecurityConfiguration {
                             fotmLogin.
                                     //  redirect here when we access something that is not allowed
                                     //  also this is the page where we perform login
-                                            loginPage("users/login")
+                                            loginPage("/login")
                                     //  the names of the input fields (in our case in login.html
                                     .usernameParameter("email")
                                     .passwordParameter("password")
                                     .defaultSuccessUrl("/")
-                                    .failureForwardUrl("users/login-error");
+                                    .failureForwardUrl("/login");
                         }
                 ).logout( logout -> {
                     logout
@@ -64,21 +64,21 @@ public class SecurityConfiguration {
     }
     
     @Bean
-    UserDetailsService userDetailsService(UserRepository userRepository) {
+    public UserDetailsService userDetailsService(UserRepository userRepository) {
         //  this service translates the website's users and roles
         //  to representation which spring security understands 
         return new MyUserDetailsService(userRepository);
     }
     
     @Bean
-    PasswordEncoder passwordEncoder() {
+    public PasswordEncoder passwordEncoder() {
         return Pbkdf2PasswordEncoder.defaultsForSpringSecurity_v5_8();
     }
     
     
     
 //    @Bean
-//    PasswordEncoder passwordEncoder() {
+//    public PasswordEncoder passwordEncoder() {
 //        return new BCryptPasswordEncoder();
 //    }
 

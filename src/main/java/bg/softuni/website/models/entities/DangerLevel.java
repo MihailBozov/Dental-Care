@@ -2,7 +2,11 @@ package bg.softuni.website.models.entities;
 
 import bg.softuni.website.models.enums.DangerLevelName;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "danger_levels")
 public class DangerLevel {
@@ -21,19 +25,5 @@ public class DangerLevel {
         this.name = name;
     }
     
-    public long getId() {
-        return id;
-    }
-    
-    public void setId(long id) {
-        this.id = id;
-    }
-    
-    public DangerLevelName getName() {
-        return name;
-    }
-    
-    public void setName(DangerLevelName name) {
-        this.name = name;
-    }
+
 }

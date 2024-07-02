@@ -14,7 +14,7 @@ VALUES ('DENTIST', 'dentist');
 INSERT INTO roles ( name, value)
 VALUES ('DENTAL_ASSISTANT', 'dental assistant');
 INSERT INTO roles ( name, value)
-VALUES ('USER', 'user');
+VALUES ('USER', 'userEntity');
 
 
 # ---------------------------     Newsletter     ---------------------------
@@ -137,57 +137,57 @@ VALUES ('I was nervous about my procedure, but the team was so reassuring and ge
 # ---------------------------     Users     ---------------------------
 
 
-INSERT INTO users (email, first_name, last_name, password, image_id)
+INSERT INTO userEntities (email, first_name, last_name, password, image_id)
 VALUES ('cassandra@sofia.com', 'Cassandra', 'Sofia', '1212', 15);
-INSERT INTO users (email, first_name, last_name, password, image_id)
+INSERT INTO userEntities (email, first_name, last_name, password, image_id)
 VALUES ('james@sofia.com', 'James', 'Sofia', '1212', 16);
-INSERT INTO users (email, first_name, last_name, password, image_id)
+INSERT INTO userEntities (email, first_name, last_name, password, image_id)
 VALUES ('evelyn@sofia.com', 'Evelyn', 'Sofia', '1212', 17);
-INSERT INTO users (email, first_name, last_name, password, image_id)
+INSERT INTO userEntities (email, first_name, last_name, password, image_id)
 VALUES ('sophia@sofia.com', 'Sophia', 'Sofia', '1212', 18);
-INSERT INTO users (email, first_name, last_name, password, image_id)
+INSERT INTO userEntities (email, first_name, last_name, password, image_id)
 VALUES ('isabella@sofia.com', 'Isabella', 'Sofia', '1212', 19);
-INSERT INTO users (email, first_name, last_name, password, image_id)
+INSERT INTO userEntities (email, first_name, last_name, password, image_id)
 VALUES ('daniel@sofia.com', 'Daniel', 'Sofia', '1212', 20);
-INSERT INTO users (email, first_name, last_name, password, image_id, testimonial_id)
+INSERT INTO userEntities (email, first_name, last_name, password, image_id, testimonial_id)
 VALUES ('yanica@sofia.com', 'Yanica', 'Sofia', '1212', 21, 1);
-INSERT INTO users (email, first_name, last_name, password, image_id, testimonial_id)
+INSERT INTO userEntities (email, first_name, last_name, password, image_id, testimonial_id)
 VALUES ('emma@sofia.com', 'Emma', 'Sofia', '1212', 22, 2);
-INSERT INTO users (email, first_name, last_name, password, image_id, testimonial_id)
+INSERT INTO userEntities (email, first_name, last_name, password, image_id, testimonial_id)
 VALUES ('kale@sofia.com', 'Kale', 'Sofia', '1212', 23, 3);
 
 # ---------------------------     Users Roles     ---------------------------
 
 
-INSERT INTO user_roles(user, roles)
+INSERT INTO user_roles(userEntity, roles)
 VALUES ('1', '1');
-INSERT INTO user_roles(user, roles)
+INSERT INTO user_roles(userEntity, roles)
 VALUES ('1', '3');
-INSERT INTO user_roles(user, roles)
+INSERT INTO user_roles(userEntity, roles)
 VALUES ('2', '1');
-INSERT INTO user_roles(user, roles)
+INSERT INTO user_roles(userEntity, roles)
 VALUES ('2', '3');
-INSERT INTO user_roles(user, roles)
+INSERT INTO user_roles(userEntity, roles)
 VALUES ('3', '1');
-INSERT INTO user_roles(user, roles)
+INSERT INTO user_roles(userEntity, roles)
 VALUES ('3', '4');
-INSERT INTO user_roles(user, roles)
+INSERT INTO user_roles(userEntity, roles)
 VALUES ('4', '1');
-INSERT INTO user_roles(user, roles)
+INSERT INTO user_roles(userEntity, roles)
 VALUES ('4', '3');
-INSERT INTO user_roles(user, roles)
+INSERT INTO user_roles(userEntity, roles)
 VALUES ('5', '1');
-INSERT INTO user_roles(user, roles)
+INSERT INTO user_roles(userEntity, roles)
 VALUES ('5', '3');
-INSERT INTO user_roles(user, roles)
+INSERT INTO user_roles(userEntity, roles)
 VALUES ('6', '1');
-INSERT INTO user_roles(user, roles)
+INSERT INTO user_roles(userEntity, roles)
 VALUES ('6', '4');
-INSERT INTO user_roles(user, roles)
+INSERT INTO user_roles(userEntity, roles)
 VALUES ('7', '1');
-INSERT INTO user_roles(user, roles)
+INSERT INTO user_roles(userEntity, roles)
 VALUES ('8', '1');
-INSERT INTO user_roles(user, roles)
+INSERT INTO user_roles(userEntity, roles)
 VALUES ('9', '1');
 
 

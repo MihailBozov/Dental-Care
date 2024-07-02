@@ -1,7 +1,11 @@
 package bg.softuni.website.models.entities;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "testimonials")
 public class Testimonial {
@@ -17,38 +21,7 @@ public class Testimonial {
     @Column(name="count_stars")
     private int countStars;
     
-    @OneToOne(mappedBy = "testimonial", targetEntity = User.class)
-    private User user;
+    @OneToOne(mappedBy = "testimonial", targetEntity = UserEntity.class)
+    private UserEntity userEntity;
     
-    public long getId() {
-        return id;
-    }
-    
-    public void setId(long id) {
-        this.id = id;
-    }
-    
-    public User getUser() {
-        return user;
-    }
-    
-    public void setUser(User user) {
-        this.user = user;
-    }
-    
-    public String getContent() {
-        return content;
-    }
-    
-    public void setContent(String content) {
-        this.content = content;
-    }
-    
-    public int getCountStars() {
-        return countStars;
-    }
-    
-    public void setCountStars(int countStars) {
-        this.countStars = countStars;
-    }
 }

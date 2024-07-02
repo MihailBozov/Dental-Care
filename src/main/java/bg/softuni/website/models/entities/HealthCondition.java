@@ -2,9 +2,13 @@ package bg.softuni.website.models.entities;
 
 import bg.softuni.website.models.enums.DangerLevelName;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "health_conditions")
 public class HealthCondition {
@@ -25,7 +29,7 @@ public class HealthCondition {
     
     @ManyToOne
     @JoinColumn(name = "created_by_user_id", referencedColumnName = "id")
-    User createdByUser;
+    UserEntity createdByUserEntity;
     
     @Column(name = "creation_date")
     private LocalDateTime creationDate;
@@ -37,27 +41,5 @@ public class HealthCondition {
         this.creationDate = LocalDateTime.now();
     }
     
-    public long getId() {
-        return id;
-    }
-    
-    public void setId(long id) {
-        this.id = id;
-    }
-    
-    public String getName() {
-        return name;
-    }
-    
-    public void setName(String name) {
-        this.name = name;
-    }
-    
-    public DangerLevelName getDangerLevel() {
-        return dangerLevelName;
-    }
-    
-    public void setDangerLevel(DangerLevelName dangerLevelName) {
-        this.dangerLevelName = dangerLevelName;
-    }
+   
 }

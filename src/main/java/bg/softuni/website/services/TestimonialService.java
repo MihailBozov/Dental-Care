@@ -2,10 +2,8 @@ package bg.softuni.website.services;
 
 import bg.softuni.website.models.dtos.TestimonialDto;
 import bg.softuni.website.models.entities.Image;
-import bg.softuni.website.models.entities.Testimonial;
-import bg.softuni.website.models.entities.User;
+import bg.softuni.website.models.entities.UserEntity;
 import bg.softuni.website.repositories.ImageRepository;
-import bg.softuni.website.repositories.TeamRepository;
 import bg.softuni.website.repositories.TestimonialsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,16 +24,16 @@ public class TestimonialService {
     
     
     public List<TestimonialDto> getAllTestimonials() {
-        List<User> users = this.testimonialsRepository.findAllUsersWithTestimonials();
+        List<UserEntity> userEntities = this.testimonialsRepository.findAllUsersWithTestimonials();
         List<Image> icons = this.imageRepository.findAllQuoteImagesOrdered();
         List<TestimonialDto> testimonialDtos = new ArrayList<>();
-        for (User user : users) {
+        for (UserEntity userEntity : userEntities) {
             TestimonialDto testimonialDto = new TestimonialDto();
-            testimonialDto.setAuthorFirstName(user.getFirstName());
-            testimonialDto.setAuthorImageUrl(user.getImage().getUrl());
-            testimonialDto.setContent(user.getTestimonial().getContent());
+            testimonialDto.setAuthorFirstName(userEntity.getFirstName());
+            testimonialDto.setAuthorImageUrl(userEntity.getImage().getUrl());
+            testimonialDto.setContent(userEntity.getTestimonial().getContent());
             
-            testimonialDto.setStars(new int[user.getTestimonial().getCountStars()]);
+            testimonialDto.setStars(new int[userEntity.getTestimonial().getCountStars()]);
             testimonialDto.setQuoteStartImageUrl(icons.get(0).getUrl());
             testimonialDto.setQuoteEndImageUrl(icons.get(1).getUrl());
             testimonialDtos.add(testimonialDto);

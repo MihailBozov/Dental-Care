@@ -7,10 +7,11 @@
 
 <th:block th:include="~{/fragments/window-background}"></th:block>
 
+<!--th:object="${loginDto}"-->
 <form class="login_form"
       th:action="@{/login}"
       th:method="post"
-      th:object="${loginDto}"
+
 >
     <div class="container_login_form container justify-content-center align-items-center border border-1 border-info rounded-4 p-4  "
          style="">
@@ -21,16 +22,15 @@
                    class="form-control"
                    id="inputEmail"
                    name="email"
-                   placeholder="email"
-                   th:errorclass="is-invalid"
-                   th:field="*{email}">
-<!--            <div th:if="${#fields.hasErrors('email')}" class="invalid-feedback">-->
-<!--                <small class="d-inline-block bg-danger text-light rounded"-->
-<!--                       th:each="error : ${#fields.errors('email')}"-->
-<!--                       th:if="${error.toString().equals('Oops! That does not look like a valid email. Please try again.')}"-->
-<!--                       th:text="${error}">-->
-<!--                </small>-->
-<!--            </div>-->
+                   placeholder="email">
+<!--                   th:errorclass="is-invalid"-->
+            <!--            <div th:if="${#fields.hasErrors('email')}" class="invalid-feedback">-->
+            <!--                <small class="d-inline-block bg-danger text-light rounded"-->
+            <!--                       th:each="error : ${#fields.errors('email')}"-->
+            <!--                       th:if="${error.toString().equals('Oops! That does not look like a valid email. Please try again.')}"-->
+            <!--                       th:text="${error}">-->
+            <!--                </small>-->
+            <!--            </div>-->
         </div>
 
         <div class="form-group py-2 mb-1">
@@ -39,11 +39,10 @@
                    class="form-control"
                    id="loginPassword"
                    name="password"
-                   placeholder="password"
-                   th:field="*{password}">
+                   placeholder="password">
         </div>
-
-        <div th:if="${#fields.hasAnyErrors()}" class="mb-4">
+        <!--        th:if="${#fields.hasAnyErrors()}"-->
+        <div class="mb-4 invalid-feedback">
             <small class="d-inline-block bg-danger text-light rounded">
                 Oops! That doesn't look like a valid email or password. Please try again
             </small>
