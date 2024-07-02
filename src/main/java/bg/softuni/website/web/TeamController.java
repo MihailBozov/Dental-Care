@@ -24,12 +24,12 @@ public class TeamController {
     
     @ModelAttribute("allTeamMembers")
     public List<TeamDto> initAllTeamMembers() {
-        return this.teamService.getAllTeamMembersForDisplay();
+        return this.teamService.getAllTeamMembers();
     }
     
     @GetMapping("/team")
     public String team(Model model) {
         model.addAttribute("currentPage", "teamPage");
-        return "teamPage";
+        return "team-page";
     }
 }

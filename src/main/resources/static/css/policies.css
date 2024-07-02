@@ -15,26 +15,26 @@
     text-align: center;
     padding: 20px 40px;
     margin: 30px auto 10px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--w_tone-white);
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px var(--w_tone-gray);
 }
 
 .policy_section h2 {
     padding-top: 1em;
     padding-bottom: 0.2em;
     font-size: 3em;
-    color: #333;
+    color: var(--w_black);
 }
 
 .policy_section h2 span {
-    color: #4a90e2;
+    color: var(--w_ocean);
 }
 
 .policy_section .subtitle {
     font-size: 1.2rem;
     line-height: 1.5;
-    color: #5a6268;
+    color: var(--w_black);
     max-width: 1000px;
     margin: 0 auto;
     padding-bottom: 1.5em;
@@ -44,11 +44,11 @@
     margin: 0 auto 2rem;
     padding: 3rem;
     max-width: 1000px;
-    background: rgba(255, 255, 255, 0.3);
+    background: var(--w_tone-white);
     text-align: left;
     cursor: auto;
     border-radius: 10px;
-    box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--w_shadow-gray);
     
 }
 
@@ -61,7 +61,7 @@
 .row_unit {
     padding-top: 0.7em;
     font-family: 'Fredoka', serif;
-    color: #5a6268;
+    color: var(--w_black);
     font-weight: 350;
 }
 
@@ -73,7 +73,7 @@
 a[class="all_policies"] {
     font-size: 1rem;
     display: block;
-    color: #5a6268;
+    color: var(--w_black);
     text-decoration: none;
     cursor: pointer;
     transition: 0.4s ease;

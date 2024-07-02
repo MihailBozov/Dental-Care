@@ -1,7 +1,6 @@
 package bg.softuni.website.web;
 
 import bg.softuni.website.models.dtos.LoginDto;
-import bg.softuni.website.models.dtos.NewsletterDto;
 import bg.softuni.website.models.dtos.RegisterDto;
 import bg.softuni.website.services.AuthService;
 import bg.softuni.website.services.NewsletterService;
@@ -46,7 +45,7 @@ public class AuthController {
             return "redirect:/";
         }
         
-        return "registerPage";
+        return "register-page";
     }
     
     @PostMapping("/register")
@@ -80,7 +79,7 @@ public class AuthController {
             return "redirect:/";
         }
         
-        return "loginPage";
+        return "login-page";
     }
     
     @ModelAttribute("loginDto")

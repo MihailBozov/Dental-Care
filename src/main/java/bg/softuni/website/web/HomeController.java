@@ -38,7 +38,7 @@ public class HomeController {
     
     @ModelAttribute("allTeamMembers")
     public List<TeamDto> initAllTeamMembers() {
-        return this.teamService.getAllTeamMembersForDisplay();
+        return this.teamService.getAllTeamMembers();
     }
     
     @ModelAttribute("allTestimonials")

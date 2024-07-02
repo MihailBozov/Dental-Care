@@ -1,0 +1,120 @@
+
+.testimonials_section {
+    max-width: 1200px;
+    text-align: center;
+    padding: 20px 40px;
+    margin: 30px auto 10px;
+    background-color: var(--w_tone-white);
+    border-radius: 8px;
+    box-shadow: var(--w_shadow-gray-light);
+}
+
+.testimonials_section h2 {
+    padding-top: 1rem;
+    padding-bottom: 0.2em;
+    font-size: 2em;
+    color: var(--w_black);
+}
+
+.testimonials_section h2 span {
+    color: var(--w_ocean);
+}
+
+.testimonials_section .subtitle {
+    
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--w_black-light);
+    max-width: 800px;
+    margin: 0 auto;
+    padding-bottom: 0.5em;
+}
+
+
+.testimonials_container {
+    display: grid;
+    grid-auto-rows: auto;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 1.5em auto;
+}
+
+.testimonial_card {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-rows: 1.7fr 1fr;
+    max-width: 400px;
+    border-radius: 10px;
+    border: var(--w_border-transparent-1);
+    overflow: hidden;
+    gap: 0;
+    box-shadow: var(--w_shadow-gray-light);
+    transition: var(--w_transition-4);
+}
+
+.testimonial_card:hover {
+    transform: var(--w_transform-scale-1);
+    border: var(--w_border-ocean-1);
+    box-shadow: var(--w_shadow-gray);
+    
+}
+
+.author_details {
+    position: relative;
+}
+
+.testimonial_card .author_image {
+    max-width: 100px;
+    border: 3px solid var(--w_white);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.author_review {
+    padding: 4em 1em;
+    color: var(--w_white);
+    background: var(--w_gradient-ocean);
+}
+
+.author_review p {
+    display: inline;
+}
+
+.img_quote {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+}
+
+.quote_start {
+    transform: translate(-15%, -30%);
+}
+
+.quote_end {
+    transform: translate(15%, 30%);
+}
+
+.author-info {
+    padding-top: 55px;
+}
+
+.author_name {
+    font-family: 'Fredoka', sans-serif;
+    /*font-family: 'Montserrat', sans-serif;*/
+    font-weight: 400;
+    line-height: 1.1;
+    font-size: 1.5rem;
+    padding-bottom: 1em;
+}
+
+.stars {
+    font-size: 1.3em;
+    color: var(--w_gold);
+}

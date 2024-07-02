@@ -1,0 +1,14 @@
+a[class="all_units"] {
+    display: inline-block;
+    font-size: 1.1rem;
+    color: var(--w_black-light);
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--w_transition-4);
+
+}
+
+a[class="all_units"]:hover {
+    color: var(--w_ocean);
+    transform: var(--w_transform-scale-5);
+}

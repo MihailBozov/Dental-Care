@@ -1,0 +1,42 @@
+
+#confirmationModal .modal-header svg {
+    margin:-0.3em 0.5em -0.3em 0;
+    width: 3em;
+    height: auto;
+    fill: var(--w_danger);
+    stroke-width: -0.2em;
+}
+
+#confirmationModal .modal_body {
+    padding: 0.4em;
+    display: grid;
+    gap: 0;
+    align-items: center;
+}
+
+#confirmationModal .text {
+    font-family: 'Readex Pro', sans-serif;
+    font-weight: 350;
+    max-width: 400px;
+    color: var(--w_black);
+    text-align: start;
+    font-size: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-left: 1em;
+}
+
+#confirmationModal .text span {
+    color: var(--w_danger);
+}
+
+#confirmationModal .modal_body svg {
+    margin: 0 auto;
+    width: 105px;
+    height: auto;
+    fill: var(--w_warning);
+}
+
+#confirmationModal .modal-footer {
+    /*padding: 16px;*/
+}

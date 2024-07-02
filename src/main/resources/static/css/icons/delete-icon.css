@@ -1,0 +1,36 @@
+.unit_link {
+    position: absolute;
+    background: transparent;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+}
+
+.delete_icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transition: var(--w_transition-4);
+    overflow: hidden;
+}
+
+.delete_icon svg {
+    height: 1.8rem;
+    width: 1.8rem;
+    border-radius: 0.4rem;
+}
+
+.delete_icon svg path {
+    fill: var(--w_black-light);
+}
+
+.delete_icon svg:hover {
+    background: var(--w_danger);
+    transform: var(--w_transform-scale-5);
+}
+
+.delete_icon svg:hover path {
+    fill: var(--w_white);
+}

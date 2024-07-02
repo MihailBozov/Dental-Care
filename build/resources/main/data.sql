@@ -70,9 +70,9 @@ VALUES ('quotes_white_start.svg', '/images/icons/quotes_white_start.svg');
 INSERT INTO image_categories_images(image_category_id, image_id)
 VALUES (3, 10);
 INSERT INTO images(name, url)
-VALUES ('add_new.svg', '/images/icons/add_new.svg');
+VALUES ('heroImg.svg', '/images/main/heroImg.svg');
 INSERT INTO image_categories_images(image_category_id, image_id)
-VALUES (3, 11);
+VALUES (5, 11);
 INSERT INTO images(name, url)
 VALUES ('hero_background.svg', '/images/main/hero_background.svg');
 INSERT INTO image_categories_images(image_category_id, image_id)
@@ -121,18 +121,6 @@ INSERT INTO images(name, url)
 VALUES ('Kale_img.png', '/images/profile/Kale_img.png');
 INSERT INTO image_categories_images(image_category_id, image_id)
 VALUES (1, 23);
-INSERT INTO images(name, url)
-VALUES ('heroImg.svg', '/images/main/heroImg.svg');
-INSERT INTO image_categories_images(image_category_id, image_id)
-VALUES (5, 24);
-INSERT INTO images(name, url)
-VALUES ('delete.svg', '/images/icons/delete.svg');
-INSERT INTO image_categories_images(image_category_id, image_id)
-VALUES (3, 25);
-INSERT INTO images(name, url)
-VALUES ('success.svg', '/images/icons/success.svg');
-INSERT INTO image_categories_images(image_category_id, image_id)
-VALUES (3, 26);
 
 
 # ---------------------------     Testimonials     ---------------------------

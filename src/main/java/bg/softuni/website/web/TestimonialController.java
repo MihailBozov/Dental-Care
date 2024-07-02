@@ -28,6 +28,6 @@ public class TestimonialController {
     @GetMapping("/testimonials")
     public String testimonials(Model model) {
         model.addAttribute("currentPage", "testimonialsPage");
-        return "testimonialsPage";
+        return "testimonials-page";
     }
 }

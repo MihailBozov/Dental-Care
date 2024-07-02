@@ -7,7 +7,7 @@ import jakarta.validation.constraints.Pattern;
 @CheckLoginPassword
 public class LoginDto {
 
-    @Pattern(regexp = "^\\w+@\\w+\\.\\w+$", message = "Oops! That does not look like a valid email. Please try again.")
+    @Pattern(regexp = "^\\w{2,}+@\\w{2,}\\.\\w{2,}$", message = "Oops! That does not look like a valid email. Please try again.")
     @CheckLoginEmailExistence
     String email;
    

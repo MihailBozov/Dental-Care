@@ -55,4 +55,11 @@ public class ImageService {
         
         return image;
     }
+    
+    public void deleteImage(Image image) throws IOException {
+        this.imageRepository.deleteById( image.getId());
+        String name = image.getName();
+        Path filePath = Path.of(formNewTreatmentUploadDir,name);
+        Files.delete(filePath);
+    }
 }

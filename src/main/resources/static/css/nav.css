@@ -1,4 +1,25 @@
-
 .navbar {
     z-index: 1;
+}
+
+/*.navbar ul li {*/
+/*    margin-left: 0.1em;*/
+/*    margin-right: 0.1em;*/
+/*}*/
+
+.navbar ul {
+    gap: 0.4em;
+    align-items: center;
+}
+
+.navbar ul a:not(.btn) {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    border-bottom: 3px solid transparent;
+    letter-spacing: 0.02em;
+}
+
+.navbar ul a:hover:not(.btn) {
+    border-bottom: 3px solid var(--w_ocean);
 }

@@ -23,7 +23,7 @@ public class TeamService {
         this.teamRepository = teamRepository;
     }
     
-    public List<TeamDto> getAllTeamMembersForDisplay() {
+    public List<TeamDto> getAllTeamMembers() {
         List<User> users = this.teamRepository.findAllTeamMembers();
         List<TeamDto> members = new ArrayList<>();
         
@@ -31,21 +31,19 @@ public class TeamService {
                 stream()
                 .filter(user -> user.getRoles()
                         .stream()
-                        .filter(role ->
-                                role.getName() == UserRole.DENTIST ||
-                                        role.getName() == UserRole.DENTAL_ASSISTANT ||
-                                        role.getName() == UserRole.MANAGER)
+                        .filter(role -> role.getName() != UserRole.USER)
                         .count() > 0)
                 .toList();
         
         
         for (User user : filteredUsers) {
-            TeamDto memberDto = this.modelMapper.map(user, TeamDto.class);
-            memberDto.setRoles(user.getRoles().stream()
-                    .filter(role -> !role.getName().equals(UserRole.ADMIN) && !role.getName().equals(UserRole.USER))
-                    .map(role -> role.getValue().toString()).toList());
-            memberDto.setPictureUrl(user.getImage().getUrl());
-            members.add(memberDto);
+            TeamDto member = this.modelMapper.map(user, TeamDto.class);
+            member.setRoles(user.getRoles());
+            
+            if (user.getImage() != null) {
+                member.setPictureUrl(user.getImage().getUrl());
+            }
+            members.add(member);
         }
         
         return members;

@@ -8,7 +8,7 @@ html, body {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: -3;
+    z-index: -4;
     opacity: 0.1;
     min-width: 100%;
     min-height: 100%;
@@ -24,6 +24,7 @@ html, body {
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    z-index: -3;
 }
 
 .hero_background_img img {
@@ -42,12 +43,16 @@ html, body {
     bottom: 0;
     left: 0;
     right: 0;
-    background: white;
+    background: var(--w-tone-white-thick);
     opacity: 0.90;
     z-index: -1;
 }
 
+.hero_text {
+    z-index: 0;
+}
+
 .hero_text span{
-    color: #50A0E2;
+    color: var(--w_ocean);
 }
 

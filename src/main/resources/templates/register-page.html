@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:include="~{/fragments/head}"></th:block>
+<body>
+
+<th:block th:include="~{/fragments/navigation}"></th:block>
+<th:block th:include="~{/fragments/window-background}"></th:block>
+
+<form th:action="@{/register}"
+      th:method="post"
+      th:object="${registerDto}"
+      class="registration_form">
+    <div class=" container justify-content-center 
+            align-items-center h-auto border border-1 border-info rounded-4 p-md-4">
+        <h2 class="text-secondary pb-3">Make a registration</h2>
+
+        <div class="row flex-wrap">
+
+            <div class="col-6 ">
+                <label for="fName" class="form-label">First Name</label>
+                <input type="text"
+                       class="form-control"
+                       id="fName"
+                       name="firstName"
+                       placeholder="First Name"
+                       aria-current=""
+                       th:errorclass="is-invalid"
+                       th:field="*{firstName}">
+                
+                <div th:if="${#fields.hasErrors('firstName')}" class="invalid-feedback">
+                    <small class="d-inline-block bg-danger text-light rounded mt-1"
+                           th:text=" ${#fields.errors('firstName').getFirst()}">
+<!--                           th:each="error : ${#fields.errors('firstName')}"-->
+<!--                           th:text="${error}"-->
+
+                    </small>
+                </div>
+            </div>
+            <div class="col-6">
+                <label for="lName" class="form-label">Last Name</label>
+                <input type="text"
+                       name="lastName"
+                       class="form-control"
+                       id="lName"
+                       placeholder="Last Name"
+                       th:errorclass="is-invalid"
+                       th:field="*{lastName}">
+
+                <div th:if="${#fields.hasErrors('lastName')}" class="invalid-feedback">
+                    <small class="d-inline-block bg-danger text-light rounded mt-1"
+                           th:text=" ${#fields.errors('lastName').getFirst()}">
+<!--                           th:each="error : ${#fields.errors('lastName')}"-->
+<!--                           th:text="${error}">-->
+                    </small>
+                </div>
+            </div>
+        </div>
+        <div class="row py-md-2">
+            <div>
+                <label for="regEmail" class="form-label">Email</label>
+                <input type="email"
+                       name="email"
+                       class="form-control"
+                       id="regEmail"
+                       placeholder="name@example.com"
+                       th:errorclass="is-invalid"
+                       th:field="*{email}">
+
+                <div th:if="${#fields.hasErrors('email')}" class="invalid-feedback">
+                    <small class="d-inline-block bg-danger text-light rounded mt-1"
+                           th:text=" ${#fields.errors('email').getFirst()}">
+<!--                           th:each="error : ${#fields.errors('email')}"-->
+<!--                           th:text="${error}">-->
+                    </small>
+                </div>
+            </div>
+        </div>
+        <div class="row col-6 py-md-2">
+            <div>
+                <label for="regPassword">Password</label>
+                <input type="password"
+                       name="password"
+                       id="regPassword"
+                       placeholder="Password"
+                       class="form-control"
+                       th:errorclass="is-invalid"
+                       th:field="*{password}">
+
+                <div th:if="${#fields.hasErrors('password')}" class="invalid-feedback">
+                    <small class="d-inline-block bg-danger text-light rounded mt-1"
+                           th:text=" ${#fields.errors('password').getFirst()}">
+<!--                           th:each="error : ${#fields.errors('password')}"-->
+<!--                           th:text="${error}">-->
+                    </small>
+                </div>
+            </div>
+            <div class="mt-md-2">
+                <label for="regConfirmPassword">Confirm password</label>
+                <input type="password"
+                       name="confirmPassword"
+                       id="regConfirmPassword"
+                       placeholder="Confirm Password"
+                       class="form-control"
+                       th:field="*{confirmPassword}">
+
+                <div th:if="${#fields.hasGlobalErrors()}">
+                    <small class="d-inline-block bg-danger text-light rounded mt-1"
+                           th:each="error : ${#fields.globalErrors()}"
+                           th:if="${error.toString().equals('Oops! Your passwords do not match.')}"
+                           th:text="${error}">
+                    </small>
+                </div>
+            </div>
+        </div>
+        <div class="row col-6 py-md-2">
+            <div>
+                <button th:type="submit" th:name="submit" th:value="true" data-mdb-button-init data-mdb-ripple-init
+                        class="btn btn-primary">Submit
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<footer th:replace="~{/fragments/footer}"></footer>
+</body>
+</html>

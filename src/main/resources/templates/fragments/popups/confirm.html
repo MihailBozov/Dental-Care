@@ -1,0 +1,37 @@
+<div
+        class="modal fade modal_container"
+        id="confirmationModal"
+        tabindex="-1"
+        aria-labelledby="confirmationModalLabel"
+        aria-hidden="true">
+    <div class="modal-dialog modal_dialog">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" ><path d="M480-271.39q17.04 0 29.13-12.09t12.09-29.13q0-16.82-12.09-29.3T480-354.39q-17.04 0-29.13 12.48t-12.09 29.3q0 16.83 12.09 29.02 12.09 12.2 29.13 12.2Zm-33.39-141.74h66.78v-282.78h-66.78v282.78ZM324.35-105.87 105.87-324.25v-311.97L324.25-854.7h311.97L854.7-636.32v311.97L636.32-105.87H324.35Zm32.69-79.22h245.7l172.17-171.95v-245.7L602.96-774.91h-245.7L185.09-602.96v245.7l171.95 172.17ZM480-480Z"/></svg>
+                <h1 class="modal-title fs-5" id="confirmationModalLabel">Confirm Your Choice</h1>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body modal_body">
+                
+                <form th:method="get"
+                      id="deleteForm" 
+                      style="display:none;">
+                </form>
+<!--                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="m40-120 440-760 440 760H40Zm104-60h672L480-760 144-180Zm340.18-57q12.82 0 21.32-8.68 8.5-8.67 8.5-21.5 0-12.82-8.68-21.32-8.67-8.5-21.5-8.5-12.82 0-21.32 8.68-8.5 8.67-8.5 21.5 0 12.82 8.68 21.32 8.67 8.5 21.5 8.5ZM454-348h60v-224h-60v224Zm26-122Z"/></svg>-->
+                <div class="text">Wanna delete the damn thing?</div>
+            </div>
+
+
+            <div class="modal-footer">
+                <button type="button" class="close btn btn-secondary" data-dismiss="modal" aria-label="Close">
+                    Close
+                </button>
+                <button type="button" class="btn btn-danger" onclick="submitDeleteForm()">Continue</button>
+            </div>
+        </div>
+    </div>
+</div>
+

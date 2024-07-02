@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:include="~{/fragments/head}"></th:block>
+<body>
+
+<th:block th:include="~{/fragments/navigation}"></th:block>
+
+<th:block th:include="~{/fragments/window-background}"></th:block>
+
+<form class="login_form"
+      th:action="@{/login}"
+      th:method="post"
+      th:object="${loginDto}"
+>
+    <div class="container_login_form container justify-content-center align-items-center border border-1 border-info rounded-4 p-4  "
+         style="">
+        <h2 class="text-secondary mb-3">Login to your profile</h2>
+        <div class="form-group py-2">
+            <label for="inputEmail">Email</label>
+            <input type="email"
+                   class="form-control"
+                   id="inputEmail"
+                   placeholder="email"
+                   th:errorclass="is-invalid"
+                   th:field="*{email}">
+<!--            <div th:if="${#fields.hasErrors('email')}" class="invalid-feedback">-->
+<!--                <small class="d-inline-block bg-danger text-light rounded"-->
+<!--                       th:each="error : ${#fields.errors('email')}"-->
+<!--                       th:if="${error.toString().equals('Oops! That does not look like a valid email. Please try again.')}"-->
+<!--                       th:text="${error}">-->
+<!--                </small>-->
+<!--            </div>-->
+        </div>
+
+        <div class="form-group py-2 mb-1">
+            <label for="loginPassword">Password</label>
+            <input type="password"
+                   class="form-control"
+                   id="loginPassword"
+                   placeholder="password"
+                   th:field="*{password}">
+        </div>
+
+        <div th:if="${#fields.hasAnyErrors()}" class="mb-4">
+            <small class="d-inline-block bg-danger text-light rounded">
+                Oops! That doesn't look like a valid email or password. Please try again
+            </small>
+        </div>
+
+        <div class="row d-flex justify-content-start align-items-center">
+            <div class="col-4">
+                <button type="submit" class="btn btn-primary">Log in</button>
+            </div>
+            <div class="form-group form-check col-5 ">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Remember me</label>
+            </div>
+        </div>
+    </div>
+</form>
+
+<footer th:replace="~{/fragments/footer}"></footer>
+</body>
+</html>
+

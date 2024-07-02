@@ -21,6 +21,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TreatmentService {
@@ -63,4 +64,15 @@ public class TreatmentService {
         
         this.treatmentRepository.saveAndFlush(treatment);
     }
+    
+    public boolean deleteTreatment(Long id) throws IOException {
+        Optional<Treatment> treatment = this.treatmentRepository.findById(id);
+        if (treatment.isPresent()) {
+            this.imageService.deleteImage(treatment.get().getImage());
+            this.treatmentRepository.delete(treatment.get());
+            return true;
+        }
+        return false;
+    }
+    
 }

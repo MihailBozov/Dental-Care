@@ -1,12 +1,14 @@
 package bg.softuni.website.models.dtos;
 
+import bg.softuni.website.models.entities.Role;
+
 import java.util.List;
 
 public class TeamDto {
     
     private String firstName;
     private String pictureUrl;
-    private List<String> roles;
+    private List<Role> roles;
     
     public String getFirstName() {
         return firstName;
@@ -24,11 +26,11 @@ public class TeamDto {
         this.pictureUrl = pictureUrl;
     }
     
-    public List<String> getRoles() {
+    public List<Role> getRoles() {
         return roles;
     }
     
-    public void setRoles(List<String> roles) {
+    public void setRoles(List<Role> roles) {
         this.roles = roles;
     }
 }

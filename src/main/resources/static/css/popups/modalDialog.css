@@ -1,0 +1,14 @@
+
+.modal_body {
+    overflow-y: auto; 
+    max-height: 72vh;
+}
+
+form .input_unit {
+    text-align: start;
+
+}
+
+form .field_label {
+    font-family: 'Poppins', serif;
+}

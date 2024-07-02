@@ -25,3 +25,14 @@ function showSuccess() {
         history.replaceState(null, null, newUrl);
     }
 }
+
+
+function setDeleteUrl(link) {
+    let form = document.getElementById('deleteForm');
+    form.action = link.getAttribute('href');
+}
+
+function submitDeleteForm() {
+    let form = document.getElementById('deleteForm');
+    form.submit();
+}

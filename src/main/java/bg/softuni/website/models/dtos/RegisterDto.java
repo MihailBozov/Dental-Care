@@ -20,7 +20,7 @@ public class RegisterDto {
     @Size(max = 20, message = "Oops! Your last name is too long. Should be less than 20 characters.")
     private String lastName;
     
-    @Pattern(regexp = "^\\w+@\\w+\\.\\w+$", message = "Oops! That doesn't look like a valid email. Please try again.")
+    @Pattern(regexp = "^\\w{2,}+@\\w{2,}\\.\\w{2,}$", message = "Oops! That doesn't look like a valid email. Please try again.")
     @UniqueRegisterEmail(message = "Oops. This email is already taken.")
     private String email;
     

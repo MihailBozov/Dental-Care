@@ -1,0 +1,117 @@
+
+.treatmentSection {
+    max-width: 1200px;
+    text-align: center;
+    padding: 20px 40px;
+    margin: 30px auto 10px;
+    background-color: var(--w_tone-white);
+    border-radius: 8px;
+    box-shadow: var(--w_shadow-gray-light);
+}
+
+.treatmentSection h2 {
+    padding-top: 1em;
+    padding-bottom: 0.2em;
+    font-size: 3em;
+    color: var(--w_black);
+}
+
+.treatmentSection h2 span {
+    color: var(--w_ocean);
+}
+
+.treatmentSection .subtitle {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--w_black-light);
+    max-width: 800px;
+    margin: 0 auto;
+    padding-bottom: 0.5em;
+}
+.treatment_container {
+    display: grid;
+    grid-auto-rows: auto;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    padding: 20px;
+    margin: 1.5em auto;
+}
+
+.treatment_container .treatment_unit {
+    background: var(--w_white);
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    border: var(--w_border-transparent-1);
+    border-radius: 10px;
+    box-shadow: var(--w_shadow-gray);
+    transition: var(--w_transition-4);
+    position: relative;
+    overflow: hidden;
+}
+
+
+.treatment_container .treatment_unit:hover {
+    background: var(--w_white);
+    transform: var(--w_transform-scale-1);
+    box-shadow: var(--w_shadow-gray-thick);
+    border: var(--w_border-ocean-1);
+}
+
+
+.treatment_container .treatment_unit:hover p {
+    color: var(--w_black);
+}
+
+
+.treatment_container .treatment_icon {
+    width: auto;
+    height: 80px;
+}
+
+
+.treatment_container .treatment_title {
+    color: var(--w_ocean);
+    font-size: 1.5em;
+    margin: 0 auto 1rem;
+}
+
+
+.treatment_container .treatment_unit .treatment_description {
+    color: var(--w_black-light);
+}
+
+
+.treatment_container a {
+    display: block;
+    text-decoration: none;
+}
+
+svg.new_icon {
+    overflow: hidden;
+    border-radius: 0.5em;
+}
+
+.treatment_container .new_treatment:hover {
+    border: var(--w_border-success-1);
+}
+
+.treatment_container .new_treatment:hover .new_icon {
+    background: var(--w_success);
+}
+
+.treatment_container .new_treatment:hover .treatment_title {
+    color: var(--w_success);
+}
+
+.treatment_container .new_treatment:hover path {
+    fill: var(--w_white);
+    stroke: var(--w_white);
+    stroke-width: 1px;
+}
+
+
+
+

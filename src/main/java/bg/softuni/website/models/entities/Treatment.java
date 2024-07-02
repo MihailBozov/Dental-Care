@@ -30,7 +30,7 @@ public class Treatment {
     @JoinColumn(name = "created_by_user_id", referencedColumnName = "id")
     User createdByUser;
     
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "image_id", referencedColumnName = "id")
     private Image image;
     
