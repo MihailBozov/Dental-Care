@@ -1,96 +1,38 @@
-<!--<section class="treatmentSection" xmlns:th="http://www.thymeleaf.org">-->
-<!--    <h2 th:if="${currentPage == 'homePage'}">Some of our <span>Treatments</span></h2>-->
-<!--    <h2 th:if="${currentPage != 'homePage'}">Our <span>Treatments</span></h2>-->
-<!--    <div class="subtitle">From routine cleanings and preventive care to advanced restorative and cosmetic procedures,-->
-<!--        our dedicated team is committed to providing exceptional care tailored to your individual needs.-->
-<!--    </div>-->
+<section class="treatmentSection" xmlns:th="http://www.thymeleaf.org">
+    <h2 th:if="${currentPage == 'homePage'}">Some of our <span>Treatments</span></h2>
+    <h2 th:if="${currentPage != 'homePage'}">Our <span>Treatments</span></h2>
+    <div class="subtitle">From routine cleanings and preventive care to advanced restorative and cosmetic procedures,
+        our dedicated team is committed to providing exceptional care tailored to your individual needs.
+    </div>
 
-<!--    <div class="treatment_container">-->
+    <div class="treatment_container">
+        
 
-<!--        &lt;!&ndash;        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">&ndash;&gt;-->
-<!--        &lt;!&ndash;            Open Form Modal&ndash;&gt;-->
-<!--        &lt;!&ndash;        </button>&ndash;&gt;-->
+        <a th:each="role : ${@userSession.getRoles()}"
+           th:if="${role.getName().toString().equals('DENTAL_ASSISTANT')} or ${role.getName().toString().equals('DOCTOR')} or ${role.getName().toString().equals('MANAGER')} or ${role.getName().toString().equals('ADMIN')} and ${currentPage == 'treatmentsPage'}"
+           class="treatment_unit d-flex flex-column justify-content-center align-items-center"
+           data-toggle="modal"
+           data-target="#newTreatmentModal"
+           href="/treatments#exampleModal">
+            <img class="treatment_icon m-0"
+                 th:src="@{/images/icons/add_new.svg}"
+                 width="80"
+                 height="80"
+                 alt="">
+            <h2 class="treatment_title">New Treatment</h2>
+        </a>
 
+        <th:block th:include="~{fragments/addTreatment}"></th:block>
 
-<!--        <a class="treatment_unit d-flex flex-column justify-content-center align-items-center"-->
-<!--           th:if="${currentPage} == treatmentsPage"-->
-<!--           data-toggle="modal"-->
-<!--           data-target="#exampleModal"-->
-<!--           href="/treatments#exampleModal">-->
-<!--            <img class="treatment_icon m-0" -->
-<!--                 th:src="@{/images/icons/add_new.svg}" -->
-<!--                 width="80" -->
-<!--                 height="80" -->
-<!--                 alt="">-->
-<!--            <h2 class="treatment_title">New Treatment</h2>-->
-<!--        </a>-->
+        <a class="treatment_unit" href="#" th:each="treatment : ${allTreatments}">
+            <img class="treatment_icon" th:src="${treatment.getImageUrl()}" alt="">
+            <h2 class="treatment_title" th:text="${treatment.getName()}"></h2>
+            <div class="treatment_description">
+                <p th:text="${treatment.getDescription()}"></p>
+            </div>
+        </a>
 
-<!--        <div class="modal fade"-->
-<!--             id="exampleModal"-->
-<!--             tabindex="-1"-->
-<!--             aria-labelledby="exampleModalLabel"-->
-<!--             aria-hidden="true">-->
-<!--            <div class="modal-dialog">-->
-<!--                <div class="modal-content">-->
-<!--                    <div class="modal-header">-->
-<!--                        <h5 class="modal-title" id="exampleModalLabel">Form in Modal</h5>-->
-<!--                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
-<!--                            <span aria-hidden="true">&times;</span>-->
-<!--                        </button>-->
-<!--                    </div>-->
-<!--                    <div class="modal-body">-->
-<!--                        &lt;!&ndash; Form inside the modal &ndash;&gt;-->
-<!--                        <form th:action="@{/treatments}" -->
-<!--                              th:object="${newTreatmentDto}" -->
-<!--                              method="post" -->
-<!--                              id="modalForm">-->
-<!--                            <div class="form-group">-->
-<!--                                <label for="name">Email address</label>-->
-<!--                                <input type="text" -->
-<!--                                       class="form-control" -->
-<!--                                       id="name" -->
-<!--                                       th:field="*{name}"-->
-<!--                                       placeholder="Enter email">-->
-<!--                            </div>-->
-<!--                            <div class="form-group">-->
-<!--                                <label for="description">Password</label>-->
-<!--                                <input type="text" class="form-control" -->
-<!--                                       id="description" -->
-<!--                                       th:field="*{description}"-->
-<!--                                       placeholder="Password">-->
-<!--                            </div>-->
-<!--                        </form>-->
-<!--                    </div>-->
-<!--                    <div class="modal-footer">-->
-<!--                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
-<!--                        <button type="submit" class="btn btn-primary" form="modalForm">Submit</button>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
+    </div>
 
-
-<!--        <a class="treatment_unit"-->
-<!--           th:if="${currentPage} == treatmentsPage"-->
-<!--           href="#">-->
-<!--            <img class="treatment_icon" th:src="@{/images/icons/cleansing.svg}" alt="">-->
-<!--            <h2 class="treatment_title">Dental Cleaning</h2>-->
-<!--            <div class="treatment_description">-->
-<!--                <p>A routine procedure involving the removal of plaque and tartar from teeth to maintain oral health and-->
-<!--                    prevent gum disease.</p>-->
-<!--            </div>-->
-<!--        </a>-->
-
-
-<!--        <a class="treatment_unit" href="#" th:each="treatment : ${allTreatments}">-->
-<!--            <img class="treatment_icon" th:src="${treatment.getImageUrl()}" alt="">-->
-<!--            <h2 class="treatment_title" th:text="${treatment.getName()}"></h2>-->
-<!--            <div class="treatment_description">-->
-<!--                <p th:text="${treatment.getDescription()}"></p>-->
-<!--            </div>-->
-<!--        </a>-->
-
-<!--    </div>-->
-
-<!--    <a href="/treatments" class="all_testimonials" th:if="${currentPage == 'homePage'}">All Testimonials →</a>-->
-<!--</section>-->
+    <a href="/treatments" class="all_testimonials" th:if="${currentPage == 'homePage'}">All Testimonials →</a>
+</section>

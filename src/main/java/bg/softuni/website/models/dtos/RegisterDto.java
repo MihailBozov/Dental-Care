@@ -1,11 +1,11 @@
 package bg.softuni.website.models.dtos;
 
-import bg.softuni.website.util.validation.MatchPasswords;
-import bg.softuni.website.util.validation.UniqueEmail;
+import bg.softuni.website.util.validation.MatchRegisterPasswords;
+import bg.softuni.website.util.validation.UniqueRegisterEmail;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
-@MatchPasswords(message = "Oops! Your passwords do not match.")
+@MatchRegisterPasswords(message = "Oops! Your passwords do not match.")
 public class RegisterDto {
     
     @NotBlank(message = "Oops! Your first name cannot be blank")
@@ -21,7 +21,7 @@ public class RegisterDto {
     private String lastName;
     
     @Pattern(regexp = "^\\w+@\\w+\\.\\w+$", message = "Oops! That doesn't look like a valid email. Please try again.")
-    @UniqueEmail(message = "Oops. This email is already taken.")
+    @UniqueRegisterEmail(message = "Oops. This email is already taken.")
     private String email;
     
     @Pattern(regexp = "^\\S+$", message = "Oops! Your password cannot contain whitespaces")

@@ -1,14 +1,14 @@
 package bg.softuni.website.models.dtos;
 
-import bg.softuni.website.util.validation.CheckEmailExistence;
-import bg.softuni.website.util.validation.CheckPassword;
+import bg.softuni.website.util.validation.CheckLoginEmailExistence;
+import bg.softuni.website.util.validation.CheckLoginPassword;
 import jakarta.validation.constraints.Pattern;
 
-@CheckPassword
+@CheckLoginPassword
 public class LoginDto {
 
     @Pattern(regexp = "^\\w+@\\w+\\.\\w+$", message = "Oops! That does not look like a valid email. Please try again.")
-    @CheckEmailExistence
+    @CheckLoginEmailExistence
     String email;
    
     String password;
