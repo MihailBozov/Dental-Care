@@ -28,67 +28,63 @@ public class SecurityConfiguration {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http
-                .authorizeHttpRequests(
+                
+                //  define which urls are visible by which users
+                .authorizeHttpRequests(authorizeRequests -> authorizeRequests
                         
-                        //  define which urls are visible by which users
-                        authorizeRequests -> authorizeRequests
-                                
-                                //  all static resources which are situated in js, images, css are available for anyone
-                                .requestMatchers(PathRequest
-                                        .toStaticResources()
-                                        .atCommonLocations()).permitAll()
-                                
-                                //  allow anyone to see the homepage, register page and logout page
-                                .requestMatchers("/", "/login", "/register", "/logout", "/treatments").permitAll()
-                                
-                                //  allow who can see what
-                                .requestMatchers("/users/**").hasAnyRole(UserRole.ADMIN.name(), UserRole.MANAGER.name(), UserRole.DENTIST.name(), UserRole.DENTAL_ASSISTANT.name())
-                                .requestMatchers("/doctors/**").hasAnyRole(UserRole.ADMIN.name(), UserRole.MANAGER.name())
-                                .requestMatchers("/managers/**").hasRole(UserRole.ADMIN.name())
-                                
-                                .requestMatchers("/treatments/newTreatment/**").hasAnyRole(UserRole.ADMIN.name(), UserRole.MANAGER.name(), UserRole.DENTIST.name(), UserRole.DENTAL_ASSISTANT.name())
-                                
-                                
-                                
-                                //  who can use which http methods
-                                .requestMatchers(HttpMethod.GET).permitAll()
-                                .requestMatchers(HttpMethod.POST).hasAnyRole(UserRole.ADMIN.name(), UserRole.MANAGER.name(), UserRole.DENTIST.name(), UserRole.DENTAL_ASSISTANT.name())
-                                .requestMatchers(HttpMethod.DELETE).hasAnyRole(UserRole.ADMIN.name(), UserRole.MANAGER.name(), UserRole.DENTIST.name(), UserRole.DENTAL_ASSISTANT.name())
-                                .requestMatchers(HttpMethod.PUT).hasAnyRole(UserRole.ADMIN.name(), UserRole.MANAGER.name(), UserRole.DENTIST.name(), UserRole.DENTAL_ASSISTANT.name())
-                                .requestMatchers(HttpMethod.PATCH).hasAnyRole(UserRole.ADMIN.name(), UserRole.MANAGER.name(), UserRole.DENTIST.name(), UserRole.DENTAL_ASSISTANT.name())
-                                .requestMatchers(HttpMethod.OPTIONS).hasRole(UserRole.ADMIN.name())
-                                .requestMatchers(HttpMethod.TRACE).hasRole(UserRole.ADMIN.name())
-                                .requestMatchers(HttpMethod.HEAD).hasRole(UserRole.ADMIN.name())
-                                //  .requestMatchers(HttpMethod.GET, "/api/**").hasAnyRole("USER", "ADMIN")
-                                
-                                //  all other requests are authenticated
-                                .anyRequest().authenticated())
-                .formLogin(
-                        formLogin -> {
-                            formLogin.
-                                    //  redirect here when we access something that is not allowed
-                                    //  also this is the page where we perform login
-                                            loginPage("/login")
-                                    //  the names of the input fields (in our case in login.html
-                                    .usernameParameter("email")
-                                    .passwordParameter("password")
-                                    .defaultSuccessUrl("/", true)
-                                    .failureForwardUrl("/login");
-                        }
-                ).logout(logout -> {
-                            logout
-                                    //  the url where we should POST something in order to perform the logout
-                                    .logoutUrl("/logout")
-                                    //  where to go on logout
-                                    .logoutSuccessUrl("/")
-                                    //  invalidate the http session
-                                    .invalidateHttpSession(true)
-                                    .deleteCookies("JSESSIONID");
-                        }
-                ).csrf(csrf -> csrf
+                        //  all static resources which are situated in js, images, css are available for anyone
+                        .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
+                        
+                        //  allow anyone to see the homepage, register page and logout page
+                        .requestMatchers("/", "/login", "/register", "/logout", "/treatments", "/login-error").permitAll()
+                        
+                        //  allow who can see what
+                        .requestMatchers("/users/**").hasAnyRole(UserRole.ADMIN.name(), UserRole.MANAGER.name(), UserRole.DENTIST.name(), UserRole.DENTAL_ASSISTANT.name())
+                        .requestMatchers("/doctors/**").hasAnyRole(UserRole.ADMIN.name(), UserRole.MANAGER.name())
+                        .requestMatchers("/managers/**").hasRole(UserRole.ADMIN.name())
+                        
+                        .requestMatchers("/treatments/newTreatment/**").hasAnyRole(UserRole.ADMIN.name(), UserRole.MANAGER.name(), UserRole.DENTIST.name(), UserRole.DENTAL_ASSISTANT.name())
+                        
+                        
+                        //  who can use which http methods
+                        .requestMatchers(HttpMethod.GET).permitAll()
+                        .requestMatchers(HttpMethod.POST).hasAnyRole(UserRole.ADMIN.name(), UserRole.MANAGER.name(), UserRole.DENTIST.name(), UserRole.DENTAL_ASSISTANT.name())
+                        .requestMatchers(HttpMethod.DELETE).hasAnyRole(UserRole.ADMIN.name(), UserRole.MANAGER.name(), UserRole.DENTIST.name(), UserRole.DENTAL_ASSISTANT.name())
+                        .requestMatchers(HttpMethod.PUT).hasAnyRole(UserRole.ADMIN.name(), UserRole.MANAGER.name(), UserRole.DENTIST.name(), UserRole.DENTAL_ASSISTANT.name())
+                        .requestMatchers(HttpMethod.PATCH).hasAnyRole(UserRole.ADMIN.name(), UserRole.MANAGER.name(), UserRole.DENTIST.name(), UserRole.DENTAL_ASSISTANT.name())
+                        .requestMatchers(HttpMethod.OPTIONS).hasRole(UserRole.ADMIN.name())
+                        .requestMatchers(HttpMethod.TRACE).hasRole(UserRole.ADMIN.name())
+                        .requestMatchers(HttpMethod.HEAD).hasRole(UserRole.ADMIN.name())
+                        //  .requestMatchers(HttpMethod.GET, "/api/**").hasAnyRole("USER", "ADMIN")
+                        
+                        //  all other requests are authenticated
+                        .anyRequest().authenticated()
+                )
+                .formLogin(formLogin -> formLogin
+                        //  redirect here when we access something that is not allowed
+                        //  also this is the page where we perform login
+                        .loginPage("/login")
+                        //  the names of the input fields (in our case in login.html
+                        .usernameParameter("email")
+                        .passwordParameter("password")
+                        .defaultSuccessUrl("/", true)
+                        .failureForwardUrl("/login-error")
+                
+                )
+                .logout(logout -> logout
+                        //  the url where we should POST something in order to perform the logout
+                        .logoutUrl("/logout")
+                        //  where to go on logout
+                        .logoutSuccessUrl("/")
+                        //  invalidate the http session
+                        .invalidateHttpSession(true)
+                        .deleteCookies("JSESSIONID")
+                
+                )
+                .csrf(csrf -> csrf
                         .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
-                ).rememberMe(
-                        rememberMe -> {
+                )
+                .rememberMe(rememberMe -> {
                             rememberMe
                                     .key(rememberMeKey)
                                     .rememberMeParameter("remember-me")

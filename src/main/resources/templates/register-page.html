@@ -10,115 +10,114 @@
       th:method="post"
       th:object="${registerDto}"
       class="registration_form">
-    <div class=" container justify-content-center 
-            align-items-center h-auto border border-1 border-info rounded-4 p-md-4">
+    <div id="form_register_container" class=" container justify-content-center form_container align-items-center">
         <h2 class="text-secondary pb-3">Make a registration</h2>
 
         <div class="row flex-wrap">
 
             <div class="col-6 ">
-                <label for="fName" class="form-label">First Name</label>
-                <input type="text"
-                       class="form-control"
-                       id="fName"
-                       name="firstName"
-                       placeholder="First Name"
-                       aria-current=""
-                       th:errorclass="is-invalid"
-                       th:field="*{firstName}">
-                
-                <div th:if="${#fields.hasErrors('firstName')}" class="invalid-feedback">
-                    <small class="d-inline-block bg-danger text-light rounded mt-1"
-                           th:text=" ${#fields.errors('firstName').getFirst()}">
-<!--                           th:each="error : ${#fields.errors('firstName')}"-->
-<!--                           th:text="${error}"-->
 
-                    </small>
+                <div class="form-floating mb-3">
+                    <input type="text"
+                           class="form-control"
+                           id="floating_first_name"
+                           name="firstName"
+                           placeholder="First Name"
+                           th:errorclass="is-invalid"
+                           th:field="*{firstName}">
+                    <label for="floating_first_name">First Name</label>
+
+                    <div th:if="${#fields.hasErrors('firstName')}" class="invalid-feedback">
+                        <small class="d-inline-block bg-danger text-light rounded mt-1"
+                               th:text=" ${#fields.errors('firstName').getFirst()}">
+                        </small>
+                    </div>
                 </div>
             </div>
+
+
             <div class="col-6">
-                <label for="lName" class="form-label">Last Name</label>
-                <input type="text"
-                       name="lastName"
-                       class="form-control"
-                       id="lName"
-                       placeholder="Last Name"
-                       th:errorclass="is-invalid"
-                       th:field="*{lastName}">
 
-                <div th:if="${#fields.hasErrors('lastName')}" class="invalid-feedback">
-                    <small class="d-inline-block bg-danger text-light rounded mt-1"
-                           th:text=" ${#fields.errors('lastName').getFirst()}">
-<!--                           th:each="error : ${#fields.errors('lastName')}"-->
-<!--                           th:text="${error}">-->
-                    </small>
+                <div class="form-floating mb-3">
+                    <input type="text"
+                           name="lastName"
+                           class="form-control"
+                           id="floating_last_name"
+                           placeholder="Last Name"
+                           th:errorclass="is-invalid"
+                           th:field="*{lastName}">
+
+                    <div th:if="${#fields.hasErrors('lastName')}" class="invalid-feedback">
+                        <small class="d-inline-block bg-danger text-light rounded mt-1"
+                               th:text=" ${#fields.errors('lastName').getFirst()}">
+                        </small>
+                    </div>
+
+                    <label for="floating_last_name">Last Name</label>
                 </div>
             </div>
         </div>
-        <div class="row py-md-2">
-            <div>
-                <label for="regEmail" class="form-label">Email</label>
-                <input type="email"
-                       name="email"
-                       class="form-control"
-                       id="regEmail"
-                       placeholder="name@example.com"
-                       th:errorclass="is-invalid"
-                       th:field="*{email}">
 
-                <div th:if="${#fields.hasErrors('email')}" class="invalid-feedback">
-                    <small class="d-inline-block bg-danger text-light rounded mt-1"
-                           th:text=" ${#fields.errors('email').getFirst()}">
-<!--                           th:each="error : ${#fields.errors('email')}"-->
-<!--                           th:text="${error}">-->
-                    </small>
-                </div>
+
+        <div class="form-floating mb-3">
+            <input type="email"
+                   class="form-control"
+                   name="email"
+                   id="floating_email_address"
+                   placeholder="Email"
+                   th:errorclass="is-invalid"
+                   th:field="*{email}">
+            <label for="floating_email_address">Email</label>
+
+            <div th:if="${#fields.hasErrors('email')}" class="invalid-feedback">
+                <small class="d-inline-block bg-danger text-light rounded mt-1"
+                       th:text=" ${#fields.errors('email').getFirst()}">
+                </small>
+            </div>
+
+        </div>
+
+
+        <div class="form-floating mb-3 password_field">
+            <input type="password"
+                   name="password"
+                   class="form-control"
+                   id="floating_password"
+                   placeholder="password"
+                   th:errorclass="is-invalid"
+                   th:field="*{password}">
+            <label for="floating_password">Password</label>
+            <div th:if="${#fields.hasErrors('password')}" class="invalid-feedback">
+                <small class="d-inline-block bg-danger text-light rounded mt-1"
+                       th:text=" ${#fields.errors('password').getFirst()}">
+                </small>
             </div>
         </div>
-        <div class="row col-6 py-md-2">
-            <div>
-                <label for="regPassword">Password</label>
-                <input type="password"
-                       name="password"
-                       id="regPassword"
-                       placeholder="Password"
-                       class="form-control"
-                       th:errorclass="is-invalid"
-                       th:field="*{password}">
 
-                <div th:if="${#fields.hasErrors('password')}" class="invalid-feedback">
-                    <small class="d-inline-block bg-danger text-light rounded mt-1"
-                           th:text=" ${#fields.errors('password').getFirst()}">
-<!--                           th:each="error : ${#fields.errors('password')}"-->
-<!--                           th:text="${error}">-->
-                    </small>
-                </div>
-            </div>
-            <div class="mt-md-2">
-                <label for="regConfirmPassword">Confirm password</label>
-                <input type="password"
-                       name="confirmPassword"
-                       id="regConfirmPassword"
-                       placeholder="Confirm Password"
-                       class="form-control"
-                       th:field="*{confirmPassword}">
 
-                <div th:if="${#fields.hasGlobalErrors()}">
-                    <small class="d-inline-block bg-danger text-light rounded mt-1"
-                           th:each="error : ${#fields.globalErrors()}"
-                           th:if="${error.toString().equals('Oops! Your passwords do not match.')}"
-                           th:text="${error}">
-                    </small>
-                </div>
+        <div class="form-floating mb-3 password_field">
+            <input type="password"
+                   name="confirmPassword"
+                   class="form-control"
+                   id="floating_confirm_password"
+                   placeholder="Confirm password"
+                   th:field="*{confirmPassword}">
+            <label for="floating_confirm_password">Confirm password</label>
+            <div th:if="${#fields.hasGlobalErrors()}">
+                <small class="d-inline-block bg-danger text-light rounded mt-1"
+                       th:each="error : ${#fields.globalErrors()}"
+                       th:if="${error.toString().equals('Oops! Your passwords do not match.')}"
+                       th:text="${error}">
+                </small>
             </div>
         </div>
-        <div class="row col-6 py-md-2">
-            <div>
-                <button th:type="submit" th:name="submit" th:value="true" data-mdb-button-init data-mdb-ripple-init
-                        class="btn btn-primary">Register
-                </button>
-            </div>
-        </div>
+        
+        
+            <button  th:type="submit" th:name="submit" th:value="true" data-mdb-button-init data-mdb-ripple-init
+                    class="register_btn btn btn-primary">Register
+            </button>
+        
+
     </div>
 </form>
 

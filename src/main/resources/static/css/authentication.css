@@ -9,8 +9,12 @@
     align-items: center;
     margin: 0 auto;
     min-height: 75dvh;
-    
-    
+}
+
+#form_register_container {
+    padding: 3em 2em;
+    border: var(--w_border-ocean-1);
+    border-radius: 10px;
 }
 
 .registration_form small {
@@ -19,6 +23,23 @@
     padding: 5px;
     font-size: 0.8rem;
 }
+
+.registration_form .password_field {
+    width: 48%;
+}
+
+.registration_form .form-floating label {
+    color: var(--w_black-light);
+}
+
+.registration_form .register_btn {
+    display: block;
+    width: 100%;
+    font-size: 1.2em;
+    margin-top: 1.5em;
+}
+
+
 
 /*-----------   login   -----------*/
 
@@ -32,6 +53,13 @@
     height: 75dvh;
 }
 
+#container_login_form {
+    padding: 3em 2em;
+    border: var(--w_border-ocean-1);
+    border-radius: 10px;
+}
+
+
 .login_form small {
     font-family: 'Fredoka', sans-serif;
     padding: 5px 5px;
@@ -39,3 +67,68 @@
     color: var(--w_white-fog);
     letter-spacing: 0.025em;
 }
+
+.login_form .input-group svg {
+    fill: var(--w_black-light);
+}
+
+.login_form .form-floating label {
+    color: var(--w_black-light);
+}
+
+.remember_me_container label {
+    margin-left: 0.3em;
+    color: var(--w_black-light);
+}
+
+.login_form button {
+    line-height: 1.3em;
+    font-size: 1.2em;
+    display: block;
+    width: 100%;
+}
+
+
+.login_form .remember_me_container {
+    margin-bottom: 1em;
+}
+
+.forgot_password_toggle{
+    margin-top: 0.4em;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.forgot_password_toggle a {
+    display: inline-block;
+    line-height: 1.2em;
+    text-decoration: none;
+}
+
+.login_form .card-body {
+    line-height: 1.6em;
+    font-family: 'Fredoka', sans-serif;
+    color: var(--w_black-light);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

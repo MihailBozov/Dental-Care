@@ -8,57 +8,85 @@
 <th:block th:include="~{/fragments/window-background}"></th:block>
 
 <!--th:object="${loginDto}"-->
+
 <form class="login_form"
       th:method="post"
       th:action="@{/login}">
-    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-    <div class="container_login_form container justify-content-center align-items-center border border-1 border-info rounded-4 p-4  "
-         style="">
-        <h2 class="text-secondary mb-3">Login to your profile</h2>
-        <div class="form-group py-2">
-            <label for="inputEmail">Email</label>
-            <input type="email"
-                   class="form-control"
-                   id="inputEmail"
-                   name="email"
-                   placeholder="email">
-<!--                   th:errorclass="is-invalid"-->
-            <!--            <div th:if="${#fields.hasErrors('email')}" class="invalid-feedback">-->
-            <!--                <small class="d-inline-block bg-danger text-light rounded"-->
-            <!--                       th:each="error : ${#fields.errors('email')}"-->
-            <!--                       th:if="${error.toString().equals('Oops! That does not look like a valid email. Please try again.')}"-->
-            <!--                       th:text="${error}">-->
-            <!--                </small>-->
-            <!--            </div>-->
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+
+    <div id="container_login_form" class="container justify-content-center align-items-center">
+        <h2 class="text-secondary mb-4">Login</h2>
+
+        <div class="form-floating input-group mb-3">
+            <div class="form-floating">
+                <input type="email"
+                       name="email"
+                       class="form-control"
+                       id="inputEmail"
+                       placeholder="Email"
+                       aria-label="Recipient's email"
+                       aria-describedby="basic-addon1"
+                       th:value="${email}">
+                <label for="inputEmail">Email</label>
+            </div>
+            <span class="input-group-text" id="basic-addon1">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                     fill="#000000"><path
+                        d="M480-108.08q-77.1 0-145-29.32-67.91-29.33-118.13-79.6-50.23-50.27-79.51-118.05-29.28-67.79-29.28-144.86 0-77.15 29.32-145.06 29.33-67.92 79.6-118.16 50.27-50.23 118.05-79.51 67.79-29.28 144.86-29.28 77.15 0 145.06 29.33 67.92 29.33 118.16 79.61 50.23 50.28 79.51 118.11 29.28 67.82 29.28 144.94v47.05q0 53.11-36.83 90.17-36.83 37.05-89.94 37.05-35.07 0-64.5-17.46-29.42-17.46-46.46-47.46-24.81 30.62-59.9 47.77-35.1 17.15-74.15 17.15-72.95 0-123.72-50.76-50.76-50.77-50.76-123.58t50.76-123.58q50.77-50.76 123.58-50.76t123.58 50.76q50.76 50.77 50.76 123.5v47.23q0 29.46 20.72 50.35 20.71 20.88 50.09 20.88 29.38 0 50.1-20.88 20.71-20.89 20.71-50.35V-480q0-131.9-92.02-223.93-92.03-92.03-223.93-92.03-131.89 0-223.93 92.02-92.04 92.03-92.04 223.93 0 131.89 92.02 223.93 92.03 92.04 223.93 92.04h197.59v55.96H480Zm-.1-253.54q49.29 0 83.89-34.5 34.59-34.5 34.59-83.78 0-49.29-34.5-83.89-34.5-34.59-83.78-34.59-49.29 0-83.89 34.5-34.59 34.5-34.59 83.78 0 49.29 34.5 83.89 34.5 34.59 83.78 34.59Z"/></svg>
+            </span>
+
         </div>
 
-        <div class="form-group py-2 mb-1">
-            <label for="loginPassword">Password</label>
-            <input type="password"
-                   class="form-control"
-                   id="loginPassword"
-                   name="password"
-                   placeholder="password">
+        <div class="form-floating input-group mb-3">
+
+            <div class="form-floating">
+                <input type="password"
+                       name="password"
+                       id="loginPassword"
+                       class="form-control"
+                       placeholder="Password"
+                       aria-label="Recipient's username"
+                       aria-describedby="basic-addon2">
+                <label for="loginPassword">Password</label>
+            </div>
+            <span class="input-group-text" id="basic-addon2">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                     fill="#000000"><path
+                        d="M278.08-414.31q-27.08 0-46.43-19.26-19.34-19.27-19.34-46.35 0-27.08 19.26-46.43 19.27-19.34 46.35-19.34 27.08 0 46.43 19.26 19.34 19.27 19.34 46.35 0 27.08-19.26 46.43-19.27 19.34-46.35 19.34ZM278-245q-97.54 0-166.27-68.73T43-480q0-97.54 68.73-166.27T278-715q69.77 0 125.15 35 55.39 35 82.68 99.39h363.02l107.92 107.92-159.31 148.38-80.92-59.61-82.23 59.38-72.77-54.85h-75.62q-24.31 57.7-78.19 96.04Q353.85-245 278-245Zm0-58.39q60.77 0 107.65-39.11 46.89-39.12 60.04-95.27h136.46l52.77 40.69 82.62-58.77 75.84 56.39 79.93-74.85-47.93-47.92H445.77q-11.62-53.31-57.81-93.85-46.19-40.53-109.86-40.53-73.79 0-125.25 51.4-51.46 51.4-51.46 125.15t51.41 125.21q51.42 51.46 125.2 51.46Z"/></svg>
+            </span>
         </div>
-        <!--        th:if="${#fields.hasAnyErrors()}"-->
-        <div class="mb-4 invalid-feedback">
+
+
+        <div th:if="${bad_credentials}" class="mb-4">
             <small class="d-inline-block bg-danger text-light rounded">
                 Oops! That doesn't look like a valid email or password. Please try again
             </small>
         </div>
 
-        <div class="row d-flex justify-content-start align-items-center">
-            <div class="col-4">
-                <button type="submit" class="btn btn-primary">Log in</button>
-            </div>
-            <div class="form-group form-check col-5 ">
-                <input type="checkbox" 
-                       class="form-check-input" 
-                       name="remember-me"
-                       id="remember-me">
-                <label class="form-check-label" for="remember-me">Remember me</label>
+
+        <div class="form-group py-1 remember_me_container">
+            <input type="checkbox"
+                   class="form-check-input"
+                   name="remember-me"
+                   id="remember-me">
+            <label class="form-check-label" for="remember-me">Remember me</label>
+        </div>
+
+        <button type="submit" class="login_button form-group btn btn-primary">Login</button>
+
+        <div class="d-inline-flex gap-1 py-2 mb-1 forgot_password_toggle">
+            <a class="" data-bs-toggle="collapse" href="#collapseForgotPassword" role="button" aria-expanded="false"
+               aria-controls="collapseForgotPassword">
+                Forgot password
+            </a>
+        </div>
+        <div class="collapse" id="collapseForgotPassword">
+            <div class="card card-body ">
+                Looks like you forgot your password...<br>
+                We wish you our best!
             </div>
         </div>
+
     </div>
 </form>
 
