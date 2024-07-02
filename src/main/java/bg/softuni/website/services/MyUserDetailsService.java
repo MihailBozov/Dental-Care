@@ -1,13 +1,21 @@
 package bg.softuni.website.services;
 
 import bg.softuni.website.models.entities.UserEntity;
+import bg.softuni.website.models.enums.UserRole;
 import bg.softuni.website.repositories.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 
 public class MyUserDetailsService implements UserDetailsService {
     
@@ -27,10 +35,17 @@ public class MyUserDetailsService implements UserDetailsService {
     
     
     private UserDetails map(UserEntity userEntity) {
+        
+        Set<GrantedAuthority> roles = userEntity
+                .getRoles()
+                .stream()
+                .map(role -> new SimpleGrantedAuthority("ROLE_" + role.getName().name()))
+                .collect(Collectors.toSet());
+        
         return User
-                .withUsername(userEntity.getFirstName())
+                .withUsername(userEntity.getEmail())
                 .password(userEntity.getPassword())
-                .authorities(List.of()) //TODO   add roles
+                .authorities(roles) 
                 .build();
     }
 }

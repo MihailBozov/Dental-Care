@@ -67,9 +67,9 @@ public class AuthController {
         return "login-page";
     }
     
-    @GetMapping("/logout")
+    @PostMapping("/logout")
     public String logout() {
-        return "index";
+        return "redirect:/index";
     }
     
 }

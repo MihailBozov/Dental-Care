@@ -25,6 +25,8 @@ spring:
       max-request-size: 50MB
     
 
+remember.me.key: ${REMEMBER_ME_KEY:topSecret}
+
 logging:
   level:
     org.hibernate.SQL: DEBUG

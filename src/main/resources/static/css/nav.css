@@ -12,6 +12,7 @@
     align-items: center;
 }
 
+.navbar ul input:not(.btn),
 .navbar ul a:not(.btn) {
     font-family: 'Poppins', sans-serif;
     font-size: 1em;
@@ -20,6 +21,7 @@
     letter-spacing: 0.02em;
 }
 
+.navbar ul input:hover:not(.btn),
 .navbar ul a:hover:not(.btn) {
     border-bottom: 3px solid var(--w_ocean);
 }

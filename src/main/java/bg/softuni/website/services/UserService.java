@@ -18,7 +18,7 @@ public class UserService {
     private RoleRepository roleRepository;
     private ModelMapper modelMapper;
     private PasswordEncoder passwordEncoder;
-
+    
     
     @Autowired
     public UserService(UserRepository userRepository, RoleRepository roleRepository, ModelMapper modelMapper, PasswordEncoder passwordEncoder) {
@@ -36,5 +36,6 @@ public class UserService {
         userEntity.getRoles().add(role);
         this.userRepository.saveAndFlush(userEntity);
     }
+    
 }
 

@@ -1,4 +1,6 @@
-<section class="treatmentSection" xmlns:th="http://www.thymeleaf.org">
+<section class="treatmentSection"
+         xmlns:th="http://www.thymeleaf.org"
+         xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
     <h2 th:if="${currentPage == 'homePage'}">Some of our <span>Treatments</span></h2>
     <h2 th:if="${currentPage != 'homePage'}">Our <span>Treatments</span></h2>
     <div class="subtitle">From routine cleanings and preventive care to advanced restorative and cosmetic
@@ -8,9 +10,9 @@
 
     <div class="treatment_container">
 
-<!--        th:if="${role.getName().toString().equals('DENTAL_ASSISTANT')} or ${role.getName().toString().equals('DOCTOR')} or ${role.getName().toString().equals('MANAGER')} or ${role.getName().toString().equals('ADMIN')} and ${currentPage == 'treatmentsPage'}"-->
-<!--        th:each="role : ${@userSession.getRoles()}"-->
-        <a class="treatment_unit new_treatment d-flex flex-column justify-content-center align-items-center"
+
+        <a sec:authorize="hasAnyRole('ADMIN', 'MANAGER', 'DENTIST', 'DENTAL_ASSISTANT')"
+           class="treatment_unit new_treatment d-flex flex-column justify-content-center align-items-center"
            data-toggle="modal"
            data-target="#newTreatmentModal"
            href="/treatments/newTreatment">
@@ -43,9 +45,8 @@
             <a href="#" class="unit_link"></a>
             <img class="treatment_icon" th:src="${treatment.getImageUrl()}" alt="">
 
-<!--            th:if="${role.getName().toString().equals('DENTAL_ASSISTANT')} or ${role.getName().toString().equals('DOCTOR')} or ${role.getName().toString().equals('MANAGER')} or ${role.getName().toString().equals('ADMIN')} and ${currentPage == 'treatmentsPage'}"-->
-<!--            th:each="role : ${@userSession.getRoles()}"-->
-            <a th:href="@{/treatments/{id}(id=${treatment.id})}"
+            
+            <a sec:authorize="hasAnyRole('ADMIN', 'MANAGER', 'DENTIST', 'DENTAL_ASSISTANT')"
                data-toggle="modal"
                data-target="#confirmationModal"
                onclick="setDeleteUrl(this)"
