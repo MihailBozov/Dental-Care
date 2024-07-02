@@ -30,59 +30,51 @@ VALUES ('mihailbozov@hotmail.com', TIMESTAMP(NOW()));
 
 
 INSERT INTO images(name, url)
-VALUES ('brackets.svg', '/images/icons/brackets.svg');
+VALUES ('brackets.svg', '/images/treatments/brackets.svg');
 INSERT INTO image_categories_images(image_category_id, image_id)
 VALUES (3, 1);
 INSERT INTO images(name, url)
-VALUES ('clean.svg', '/images/icons/clean.svg');
+VALUES ('clean.svg', '/images/treatments/clean.svg');
 INSERT INTO image_categories_images(image_category_id, image_id)
 VALUES (3, 2);
 INSERT INTO images(name, url)
-VALUES ('cleansing.svg', '/images/icons/cleansing.svg');
+VALUES ('cleansing.svg', '/images/treatments/cleansing.svg');
 INSERT INTO image_categories_images(image_category_id, image_id)
 VALUES (3, 3);
 INSERT INTO images(name, url)
-VALUES ('crown.svg', '/images/icons/crown.svg');
+VALUES ('crown.svg', '/images/treatments/crown.svg');
 INSERT INTO image_categories_images(image_category_id, image_id)
 VALUES (3, 4);
 INSERT INTO images(name, url)
-VALUES ('dentMachine.svg', '/images/icons/dentMachine.svg');
+VALUES ('implant.svg', '/images/treatments/implant.svg');
 INSERT INTO image_categories_images(image_category_id, image_id)
 VALUES (3, 5);
 INSERT INTO images(name, url)
-VALUES ('diagnostic.svg', '/images/icons/diagnostic.svg');
+VALUES ('rootCanal.svg', '/images/treatments/rootCanal.svg');
 INSERT INTO image_categories_images(image_category_id, image_id)
 VALUES (3, 6);
 INSERT INTO images(name, url)
-VALUES ('implant.svg', '/images/icons/implant.svg');
+VALUES ('success.svg', '/images/icons/success.svg');
 INSERT INTO image_categories_images(image_category_id, image_id)
 VALUES (3, 7);
 INSERT INTO images(name, url)
-VALUES ('quotes_white_end.svg', '/images/icons/quotes_white_end.svg');
+VALUES ('success.svg', '/images/icons/success.svg');
 INSERT INTO image_categories_images(image_category_id, image_id)
 VALUES (3, 8);
 INSERT INTO images(name, url)
-VALUES ('quotes_white_start.svg', '/images/icons/quotes_white_start.svg');
+VALUES ('quotes_white_end.svg', '/images/icons/quotes_white_end.svg');
 INSERT INTO image_categories_images(image_category_id, image_id)
 VALUES (3, 9);
 INSERT INTO images(name, url)
-VALUES ('rootCanal.svg', '/images/icons/rootCanal.svg');
+VALUES ('quotes_white_start.svg', '/images/icons/quotes_white_start.svg');
 INSERT INTO image_categories_images(image_category_id, image_id)
 VALUES (3, 10);
 INSERT INTO images(name, url)
-VALUES ('sawing.svg', '/images/icons/sawing.svg');
+VALUES ('add_new.svg', '/images/icons/add_new.svg');
 INSERT INTO image_categories_images(image_category_id, image_id)
 VALUES (3, 11);
 INSERT INTO images(name, url)
 VALUES ('hero_background.svg', '/images/main/hero_background.svg');
-INSERT INTO image_categories_images(image_category_id, image_id)
-VALUES (5, 12);
-INSERT INTO images(name, url)
-VALUES ('hero_background_green.svg', '/images/main/hero_background_green.svg');
-INSERT INTO image_categories_images(image_category_id, image_id)
-VALUES (5, 12);
-INSERT INTO images(name, url)
-VALUES ('heroImg.svg', '/images/main/heroImg.svg');
 INSERT INTO image_categories_images(image_category_id, image_id)
 VALUES (5, 12);
 INSERT INTO images(name, url)
@@ -130,14 +122,17 @@ VALUES ('Kale_img.png', '/images/profile/Kale_img.png');
 INSERT INTO image_categories_images(image_category_id, image_id)
 VALUES (1, 23);
 INSERT INTO images(name, url)
-VALUES ('doctor.jpg', '/images/pictures/doctor.jpg');
+VALUES ('heroImg.svg', '/images/main/heroImg.svg');
 INSERT INTO image_categories_images(image_category_id, image_id)
-VALUES (6, 24);
+VALUES (5, 24);
 INSERT INTO images(name, url)
-VALUES ('add_new.svg', '/images/icons/add_new.svg');
+VALUES ('delete.svg', '/images/icons/delete.svg');
 INSERT INTO image_categories_images(image_category_id, image_id)
 VALUES (3, 25);
-
+INSERT INTO images(name, url)
+VALUES ('success.svg', '/images/icons/success.svg');
+INSERT INTO image_categories_images(image_category_id, image_id)
+VALUES (3, 26);
 
 
 # ---------------------------     Testimonials     ---------------------------
@@ -155,23 +150,23 @@ VALUES ('I was nervous about my procedure, but the team was so reassuring and ge
 
 
 INSERT INTO users (email, first_name, last_name, password, image_id)
-VALUES ('cassandra@sofia.com', 'Cassandra', 'Sofia', '1212', 17);
+VALUES ('cassandra@sofia.com', 'Cassandra', 'Sofia', '1212', 15);
 INSERT INTO users (email, first_name, last_name, password, image_id)
-VALUES ('james@sofia.com', 'James', 'Sofia', '1212', 18);
+VALUES ('james@sofia.com', 'James', 'Sofia', '1212', 16);
 INSERT INTO users (email, first_name, last_name, password, image_id)
-VALUES ('evelyn@sofia.com', 'Evelyn', 'Sofia', '1212', 19);
+VALUES ('evelyn@sofia.com', 'Evelyn', 'Sofia', '1212', 17);
 INSERT INTO users (email, first_name, last_name, password, image_id)
-VALUES ('sophia@sofia.com', 'Sophia', 'Sofia', '1212', 20);
+VALUES ('sophia@sofia.com', 'Sophia', 'Sofia', '1212', 18);
 INSERT INTO users (email, first_name, last_name, password, image_id)
-VALUES ('isabella@sofia.com', 'Isabella', 'Sofia', '1212', 21);
+VALUES ('isabella@sofia.com', 'Isabella', 'Sofia', '1212', 19);
 INSERT INTO users (email, first_name, last_name, password, image_id)
-VALUES ('daniel@sofia.com', 'Daniel', 'Sofia', '1212', 22);
+VALUES ('daniel@sofia.com', 'Daniel', 'Sofia', '1212', 20);
 INSERT INTO users (email, first_name, last_name, password, image_id, testimonial_id)
-VALUES ('yanica@sofia.com', 'Yanica', 'Sofia', '1212', 23, 1);
+VALUES ('yanica@sofia.com', 'Yanica', 'Sofia', '1212', 21, 1);
 INSERT INTO users (email, first_name, last_name, password, image_id, testimonial_id)
-VALUES ('emma@sofia.com', 'Emma', 'Sofia', '1212', 24, 2);
+VALUES ('emma@sofia.com', 'Emma', 'Sofia', '1212', 22, 2);
 INSERT INTO users (email, first_name, last_name, password, image_id, testimonial_id)
-VALUES ('kale@sofia.com', 'Kale', 'Sofia', '1212', 25, 3);
+VALUES ('kale@sofia.com', 'Kale', 'Sofia', '1212', 23, 3);
 
 # ---------------------------     Users Roles     ---------------------------
 
@@ -217,12 +212,17 @@ INSERT INTO health_conditions (danger_level, name, description, created_by_user_
 VALUES ('MEDIUM', 'Diabetes', 'The patient has Type 2 diabetes. The dental treatment should ensure that the patient''s blood sugar levels are monitored, and strict oral hygiene practices are maintained.', 1 , TIMESTAMP(NOW()));
 INSERT INTO health_conditions (danger_level, name, description, created_by_user_id, creation_date)
 VALUES ('HIGH', 'Heart Disease', 'The patient has a history of significant heart disease. The dental treatment should ensure that procedures are coordinated with the patient''s cardiologist, and special precautions, such as pre-medication with antibiotics.', 1, TIMESTAMP(NOW()));
+
+
+# ---------------------------     Treatments     ---------------------------
+
+
 INSERT INTO treatments(description, name, price, created_by_user_id, creation_date, image_id)
 VALUES ('A routine procedure involving the removal of plaque and tartar from teeth to maintain oral health and prevent gum disease.', 'Dental Cleaning', '100', 1,  TIMESTAMP(NOW()), 3);
 INSERT INTO treatments(description, name, price, created_by_user_id, creation_date, image_id)
-VALUES ('A procedure to remove infected or damaged tissue from inside a tooth, clean and disinfect the area, and fill it to prevent further infection.', 'Root Canal Treatment', '500', 2,  TIMESTAMP(NOW()), 10);
+VALUES ('A procedure to remove infected or damaged tissue from inside a tooth, clean and disinfect the area, and fill it to prevent further infection.', 'Root Canal Treatment', '500', 2,  TIMESTAMP(NOW()), 6);
 INSERT INTO treatments(description, name, price, created_by_user_id, creation_date, image_id)
-VALUES ('A surgical procedure where a titanium post is inserted into the jawbone to serve as a stable foundation for a replacement tooth or bridge.', 'Dental Implant Placement', '1000', 1,  TIMESTAMP(NOW()), 7);
+VALUES ('A surgical procedure where a titanium post is inserted into the jawbone to serve as a stable foundation for a replacement tooth or bridge.', 'Dental Implant Placement', '1000', 1,  TIMESTAMP(NOW()), 5);
 INSERT INTO treatments(description, name, price, created_by_user_id, creation_date, image_id)
 VALUES ('A cosmetic procedure to lighten the color of your teeth and remove stains, resulting in a brighter smile.', 'Teeth Whitening', '200', 1, TIMESTAMP(NOW()), 2);
 INSERT INTO treatments(description, name, price, created_by_user_id, creation_date, image_id)

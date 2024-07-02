@@ -2,7 +2,6 @@ package bg.softuni.website.sessions;
 
 import bg.softuni.website.models.entities.Role;
 import bg.softuni.website.models.entities.User;
-import bg.softuni.website.models.enums.UserRoles;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.SessionScope;
 

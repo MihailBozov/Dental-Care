@@ -48,6 +48,8 @@
         border-radius: 10px;
         box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.1);
         transition: 0.4s ease;
+        position: relative;
+        overflow: hidden;
     }
 
 
@@ -65,8 +67,8 @@
 
 
     .treatment_icon {
-        width: 50px;
-        height: 50px;
+        width: auto;
+        height: 60px;
         margin: auto;
     }
 
@@ -74,7 +76,7 @@
     .treatment_title {
         color: #4a90e2;
         font-size: 1.5em;
-        margin: 0 auto 1rem ;
+        margin: 0 auto 1rem;
     }
 
 
@@ -103,3 +105,35 @@ a[class="all_treatments"]:hover {
     color: #4a90e2;
     transform: scale(105%);
 }
+
+.delete_icon_img {
+    width: 40px;
+    height: auto;
+}
+
+.unit_link {
+    position: absolute;
+    background: transparent;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+}
+
+.delete_icon {
+    border-radius: 50%;
+    
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.delete_icon:hover {
+    border: 1px solid red;
+    box-shadow: 0 0 10px #ff0000;
+    transform: scale(105%);
+}
+

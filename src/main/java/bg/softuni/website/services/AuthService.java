@@ -4,7 +4,7 @@ import bg.softuni.website.models.dtos.LoginDto;
 import bg.softuni.website.models.dtos.RegisterDto;
 import bg.softuni.website.models.entities.Role;
 import bg.softuni.website.models.entities.User;
-import bg.softuni.website.models.enums.UserRoles;
+import bg.softuni.website.models.enums.UserRole;
 import bg.softuni.website.repositories.RoleRepository;
 import bg.softuni.website.repositories.UserRepository;
 import bg.softuni.website.sessions.UserSession;
@@ -37,7 +37,7 @@ public class AuthService {
         User user = this.modelMapper.map(registerDto, User.class);
         user.setPassword(this.passwordEncoder.encode(registerDto.getPassword()));
         
-        Role role = this.roleRepository.findByName(UserRoles.USER);
+        Role role = this.roleRepository.findByName(UserRole.USER);
         user.getRoles().add(role);
         this.userRepository.saveAndFlush(user);
     }

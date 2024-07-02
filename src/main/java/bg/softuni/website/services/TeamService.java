@@ -2,7 +2,7 @@ package bg.softuni.website.services;
 
 import bg.softuni.website.models.dtos.TeamDto;
 import bg.softuni.website.models.entities.User;
-import bg.softuni.website.models.enums.UserRoles;
+import bg.softuni.website.models.enums.UserRole;
 import bg.softuni.website.repositories.TeamRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,9 +32,9 @@ public class TeamService {
                 .filter(user -> user.getRoles()
                         .stream()
                         .filter(role ->
-                                role.getName() == UserRoles.DENTIST ||
-                                        role.getName() == UserRoles.DENTAL_ASSISTANT ||
-                                        role.getName() == UserRoles.MANAGER)
+                                role.getName() == UserRole.DENTIST ||
+                                        role.getName() == UserRole.DENTAL_ASSISTANT ||
+                                        role.getName() == UserRole.MANAGER)
                         .count() > 0)
                 .toList();
         
@@ -42,7 +42,7 @@ public class TeamService {
         for (User user : filteredUsers) {
             TeamDto memberDto = this.modelMapper.map(user, TeamDto.class);
             memberDto.setRoles(user.getRoles().stream()
-                    .filter(role -> !role.getName().equals(UserRoles.ADMIN) && !role.getName().equals(UserRoles.USER))
+                    .filter(role -> !role.getName().equals(UserRole.ADMIN) && !role.getName().equals(UserRole.USER))
                     .map(role -> role.getValue().toString()).toList());
             memberDto.setPictureUrl(user.getImage().getUrl());
             members.add(memberDto);

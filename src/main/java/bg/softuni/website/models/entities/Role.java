@@ -1,6 +1,6 @@
 package bg.softuni.website.models.entities;
 
-import bg.softuni.website.models.enums.UserRoles;
+import bg.softuni.website.models.enums.UserRole;
 import jakarta.persistence.*;
 
 @Entity
@@ -12,14 +12,14 @@ public class Role {
     private long id;
     
     @Enumerated(EnumType.STRING)
-    private UserRoles name;
+    private UserRole name;
     
     @Basic
     private String value;
     
     public Role (){}
     
-    public Role(UserRoles name) {
+    public Role(UserRole name) {
         this.name = name;
     }
     
@@ -39,11 +39,11 @@ public class Role {
         this.id = id;
     }
     
-    public UserRoles getName() {
+    public UserRole getName() {
         return name;
     }
     
-    public void setName(UserRoles name) {
+    public void setName(UserRole name) {
         this.name = name;
     }
 }

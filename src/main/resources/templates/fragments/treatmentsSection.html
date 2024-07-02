@@ -27,14 +27,17 @@
         </a>
 
         <th:block th:include="~{fragments/addTreatment}"></th:block>
-
-        <a class="treatment_unit" href="#" th:each="treatment : ${allTreatments}">
+        
+        
+        <div class="treatment_unit" href="#" th:each="treatment : ${allTreatments}">
+            <a href="#" class="unit_link"></a>
+            <a href="/" class="delete_icon"><img th:src="@{images/icons/delete.svg}" alt="" class="delete_icon_img"></a>
             <img class="treatment_icon" th:src="${treatment.getImageUrl()}" alt="">
             <h2 class="treatment_title" th:text="${treatment.getName()}"></h2>
             <div class="treatment_description">
                 <p th:text="${treatment.getDescription()}"></p>
             </div>
-        </a>
+        </div>
 
         <th:block th:include="~{fragments/success}"></th:block>
 
