@@ -27,6 +27,7 @@
 
     --w_border-transparent-1: 1px solid transparent;
     --w_border-ocean-1: 1px solid var(--w_ocean);
+    --w_border-turquoise-1: 1px solid var(--w_turquoise);
     --w_border-success-1: 1px solid var(--w_success);
     
     

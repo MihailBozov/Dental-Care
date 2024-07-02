@@ -53,7 +53,7 @@
 
 .member_unit:hover {
     scale: 101%;
-    border: var(--w_border-ocean-1);
+    border: var(--w_border-turquoise-1);
     box-shadow: var(--w_shadow-gray);
 }
 

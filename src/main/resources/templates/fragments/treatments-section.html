@@ -8,11 +8,9 @@
 
     <div class="treatment_container">
 
-        <!--        th:if="${role.getName().toString().equals('DENTAL_ASSISTANT')} or ${role.getName().toString().equals('DOCTOR')} or ${role.getName().toString().equals('MANAGER')} or ${role.getName().toString().equals('ADMIN')} and ${currentPage == 'treatmentsPage'}"-->
-        <!--        th:each="role : ${@userSession.getRoles()}"-->
-
-        <!--                th:if="${currentPage == 'treatmentsPage'}"-->
-        <a class="treatment_unit new_treatment d-flex flex-column justify-content-center align-items-center"
+        <a th:if="${role.getName().toString().equals('DENTAL_ASSISTANT')} or ${role.getName().toString().equals('DOCTOR')} or ${role.getName().toString().equals('MANAGER')} or ${role.getName().toString().equals('ADMIN')} and ${currentPage == 'treatmentsPage'}"
+           th:each="role : ${@userSession.getRoles()}"
+           class="treatment_unit new_treatment d-flex flex-column justify-content-center align-items-center"
            data-toggle="modal"
            data-target="#newTreatmentModal"
            href="/treatments/newTreatment">
@@ -44,9 +42,11 @@
         <div class="treatment_unit" href="#" th:each="treatment : ${allTreatments}">
             <a href="#" class="unit_link"></a>
             <img class="treatment_icon" th:src="${treatment.getImageUrl()}" alt="">
-            
 
-            <a th:href="@{/treatments/{id}(id=${treatment.id})}"
+
+            <a th:if="${role.getName().toString().equals('DENTAL_ASSISTANT')} or ${role.getName().toString().equals('DOCTOR')} or ${role.getName().toString().equals('MANAGER')} or ${role.getName().toString().equals('ADMIN')} and ${currentPage == 'treatmentsPage'}"
+               th:each="role : ${@userSession.getRoles()}"
+               th:href="@{/treatments/{id}(id=${treatment.id})}"
                data-toggle="modal"
                data-target="#confirmationModal"
                onclick="setDeleteUrl(this)"
@@ -61,7 +61,7 @@
                 <p th:text="${treatment.getDescription()}"></p>
             </div>
         </div>
-        
+
         <th:block th:include="~{fragments/popups/confirm}"></th:block>
         <th:block th:include="~{fragments/popups/success}"></th:block>
     </div>
