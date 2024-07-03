@@ -11,4 +11,6 @@ public class ControllerAdv {
     public NewsletterDto newsletterDto() {
         return new NewsletterDto();
     }
+    
+    
 }

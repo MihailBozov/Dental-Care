@@ -16,6 +16,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.password.Pbkdf2PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.filter.CorsFilter;
 
 
 @Configuration
@@ -42,6 +45,7 @@ public class SecurityConfiguration {
                         .requestMatchers("/users/**").hasAnyRole(UserRole.ADMIN.name(), UserRole.MANAGER.name(), UserRole.DENTIST.name(), UserRole.DENTAL_ASSISTANT.name())
                         .requestMatchers("/doctors/**").hasAnyRole(UserRole.ADMIN.name(), UserRole.MANAGER.name())
                         .requestMatchers("/managers/**").hasRole(UserRole.ADMIN.name())
+                        .requestMatchers("/error/**").permitAll()
                         
                         .requestMatchers("/treatments/newTreatment/**").hasAnyRole(UserRole.ADMIN.name(), UserRole.MANAGER.name(), UserRole.DENTIST.name(), UserRole.DENTAL_ASSISTANT.name())
                         
@@ -107,6 +111,18 @@ public class SecurityConfiguration {
     @Bean
     public PasswordEncoder passwordEncoder() {
         return Pbkdf2PasswordEncoder.defaultsForSpringSecurity_v5_8();
+    }
+    
+    @Bean
+    public CorsFilter corsFilter() {
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        CorsConfiguration configuration = new CorsConfiguration();
+        configuration.setAllowCredentials(true);
+        configuration.addAllowedOrigin("http://localhost:5173");
+        configuration.addAllowedHeader("*");
+        configuration.addAllowedMethod("*");
+        source.registerCorsConfiguration("/**", configuration);
+        return new CorsFilter(source);
     }
 
 

@@ -38,10 +38,6 @@
 
         <th:block th:include="~{fragments/popups/add-treatment}"></th:block>
 
-        <!--        @{/treatments/{id}(id=${treatment.id})}-->
-        <!--        data-toggle="modal"-->
-        <!--        data-target="#confirmationModal"-->
-
         <div class="treatment_unit" th:each="treatment : ${allTreatments}">
             <a href="#" class="unit_link"></a>
             <img class="treatment_icon" th:src="${treatment.getImage().getUrl()}" alt="">

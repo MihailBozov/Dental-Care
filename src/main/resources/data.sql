@@ -86,39 +86,39 @@ VALUES ('pattern.svg', '/images/main/pattern.svg');
 INSERT INTO image_categories_images(image_category_id, image_id)
 VALUES (5, 14);
 INSERT INTO images(name, url)
-VALUES ('dr_Cassandra.png', '/images/profile/dr_Cassandra.png');
+VALUES ('dr_Cassandra.png', '/images/profiles/dr_Cassandra.png');
 INSERT INTO image_categories_images(image_category_id, image_id)
 VALUES (1, 15);
 INSERT INTO images(name, url)
-VALUES ('dr_James.png', '/images/profile/dr_James.png');
+VALUES ('dr_James.png', '/images/profiles/dr_James.png');
 INSERT INTO image_categories_images(image_category_id, image_id)
 VALUES (1, 16);
 INSERT INTO images(name, url)
-VALUES ('da_Evelyn.png', '/images/profile/da_Evelyn.png');
+VALUES ('da_Evelyn.png', '/images/profiles/da_Evelyn.png');
 INSERT INTO image_categories_images(image_category_id, image_id)
 VALUES (1, 17);
 INSERT INTO images(name, url)
-VALUES ('dr_Sophia.png', '/images/profile/dr_Sophia.png');
+VALUES ('dr_Sophia.png', '/images/profiles/dr_Sophia.png');
 INSERT INTO image_categories_images(image_category_id, image_id)
 VALUES (1, 18);
 INSERT INTO images(name, url)
-VALUES ('dr_Isabella.png', '/images/profile/dr_Isabella.png');
+VALUES ('dr_Isabella.png', '/images/profiles/dr_Isabella.png');
 INSERT INTO image_categories_images(image_category_id, image_id)
 VALUES (1, 19);
 INSERT INTO images(name, url)
-VALUES ('da_Daniel.png', '/images/profile/da_Daniel.png');
+VALUES ('da_Daniel.png', '/images/profiles/da_Daniel.png');
 INSERT INTO image_categories_images(image_category_id, image_id)
 VALUES (1, 20);
 INSERT INTO images(name, url)
-VALUES ('Yanica_img.png', '/images/profile/Yanica_img.png');
+VALUES ('Yanica_img.png', '/images/profiles/Yanica_img.png');
 INSERT INTO image_categories_images(image_category_id, image_id)
 VALUES (1, 21);
 INSERT INTO images(name, url)
-VALUES ('Emma_img.png', '/images/profile/Emma_img.png');
+VALUES ('Emma_img.png', '/images/profiles/Emma_img.png');
 INSERT INTO image_categories_images(image_category_id, image_id)
 VALUES (1, 22);
 INSERT INTO images(name, url)
-VALUES ('Kale_img.png', '/images/profile/Kale_img.png');
+VALUES ('Kale_img.png', '/images/profiles/Kale_img.png');
 INSERT INTO image_categories_images(image_category_id, image_id)
 VALUES (1, 23);
 
