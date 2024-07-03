@@ -1,5 +1,6 @@
 package bg.softuni.website.web;
 
+import bg.softuni.website.models.dtos.EditTreatmentDto;
 import bg.softuni.website.models.dtos.NewTreatmentDto;
 import bg.softuni.website.models.dtos.TreatmentDto;
 import bg.softuni.website.services.TreatmentService;
@@ -26,7 +27,7 @@ public class TreatmentsController {
     
     @ModelAttribute("allTreatments")
     public List<TreatmentDto> initTreatmentDto() {
-        return this.treatmentService.getAllTreatments();
+        return this.treatmentService.getAllTreatmentDtos();
     }
     
     
@@ -64,28 +65,56 @@ public class TreatmentsController {
         return "redirect:/treatments?success=true";
     }
     
-    @PostMapping("/treatments/{id}")
-    public String deleteTreatment(@PathVariable Long id, Model model) throws IOException {
+    @DeleteMapping("/treatments/{id}")
+    public String deleteTreatment(@PathVariable Long id) throws IOException {
         
         try {
             boolean isDeleted = this.treatmentService.deleteTreatment(id);
             if (isDeleted) {
                 return "redirect:/treatments?success=true";
-            } else {
+            }
+            else {
                 return "redirect:/treatments?success=false";
             }
-        }catch (Exception e) {
+        } catch (Exception e) {
             return "redirect:/treatments?success=false";
         }
         
-
-
-//        if (isDeleted) {
-//            return ResponseEntity.noContent().build();
-//        } else {
-//            return ResponseEntity.notFound().build();
-//        }
+        
     }
     
+    @ModelAttribute("editTreatmentDto")
+    public EditTreatmentDto initEditTreatmentDto() {
+        return new EditTreatmentDto();
+    }
     
+    @GetMapping("treatments/{id}")
+    @ResponseBody
+    public EditTreatmentDto editTreatment(@PathVariable Long id) {
+        return this.treatmentService.getEditTreatmentDto(id);
+    }
+    
+    @PutMapping("treatments/{id}")
+    public String editTreatment(@PathVariable Long id,
+                                @Valid EditTreatmentDto editTreatmentDto,
+                                BindingResult bindingResult,
+                                RedirectAttributes redirectAttributes) throws IOException {
+        
+        
+        if (bindingResult.hasErrors()) {
+            redirectAttributes.addFlashAttribute("editTreatmentDto", editTreatmentDto);
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.editTreatmentDto", bindingResult);
+            
+            return "redirect:/treatments";
+        }
+        
+        
+        boolean isEdited = this.treatmentService.editTreatment(editTreatmentDto, id);
+        if (isEdited) {
+            return "redirect:/treatments?success=true";
+        }
+        return "redirect:/treatments?success=false";
+        
+        
+    }
 }

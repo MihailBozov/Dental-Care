@@ -22,6 +22,11 @@ spring:
   sql:
     init:
       mode: never
+      
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
   
   servlet:
     multipart:
@@ -29,7 +34,9 @@ spring:
       max-request-size: 50MB
     
 
-remember.me.key: ${REMEMBER_ME_KEY:topSecret}
+remember:
+  me:
+    key: ${REMEMBER_ME_KEY:topSecret}
 
 logging:
   level:

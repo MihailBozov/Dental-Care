@@ -13,4 +13,6 @@ import java.util.Optional;
 public interface TreatmentRepository extends JpaRepository<Treatment, Long> {
     
     Optional<Treatment> findByName(String name);
+    
+    List<Treatment> findAllByIdNot(Long id);
 }

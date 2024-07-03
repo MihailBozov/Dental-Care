@@ -36,6 +36,12 @@
         </a>
 
 
+        <!--        <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px"-->
+        <!--             fill="#000000">-->
+        <!--            <path d="M366.35-314.77 480.5-430.54l115.15 115.77 34.54-35.15-114.15-115.77 114.15-116.16L595.65-617 480.5-501.23 366.35-617l-35.54 35.15 115.15 116.16-115.15 115.77 35.54 35.15ZM223.08-143.08V-741h-40.31v-43.61h168.92v-27.7h256.93v27.47h168.92V-741h-40.36v597.92h-514.1Zm43.84-43.84h426.46V-741H266.92v554.08Zm0-554.08v554.08V-741Z"/>-->
+        <!--        </svg>-->
+
+
         <th:block th:include="~{fragments/popups/add-treatment}"></th:block>
 
         <div class="treatment_unit" th:each="treatment : ${allTreatments}">
@@ -43,23 +49,38 @@
             <img class="treatment_icon" th:src="${treatment.getImage().getUrl()}" alt="">
 
             <form id="deleteForm" sec:authorize="hasAnyRole('ADMIN', 'MANAGER', 'DENTIST', 'DENTAL_ASSISTANT')"
-                  th:method="post"
+                  th:method="delete"
                   th:action="@{/treatments/{id}(id=${treatment.getId()})}">
                 <!-- Other form fields can go here if needed -->
-                <button type="button" onclick="getForm(this)"  class="delete_icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#000000">
-                        <path d="M366.35-314.77 480.5-430.54l115.15 115.77 34.54-35.15-114.15-115.77 114.15-116.16L595.65-617 480.5-501.23 366.35-617l-35.54 35.15 115.15 116.16-115.15 115.77 35.54 35.15ZM223.08-143.08V-741h-40.31v-43.61h168.92v-27.7h256.93v27.47h168.92V-741h-40.36v597.92h-514.1Zm43.84-43.84h426.46V-741H266.92v554.08Zm0-554.08v554.08V-741Z"/>
-                    </svg>
+                <button type="button" onclick="getDeleteForm(this)" class="delete_icon">
+<!--                    <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px"-->
+<!--                         fill="#000000">-->
+<!--                        <path d="M366.35-314.77 480.5-430.54l115.15 115.77 34.54-35.15-114.15-115.77 114.15-116.16L595.65-617 480.5-501.23 366.35-617l-35.54 35.15 115.15 116.16-115.15 115.77 35.54 35.15ZM223.08-143.08V-741h-40.31v-43.61h168.92v-27.7h256.93v27.47h168.92V-741h-40.36v597.92h-514.1Zm43.84-43.84h426.46V-741H266.92v554.08Zm0-554.08v554.08V-741Z"/>-->
+<!--                    </svg>-->
+                    <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#000000"><path d="M369.46-317.46 481-430.23l112.54 112.77 32.92-33.16-111.54-112.76 111.54-113.54-32.92-33.16L481-497.31 369.46-610.08l-33.92 33.16 112.54 113.54-112.54 112.76 33.92 33.16ZM225.23-144v-591.85H185v-43.77h168.15v-30.15h254.7v30.15H776v43.77h-40.23V-144H225.23ZM269-187.77h423v-548.08H269v548.08Zm0-548.08v548.08-548.08Z"/></svg>
                 </button>
             </form>
+                <button  th:data-id="${treatment.getId()}" class="edit_icon" onclick="getEditForm(this)">
+<!--                    <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px"-->
+<!--                         fill="#000000">-->
+<!--                        <path d="M186.92-186.92h39.7l468.84-468.43-39.5-39.5-469.04 468.04v39.89Zm-43.84 43.84v-101.15l589.84-590.31 103.12 101.42-591.81 590.04H143.08Zm629.38-590.73-38.04-37.65 38.04 37.65Zm-96.59 58.94-19.91-19.98 39.5 39.5-19.59-19.52Z"/>-->
+<!--                    </svg>-->
+                    <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#000000"><path d="M160-160v-640h412.69l-30.77 30.77H190.77v578.46h578.46v-356.46L800-578v418H160Zm320-320Zm-80 80v-104.62l386.31-386.3 104.15 100.77L500.77-400H400Zm444.92-388.85L787.85-849l57.07 60.15ZM430.77-430.77h57.31l276.07-276.08-28.38-28.92-31.46-29.69-273.54 273.31v61.38Zm305-305-31.46-29.69 31.46 29.69 28.38 28.92-28.38-28.92Z"/></svg>
+                    
+                </button>
+        
             <h2 class="treatment_title" th:text="${treatment.getName()}"></h2>
             <div class="treatment_description">
                 <p th:text="${treatment.getDescription()}"></p>
             </div>
         </div>
 
-        <th:block th:include="~{fragments/popups/confirmDelete}"></th:block>
+
+        <th:block th:include="~{fragments/popups/edit-treatment}"></th:block>
+        <th:block th:include="~{fragments/popups/failure}"></th:block>
+        <th:block th:include="~{fragments/popups/confirm-delete}"></th:block>
         <th:block th:include="~{fragments/popups/success}"></th:block>
+
     </div>
 
     <a href="/treatments" class="all_units" th:if="${currentPage == 'homePage'}">All Treatments →</a>

@@ -12,3 +12,15 @@ form .input_unit {
 form .field_label {
     font-family: 'Poppins', serif;
 }
+
+.modal_body form small {
+    font-family: 'Fredoka', sans-serif;
+    padding: 4px 4px;
+    font-size: 0.9rem;
+    color: var(--w_white-fog);
+    letter-spacing: 0.025em;
+}
+
+#newTreatmentModal::-webkit-scrollbar {
+    display: none;
+}

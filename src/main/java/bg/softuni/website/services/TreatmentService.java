@@ -1,6 +1,7 @@
 package bg.softuni.website.services;
 
 import bg.softuni.website.models.dtos.NewTreatmentDto;
+import bg.softuni.website.models.dtos.EditTreatmentDto;
 import bg.softuni.website.models.dtos.TreatmentDto;
 import bg.softuni.website.models.entities.Image;
 import bg.softuni.website.models.entities.Treatment;
@@ -29,7 +30,7 @@ public class TreatmentService {
         this.modelMapper = modelMapper;
     }
     
-    public List<TreatmentDto> getAllTreatments() {
+    public List<TreatmentDto> getAllTreatmentDtos() {
         List<Treatment> allTreatments = treatmentRepository.findAll();
         List<TreatmentDto> treatmentDtos = new ArrayList<>();
         
@@ -65,4 +66,38 @@ public class TreatmentService {
         return false;
     }
     
+    public boolean editTreatment(EditTreatmentDto editTreatmentDto, Long id) throws IOException {
+        
+        try {
+            Treatment treatment = getTreatment(id);
+            
+            String formName = "formNewTreatment";
+            MultipartFile file = editTreatmentDto.getImage();
+            
+            Image image = this.imageService.updateImage(file, treatment.getImage(), formName);
+            treatment = this.modelMapper.map(editTreatmentDto, Treatment.class);
+            
+            treatment.setName(editTreatmentDto.getName());
+            treatment.setDescription(editTreatmentDto.getDescription());
+            treatment.setPrice(editTreatmentDto.getPrice());
+            treatment.setImage(image);
+            
+            this.treatmentRepository.saveAndFlush(treatment);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+    
+    public Treatment getTreatment(Long id) {
+        return this.treatmentRepository.findById(id).get();
+    }
+    
+    public EditTreatmentDto getEditTreatmentDto(Long id) {
+        return this.modelMapper.map(this.treatmentRepository.findById(id), EditTreatmentDto.class);
+    }
+    
+    public List<Treatment> getAllTreatmentsFiltered(Long id) {
+        return this.treatmentRepository.findAllByIdNot(id);
+    }
 }

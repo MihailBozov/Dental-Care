@@ -1,42 +1,31 @@
-.unit_link {
-    position: absolute;
-    background: transparent;
-
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-
-}
-
-.delete_icon {
+.edit_icon {
     position: absolute;
     top: 10px;
-    right: 10px;
+    right: 42px;
     transition: var(--w_transition-4);
     overflow: hidden;
 }
 
-button[class="delete_icon"] {
+button[class="edit_icon"] {
     border: none;
     background: transparent;
 }
 
-.delete_icon svg {
+.edit_icon svg {
     height: 1.9rem;
     width: 1.9rem;
     border-radius: 0.4rem;
 }
 
-.delete_icon svg path {
+.edit_icon svg path {
     fill: var(--w_black-light);
 }
 
-.delete_icon svg:hover {
-    background: var(--w_danger);
+.edit_icon svg:hover {
+    background: var(--w_ocean);
     transform: var(--w_transform-scale-5);
 }
 
-.delete_icon svg:hover path {
+.edit_icon svg:hover path {
     fill: var(--w_white);
 }

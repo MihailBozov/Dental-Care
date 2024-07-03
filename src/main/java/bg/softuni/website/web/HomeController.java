@@ -33,7 +33,7 @@ public class HomeController {
     
     @ModelAttribute("allTreatments")
     public List<TreatmentDto> initTreatmentDto() {
-        return this.treatmentService.getAllTreatments();
+        return this.treatmentService.getAllTreatmentDtos();
     }
     
     @ModelAttribute("allTeamMembers")
