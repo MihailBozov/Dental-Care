@@ -60,7 +60,7 @@ public class TreatmentsController {
             return "redirect:/treatments";
         }
         
-        this.treatmentService.addNewTreatment(newTreatmentDto);
+        this.treatmentService.newTreatment(newTreatmentDto);
         
         return "redirect:/treatments?success=true";
     }

@@ -1,5 +1,6 @@
 
 .treatmentSection {
+    background: var(--w_bg_color);
     max-width: 1200px;
     text-align: center;
     padding: 20px 40px;
@@ -104,6 +105,7 @@ svg.new_icon {
 .treatment_container .new_treatment:hover {
     border: var(--w_border-success-1);
 }
+
 
 .treatment_container .new_treatment:hover .new_icon {
     background: var(--w_success);

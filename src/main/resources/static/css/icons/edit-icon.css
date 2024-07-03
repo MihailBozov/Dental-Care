@@ -1,7 +1,7 @@
 .edit_icon {
     position: absolute;
     top: 10px;
-    right: 42px;
+    right: 43px;
     transition: var(--w_transition-4);
     overflow: hidden;
 }
@@ -12,12 +12,15 @@ button[class="edit_icon"] {
 }
 
 .edit_icon svg {
+    padding-top: 2px;
     height: 1.9rem;
     width: 1.9rem;
     border-radius: 0.4rem;
 }
 
 .edit_icon svg path {
+    stroke-width: 0.8em;
+    stroke: var(--w_black-light);
     fill: var(--w_black-light);
 }
 
@@ -27,5 +30,6 @@ button[class="edit_icon"] {
 }
 
 .edit_icon svg:hover path {
+    stroke: var(--w_white);
     fill: var(--w_white);
 }

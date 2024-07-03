@@ -15,4 +15,5 @@ public interface ImageRepository extends JpaRepository<Image, Long> {
     List<Image> findAllQuoteImagesOrdered();
     
     Optional<Image> findByName(String originalFilename);
+    
 }

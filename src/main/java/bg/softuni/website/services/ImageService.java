@@ -28,7 +28,7 @@ public class ImageService {
         this.imageRepository = imageRepository;
     }
     
-    
+    @Transactional
     public Image saveImage(MultipartFile file, String formName) throws IOException {
         String uploadDir;
         switch (formName) {
@@ -49,6 +49,7 @@ public class ImageService {
         Files.write(filePath, file.getBytes());
         
         Image image = new Image();
+        
         image.setName(file.getOriginalFilename());
         image.setUrl("/images/treatments/" + file.getOriginalFilename());
         
@@ -59,24 +60,50 @@ public class ImageService {
         return image;
     }
     
-    public void deleteImage(Image image) throws IOException {
-        this.imageRepository.deleteById(image.getId());
-        String name = image.getName();
-        Path filePath = Path.of(formNewTreatmentUploadDir, name);
-        Files.delete(filePath);
-    }
-    
-   
-    public Image updateImage(MultipartFile newImage, Image oldImage, String formName) throws IOException {
+    @Transactional
+    public Image updateImage(MultipartFile newImage, String formName, Optional<Image> oldImage) throws IOException {
         
         try {
             if (newImage == null || newImage.isEmpty()) {
                 throw new IOException();
             }
-            deleteImage(oldImage);
-            return saveImage(newImage, formName);
+            
+            String uploadDir;
+            switch (formName) {
+                case "formNewTreatment":
+                    uploadDir = formNewTreatmentUploadDir;
+                    break;
+                default:
+                    throw new IllegalArgumentException("!!!   You Really Broke It   !!!");
+            }
+            
+            String fileName = newImage.getOriginalFilename();
+            Path filePath = Paths.get(uploadDir, fileName);
+            Files.write(filePath, newImage.getBytes());
+            
+            Image image = oldImage.get();
+            Path oldFlePath = Path.of(formNewTreatmentUploadDir, image.getName());
+            Files.delete(oldFlePath);
+            
+            image.setName(newImage.getOriginalFilename());
+            image.setUrl("/images/treatments/" + newImage.getOriginalFilename());
+            
+            //  TODO set the user from security
+//        image.setAddedByUserEntity(userSession.getUser());
+            
+            this.imageRepository.saveAndFlush(image);
+            return image;
+            
         } catch (Exception e) {
-            return oldImage;
+            return oldImage.get();
         }
     }
+    
+    @Transactional
+    public void deleteImage(Image image) throws IOException {
+        this.imageRepository.delete(image);
+        Path filePath = Path.of(formNewTreatmentUploadDir, image.getName());
+        Files.delete(filePath);
+    }
+    
 }

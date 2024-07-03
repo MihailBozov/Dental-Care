@@ -1,0 +1,18 @@
+:root {
+    --w_bg_color: rgba(255, 255, 255, 0);
+    --w_bg_secondary_color: rgba(0, 0, 0, 0.90);
+   
+
+    --w_bg_tertiary_color: rgba(0, 0, 0, 0.80);
+    --w_text_primary_color: rgba(0, 0, 0, 0.95);
+    --w_text_secondary_color: rgba(0, 0, 0, 0.90);
+    --w_text_fog_color: rgba(0, 0, 0, 0.85);
+    
+}
+
+[data-theme="dark"] {
+    --w_bg_color: rgba(0, 0, 0, 0.80);
+    --w_text_primary_color:  rgba(255, 255, 255, 0.95);
+    --w_text_secondary_color: rgba(255, 255, 255, 0.90);
+    --w_text_fog_color: rgba(255, 255, 255, 0.85);
+}

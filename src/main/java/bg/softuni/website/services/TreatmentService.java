@@ -41,7 +41,7 @@ public class TreatmentService {
         return treatmentDtos;
     }
     
-    public void addNewTreatment(NewTreatmentDto newTreatmentDto) throws IOException {
+    public void newTreatment(NewTreatmentDto newTreatmentDto) throws IOException {
         String formName = "formNewTreatment";
         MultipartFile file = newTreatmentDto.getImage();
         
@@ -56,17 +56,18 @@ public class TreatmentService {
         this.treatmentRepository.saveAndFlush(treatment);
     }
     
-    public boolean deleteTreatment(Long id) throws IOException {
+    public boolean deleteTreatment(long id) throws IOException {
         Optional<Treatment> treatment = this.treatmentRepository.findById(id);
         if (treatment.isPresent()) {
-            this.imageService.deleteImage(treatment.get().getImage());
+            Image image = treatment.get().getImage();
             this.treatmentRepository.delete(treatment.get());
+            this.imageService.deleteImage(image);
             return true;
         }
         return false;
     }
     
-    public boolean editTreatment(EditTreatmentDto editTreatmentDto, Long id) throws IOException {
+    public boolean editTreatment(EditTreatmentDto editTreatmentDto, long id) throws IOException {
         
         try {
             Treatment treatment = getTreatment(id);
@@ -74,8 +75,8 @@ public class TreatmentService {
             String formName = "formNewTreatment";
             MultipartFile file = editTreatmentDto.getImage();
             
-            Image image = this.imageService.updateImage(file, treatment.getImage(), formName);
-            treatment = this.modelMapper.map(editTreatmentDto, Treatment.class);
+            
+            Image image = this.imageService.updateImage(file, formName, Optional.of(treatment.getImage()));
             
             treatment.setName(editTreatmentDto.getName());
             treatment.setDescription(editTreatmentDto.getDescription());
