@@ -4,9 +4,12 @@
     text-align: center;
     padding: 20px 40px;
     margin: 30px auto 10px;
-    background-color: var(--w_tone-white);
     border-radius: 8px;
     box-shadow: var(--w_shadow-gray-light);
+}
+
+.testimonials_section:hover{
+    background-color: var(--w_tone-white);
 }
 
 .testimonials_section h2 {

@@ -44,6 +44,9 @@ public class UserEntity {
     @Column(name = "phone_number")
     private String phoneNumber;
     
+    @Column(name = "is_active")
+    private Boolean isActive;
+    
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "user_health_conditions",
             joinColumns = @JoinColumn(name = "user"), 
@@ -52,8 +55,8 @@ public class UserEntity {
     
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "user_roles",
-            joinColumns = @JoinColumn(name = "user"),
-            inverseJoinColumns = @JoinColumn(name = "roles"))
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
     private List<Role> roles;
     
     @ManyToMany(fetch = FetchType.EAGER)
@@ -93,6 +96,7 @@ public class UserEntity {
         this.receivedMessages = new ArrayList<>();
         this.createdTreatments = new ArrayList<>();
         this.addedImages = new ArrayList<>();
+        this.isActive = false;
     }
     
     @PrePersist

@@ -34,7 +34,6 @@ public class RegisterDto {
     @Size(max = 30, message = "Oops! Your password is too long. Should be less than 30 characters.")
     private String password;
     
-    
     private String confirmPassword;
     
 }

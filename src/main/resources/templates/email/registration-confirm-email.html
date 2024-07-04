@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+</head>
+<body>
+    <h1>Hello <span th:text="${firstName}"></span></h1>
+    <p>Please follow the link to activate your account:</p>
+    <a th:href="@{http://localhost:8080/activate-account?email=${email}}">Activate Account</a>
+</body>
+</html>
+
