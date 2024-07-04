@@ -42,7 +42,7 @@
 
 .treatment_container .treatment_unit {
     background: var(--w_white);
-    padding: 1rem;
+    padding: 1rem 1rem 1.2rem;
     text-align: center;
     cursor: pointer;
     border: var(--w_border-transparent-1);
@@ -70,6 +70,7 @@
 
 
 .treatment_container .treatment_unit:hover p {
+    text-overflow: ellipsis;
     color: var(--w_black);
 }
 
@@ -83,6 +84,7 @@
 .treatment_container .treatment_title {
     color: var(--w_ocean);
     font-size: 1.5em;
+    text-overflow: ellipsis;
     margin: 0 auto 1rem;
 }
 

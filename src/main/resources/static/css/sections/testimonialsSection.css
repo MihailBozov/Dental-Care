@@ -47,6 +47,7 @@
     grid-auto-flow: row;
     grid-template-rows: 1.7fr 1fr;
     max-width: 400px;
+    max-height: 500px;
     border-radius: 10px;
     border: var(--w_border-transparent-1);
     overflow: hidden;

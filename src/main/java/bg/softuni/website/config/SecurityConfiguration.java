@@ -46,7 +46,7 @@ public class SecurityConfiguration {
                         .requestMatchers("/doctors/**").hasAnyRole(UserRole.ADMIN.name(), UserRole.MANAGER.name())
                         .requestMatchers("/managers/**").hasRole(UserRole.ADMIN.name())
                         .requestMatchers("/error/**").permitAll()
-                        
+                        .requestMatchers("/newsletter").permitAll()
                         .requestMatchers("/treatments/newTreatment/**").hasAnyRole(UserRole.ADMIN.name(), UserRole.MANAGER.name(), UserRole.DENTIST.name(), UserRole.DENTAL_ASSISTANT.name())
                         
                         

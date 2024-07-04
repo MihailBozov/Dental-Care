@@ -6,6 +6,7 @@ import bg.softuni.website.models.dtos.TreatmentDto;
 import bg.softuni.website.models.entities.Image;
 import bg.softuni.website.models.entities.Treatment;
 import bg.softuni.website.repositories.TreatmentRepository;
+import jakarta.transaction.Transactional;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -56,6 +57,7 @@ public class TreatmentService {
         this.treatmentRepository.saveAndFlush(treatment);
     }
     
+    @Transactional(rollbackOn = Exception.class)
     public boolean deleteTreatment(long id) throws IOException {
         Optional<Treatment> treatment = this.treatmentRepository.findById(id);
         if (treatment.isPresent()) {
@@ -67,6 +69,7 @@ public class TreatmentService {
         return false;
     }
     
+    @Transactional(rollbackOn = Exception.class)
     public boolean editTreatment(EditTreatmentDto editTreatmentDto, long id) throws IOException {
         
         try {
