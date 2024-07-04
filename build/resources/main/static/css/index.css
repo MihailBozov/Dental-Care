@@ -10,10 +10,9 @@ html, body {
     right: 0;
     bottom: 0;
     z-index: -3;
-    
 }
 
-.back_ground_window {
+.background_window {
     object-fit: cover;
     position: fixed;
     top: 0;
@@ -23,6 +22,10 @@ html, body {
     min-width: 100%;
     min-height: 100%;
 
+}
+
+.background_window image {
+    filter: invert(100%);
 }
 
 .hero_text {

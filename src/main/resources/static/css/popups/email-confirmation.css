@@ -1,0 +1,57 @@
+
+#confirmation_email_sent .modal-header svg {
+    margin:-0.3em 0.5em -0.3em 0;
+    width: 3em;
+    height: auto;
+    fill: var(--w_warning);
+    stroke-width: -0.2em;
+}
+
+#confirmation_email_sent .modal_body {
+    text-align: left;
+    padding: 1.3em 0.4em;
+    display: grid;
+    gap: 0;
+    align-items: center;
+}
+
+
+#confirmation_email_sent .modal_body h1 {
+    margin: 0 0 16px 16px;
+    font-size: 1.5em;
+}
+
+.modal_body > :last-child {
+    margin-bottom: 0 !important;
+}
+
+
+#confirmation_email_sent .text_confirmation {
+    font-family: 'Readex Pro', sans-serif;
+    font-weight: 350;
+    max-width: 400px;
+    color: var(--w_black);
+    text-align: start;
+    font-size: 1em;
+    margin-left: 1em;
+}
+
+#confirmation_email_sent .text_confirmation span.confirmation_highlight {
+    color: var(--w_ocean);
+}
+
+#confirmation_email_sent .middle_sentence {
+    padding: 0;
+}
+
+#confirmation_email_sent .text_confirmation span.name_owner {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.2em;
+    font-weight: 400;
+    color: var(--w_ocean);
+}
+
+
+#confirmationModal .modal-footer {
+    /*padding: 16px;*/
+}

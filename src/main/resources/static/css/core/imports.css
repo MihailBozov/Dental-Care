@@ -13,9 +13,12 @@
 @import url("../popups/success.css");
 @import url("../popups/failure.css");
 @import url("../popups/confirm.css");
+@import url("../popups/email-confirmation.css");
+@import url("../popups/email-confirmed.css");
 @import url("../icons/delete-icon.css");
 @import url("../icons/edit-icon.css");
 @import url("../all-units.css");
 @import url("../error/404.css");
+
 
 

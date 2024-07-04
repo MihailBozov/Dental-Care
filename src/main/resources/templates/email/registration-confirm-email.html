@@ -2,12 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hello</title>
+    <title>Dental Care Registration</title>
 </head>
+
 <body>
-    <h1>Hello <span th:text="${firstName}"></span></h1>
-    <p>Please follow the link to activate your account:</p>
-    <a th:href="@{http://localhost:8080/activate-account?email=${email}}">Activate Account</a>
+
+<h1>Hi <span style="color: #4A90E2;" th:text="${userEvent.getFirstName()}"></span></h1>
+<h3 style="font-family: 'Fredoka', sans-serif;
+        font-weight: bold;
+        color: #5a6268">Welcome to Dental Care</h3>
+<h3 style="font-family: 'Fredoka', sans-serif;
+        font-weight: 350;
+        color: #5a6268"><a th:href="@{http://localhost:8080/activate-account/{token}(token=${userEvent.token})}">Activate your account</a></h3>
+
+
+<p><br>Best regards,</p>
+<p>The Dental Care Team</p>
 </body>
 </html>
 

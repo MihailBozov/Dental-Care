@@ -50,11 +50,11 @@ public class AuthController {
             return "redirect:/register";
         }
         
-        // TODO: Registration email with an activation link
         
         this.userService.registerUser(registerDto);
         
-        return "redirect:/login";
+        return "redirect:/?confirmationSent=true&name=" + registerDto.getFirstName()
+                + "&email=" + registerDto.getEmail();
     }
 
 

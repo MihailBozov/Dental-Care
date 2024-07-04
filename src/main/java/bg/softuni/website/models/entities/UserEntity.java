@@ -45,7 +45,7 @@ public class UserEntity {
     private String phoneNumber;
     
     @Column(name = "is_active")
-    private Boolean isActive;
+    private boolean isActive;
     
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "user_health_conditions",

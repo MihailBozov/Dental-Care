@@ -42,10 +42,14 @@ public class MyUserDetailsService implements UserDetailsService {
                 .map(role -> new SimpleGrantedAuthority("ROLE_" + role.getName().name()))
                 .collect(Collectors.toSet());
         
+        if (!userEntity.isActive()) {
+            throw new UsernameNotFoundException("User is not active");
+        }
+        
         return User
                 .withUsername(userEntity.getEmail())
                 .password(userEntity.getPassword())
-                .authorities(roles) 
+                .authorities(roles)
                 .build();
     }
 }
