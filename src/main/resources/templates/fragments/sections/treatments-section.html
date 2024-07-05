@@ -75,14 +75,13 @@
             </div>
         </div>
 
-
-        <th:block th:include="~{fragments/popups/edit-treatment}"></th:block>
-        <th:block th:include="~{fragments/popups/failure}"></th:block>
-        <th:block th:include="~{fragments/popups/confirm-delete}"></th:block>
-        <th:block th:include="~{fragments/popups/success}"></th:block>
-
     </div>
 
     <a href="/treatments" class="all_units" th:if="${currentPage == 'homePage'}">All Treatments →</a>
 
+    <th:block th:include="~{fragments/popups/edit-treatment}"></th:block>
+    <th:block th:include="~{fragments/popups/failure}"></th:block>
+    <th:block th:include="~{fragments/popups/confirm-delete}"></th:block>
+    <th:block th:include="~{fragments/popups/success}"></th:block>
+    
 </section>

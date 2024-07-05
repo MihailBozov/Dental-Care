@@ -16,7 +16,7 @@
     <main style="margin: 0.3em 0">
         <h2 style="display: inline-block; margin: 0.5em 0 0.5em">Hello</h2>
         <h1 style="color: #4A90E2; display: inline-block; margin: 0.5em 0 0.5em 0.2em" th:text="${userEvent.getFirstName()}"></h1>
-        <h2 style="display: inline"> ,</h2>
+        <h2 style="display: inline">,</h2>
         <p style="margin: 0.3em 0">Welcome to Dental Care. Click the link below to activate your account:</p>
         <a style="color: #4A90E2; text-decoration: none; font-family: 'Fredoka', sans-serif; font-size: 1.2em" th:href="@{http://localhost:8080/activate-account/{token}(token=${token})}" class="button">Activate Account</a>
     </main>

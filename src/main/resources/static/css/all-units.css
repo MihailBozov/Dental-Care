@@ -1,5 +1,7 @@
 a[class="all_units"] {
     display: inline-block;
+    justify-self: center;
+    align-self: center;
     font-size: 1.1rem;
     color: var(--w_black-light);
     text-decoration: none;
