@@ -1,0 +1,110 @@
+.not_found {
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.not_found h1 {
+    position: fixed;
+    width: inherit;
+    text-align: center;
+    top: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Fredoka', sans-serif;
+    font-size: 2em;
+
+}
+
+.not_found h1 span {
+    font-size: 0.5em;
+    color: var(--w_black-light);
+}
+
+.error400 {
+    background-image: url("/images/error/400.svg");
+}
+
+.error401 {
+    background-image: url("/images/error/401.svg");
+}
+
+.error402 {
+    background-image: url("/images/error/402.svg");
+}
+
+.error403 {
+    background-image: url("/images/error/403.svg");
+}
+
+.error404 {
+    background-image: url("/images/error/404.svg");
+}
+
+.error405 {
+    background-image: url("/images/error/405.svg");
+}
+
+.error406 {
+    background-image: url("/images/error/406.svg");
+}
+
+.error409 {
+    background-image: url("/images/error/409.svg");
+}
+
+.error410 {
+    background-image: url("/images/error/410.svg");
+}
+
+.error415 {
+    background-image: url("/images/error/415.svg");
+}
+
+.error429 {
+    background-image: url("/images/error/429.svg");
+}
+
+.error451 {
+    background-image: url("/images/error/451.svg");
+}
+
+.error500 {
+    background-image: url("/images/error/500.svg");
+}
+
+.error501 {
+    background-image: url("/images/error/501.svg");
+}
+
+.error502 {
+    background-image: url("/images/error/502.svg");
+}
+
+.error503 {
+    background-image: url("/images/error/503.svg");
+}
+
+.error504 {
+    background-image: url("/images/error/504.svg");
+}
+
+.error505 {
+    background-image: url("/images/error/505.svg");
+}
+
+.error506 {
+    background-image: url("/images/error/506.svg");
+}
+
+.error507 {
+    background-image: url("/images/error/507.svg");
+}
+
+.errorBroken {
+    background-image: url("/images/error/broken.svg");
+}
+
