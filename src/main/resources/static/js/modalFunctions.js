@@ -1,10 +1,15 @@
+document.addEventListener("DOMContentLoaded", () => {
+    showNewTreatmentErrors()
+    showEditTreatmentErrors()
+    showResult()
+    showForgotPasswordErrors()
+    resetPasswordFormErrors()
+});
+
+
 function submitNewTreatmentForm() {
     document.getElementById('newTreatmentForm').submit();
 }
-
-
-document.addEventListener("DOMContentLoaded", showNewTreatmentErrors);
-
 
 function showNewTreatmentErrors() {
     let element = document.querySelector('.modal_container .modal_result');
@@ -14,10 +19,6 @@ function showNewTreatmentErrors() {
     }
 }
 
-
-document.addEventListener("DOMContentLoaded", showEditTreatmentErrors);
-
-
 function showEditTreatmentErrors() {
     let element = document.querySelector('.modal_container .edit_modal_result');
     let hasContent = element && element.textContent.trim() !== null;
@@ -26,14 +27,14 @@ function showEditTreatmentErrors() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", showResult);
-
-
 function showResult() {
     const urlParams = new URLSearchParams(window.location.search);
     const confirmationSent = urlParams.get('confirmationSent');
-    const emailConfirmed = urlParams.get('emailConfirmed')
+    const emailConfirmed = urlParams.get('emailConfirmed');
     const success = urlParams.get('success');
+    const resetPasswordEmailSent = urlParams.get('resetPasswordEmailSent');
+    const resetPassword = urlParams.get('reset-password');
+    const resetPasswordDone = urlParams.get('resetPasswordDone');
 
     const userName = urlParams.get('name');
     const userEmail = urlParams.get('email');
@@ -53,11 +54,24 @@ function showResult() {
     } else if (success === 'true') {
         $('#success').modal('show');
 
-    } else if (
-        confirmationSent === 'false' ||
-        emailConfirmed === 'false' ||
-        success === 'false') {
-        $('#failure').modal('false');
+    } else if (resetPasswordEmailSent === 'true') {
+        $('#success_reset_password_email_sent').modal('show')
+
+    } else if (resetPassword === 'true') {
+        $('#reset_password_modal').modal('show');
+        const  token = urlParams.get('token')
+        if (token != null && token.trim() !== '') {
+            const element = document.querySelector('#reset_password_form .token')
+            element.value = token;
+        }
+        
+    } else if (resetPasswordDone === 'true'){
+        $('#reset_password_done_modal').modal('show');
+        const name = document.querySelector('#reset_password_done_modal span.name_owner');
+        name.textContent = userName;
+        
+    } else if (success === 'false') {
+        $('#failure').modal('show');
     }
 
     const newUrl = window.location.href.split('?')[0];
@@ -65,12 +79,13 @@ function showResult() {
 }
 
 
+
+
 function getDeleteForm(button) {
     $('#confirmationModal').modal('show');
 
     let confirmButton = document.querySelector('#continueWithTheSubmitting');
     confirmButton.addEventListener('click', () => button.closest('form').submit());
-
 }
 
 
@@ -94,4 +109,34 @@ function getEditForm(button) {
     submitEdited.addEventListener('click', () => editForm.submit());
 }
 
+function forgotPasswordFormSend() {
+    const forgotPasswordForm = document.querySelector('#forgot_password_form');
+    forgotPasswordForm.submit();
+}
+
+function showForgotPasswordModal() {
+    $('#forgot_password_modal').modal('show')
+}
+
+function showForgotPasswordErrors() {
+    let element = document.querySelector('.modal_container .forgot_password_result');
+    let hasContent = element && element.textContent.trim() !== null;
+    if (hasContent) {
+        $('#forgot_password_modal').modal('show');
+    }
+}
+
+function resetPasswordFormSend() {
+    const resetPasswordForm = document.querySelector('#reset_password_form');
+    resetPasswordForm.submit();
+}
+
+
+function resetPasswordFormErrors() {
+    let element = document.querySelector('#reset_password_modal .reset_results');
+    let hasContent = element && element.textContent.trim() !== '';
+    if (hasContent) {
+        $('#reset_password_modal').modal('show');
+    }
+}
 

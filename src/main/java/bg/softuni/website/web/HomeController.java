@@ -1,5 +1,6 @@
 package bg.softuni.website.web;
 
+import bg.softuni.website.models.dtos.ResetPasswordDto;
 import bg.softuni.website.models.dtos.TeamDto;
 import bg.softuni.website.models.dtos.TestimonialDto;
 import bg.softuni.website.models.dtos.TreatmentDto;
@@ -51,6 +52,9 @@ public class HomeController {
         model.addAttribute("currentPage", "homePage");
         return "index";
     }
-
-   
+    
+    @ModelAttribute("resetPasswordDto")
+    public ResetPasswordDto resetPasswordDto() {
+        return new ResetPasswordDto();
+    }
 }

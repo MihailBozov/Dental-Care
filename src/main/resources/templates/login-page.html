@@ -12,7 +12,9 @@
 <form class="login_form"
       th:method="post"
       th:action="@{/login}">
-    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+    <input type="hidden" 
+           th:name="${_csrf.parameterName}" 
+           th:value="${_csrf.token}"/>
 
     <div id="container_login_form" class="container justify-content-center align-items-center">
         <h2 class="text-secondary mb-4">Login</h2>
@@ -75,22 +77,18 @@
         <button type="submit" class="login_button form-group btn btn-primary">Login</button>
 
         <div class="d-inline-flex gap-1 py-2 mb-1 forgot_password_toggle">
-            <a class="" data-bs-toggle="collapse" href="#collapseForgotPassword" role="button" aria-expanded="false"
-               aria-controls="collapseForgotPassword">
+            <a class="" data-bs-toggle="collapse" role="button" onclick="showForgotPasswordModal()" aria-controls="forgot_password_modal">
                 Forgot password
             </a>
-        </div>
-        <div class="collapse" id="collapseForgotPassword">
-            <div class="card card-body ">
-                Looks like you forgot your password...<br>
-                We wish you our best!
-            </div>
         </div>
 
     </div>
 </form>
 
 <footer th:replace="~{/fragments/footer}"></footer>
+
+<th:block th:include="~{/fragments/popups/password-forgot}"></th:block>
+<th:block th:include="~{/fragments/popups/password-reset-email-sent}"></th:block>
 
 </body>
 </html>

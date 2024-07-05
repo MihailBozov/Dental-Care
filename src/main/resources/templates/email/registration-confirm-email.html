@@ -7,17 +7,26 @@
 
 <body>
 
-<h1>Hi <span style="color: #4A90E2;" th:text="${userEvent.getFirstName()}"></span></h1>
-<h3 style="font-family: 'Fredoka', sans-serif;
-        font-weight: bold;
-        color: #5a6268">Welcome to Dental Care</h3>
-<h3 style="font-family: 'Fredoka', sans-serif;
-        font-weight: 350;
-        color: #5a6268"><a th:href="@{http://localhost:8080/activate-account/{token}(token=${userEvent.token})}">Activate your account</a></h3>
+<div style="max-width: 1000px;
+            font-family: 'Fredoka', sans-serif;
+            color: #545b62">
+    <header>
+        <h1 style="margin: 0.1em 0 0 0">Confirmation Email</h1>
+    </header>
+    <main style="margin: 0.3em 0">
+        <h2 style="display: inline-block; margin: 0.5em 0 0.5em">Hello</h2>
+        <h1 style="color: #4A90E2; display: inline-block; margin: 0.5em 0 0.5em 0.2em" th:text="${userEvent.getFirstName()}"></h1>
+        <h2 style="display: inline"> ,</h2>
+        <p style="margin: 0.3em 0">Welcome to Dental Care. Click the link below to activate your account:</p>
+        <a style="color: #4A90E2; text-decoration: none; font-family: 'Fredoka', sans-serif; font-size: 1.2em" th:href="@{http://localhost:8080/activate-account/{token}(token=${token})}" class="button">Activate Account</a>
+    </main>
+    <footer style="margin: 0.3em 0">
+        <p style="margin: 0.3em 0">We hope you have an incredible experience using Dental Care!</p>
+        <p style="margin: 0.3em 0"><br>Best regards,</p>
+        <p style="margin: 0.3em 0">The Dental Care Team</p>
+    </footer>
+</div>
 
-
-<p><br>Best regards,</p>
-<p>The Dental Care Team</p>
 </body>
 </html>
 

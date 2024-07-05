@@ -10,5 +10,5 @@ import java.util.Optional;
 @Repository
 public interface ActivationTokenRepository extends JpaRepository<ActivationToken, Long> {
     Optional<ActivationToken> findByToken(String token);
-    Optional<ActivationToken> findAllByUser(UserEntity user);
+    Optional<ActivationToken> findByUserEmail(String email);
 }

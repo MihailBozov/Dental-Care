@@ -1,13 +1,17 @@
 package bg.softuni.website.web.email;
 
+import bg.softuni.website.models.dtos.ForgotPasswordDto;
+import bg.softuni.website.models.dtos.ResetPasswordDto;
 import bg.softuni.website.models.entities.UserEntity;
 import bg.softuni.website.repositories.ActivationTokenRepository;
 import bg.softuni.website.services.UserService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.Optional;
 
@@ -25,13 +29,61 @@ public class ActivationController {
     
     @GetMapping("/activate-account/{token}")
     public String activateAccount(@PathVariable("token") String token) {
-        
         Optional<UserEntity> matchUserWithToken = this.userService.matchToken(token);
         
         if (matchUserWithToken.isPresent()) {
             return "redirect:/?emailConfirmed=true&name=" + matchUserWithToken.get().getFirstName();
         }
-        
         return "index";
     }
+    
+    
+    @GetMapping("/reset-password/{token}")
+    public String resetPassword(@PathVariable String token) {
+        if (this.userService.match(token)) {
+            return "redirect:/?reset-password=true&token=" + token;
+        }
+        return "index";
+    }
+    
+    
+    @ModelAttribute("resetPasswordDto")
+    public ResetPasswordDto resetPasswordDto() {
+        return new ResetPasswordDto();
+    }
+    
+    @PostMapping("/reset-password")
+    public String resetPassword(@Valid ResetPasswordDto resetPasswordDto,
+                                BindingResult bindingResult,
+                                RedirectAttributes redirectAttributes) {
+        
+        if (bindingResult.hasErrors()) {
+            redirectAttributes.addFlashAttribute("resetPasswordDto", resetPasswordDto);
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.resetPasswordDto", bindingResult);
+            return "redirect:/";
+        }
+        
+        try {
+            boolean isValid = this.userService.updateUserPassword(resetPasswordDto);
+            if (isValid) {
+                return "redirect:/?resetPasswordDone=true&name=" + activationTokenRepository
+                        .findByToken(resetPasswordDto.getToken())
+                        .get()
+                        .getUser()
+                        .getFirstName();
+            }
+            return "redirect:/?success=false";
+            
+        } catch (Exception e) {
+            return "redirect:/?success=false";
+        }
+    }
 }
+
+
+
+
+
+
+
+

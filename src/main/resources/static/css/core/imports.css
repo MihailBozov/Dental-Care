@@ -15,6 +15,10 @@
 @import url("../popups/confirm.css");
 @import url("../popups/email-confirmation.css");
 @import url("../popups/email-confirmed.css");
+@import url("../popups/password-forgot-dialog.css");
+@import url("../popups/password-reset-email-sent.css");
+@import url("../popups/password-reset-modal.css");
+@import url("../popups/password-reset-done-modal.css");
 @import url("../icons/delete-icon.css");
 @import url("../icons/edit-icon.css");
 @import url("../all-units.css");

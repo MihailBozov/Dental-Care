@@ -1,6 +1,8 @@
 package bg.softuni.website.web;
 
+import bg.softuni.website.models.dtos.ForgotPasswordDto;
 import bg.softuni.website.models.dtos.RegisterDto;
+import bg.softuni.website.models.entities.UserEntity;
 import bg.softuni.website.services.UserService;
 import bg.softuni.website.services.NewsletterService;
 import jakarta.validation.Valid;
@@ -11,12 +13,15 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.Optional;
+
 @Controller
 @RequestMapping("/")
 public class AuthController {
     
     private UserService userService;
     private NewsletterService newsletterService;
+
     
     @Autowired
     public AuthController(UserService userService, NewsletterService newsletterService) {
@@ -64,6 +69,27 @@ public class AuthController {
     @GetMapping("/login")
     public String login() {
         return "login-page";
+    }
+    
+    @ModelAttribute("forgotPasswordDto")
+    public ForgotPasswordDto initForgotPasswordDto() {
+        return new ForgotPasswordDto();
+    }
+    
+    @PostMapping("/login/forgot-password")
+    public String forgotPassword(@Valid ForgotPasswordDto forgotPasswordDto,
+                                 BindingResult bindingResult,
+                                 RedirectAttributes redirectAttributes) {
+        
+        if (bindingResult.hasErrors()) {
+            redirectAttributes.addFlashAttribute("forgotPasswordDto", forgotPasswordDto);
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.forgotPasswordDto", bindingResult);
+            return "redirect:/login";
+        }
+        
+        boolean emailSent = userService.doPasswordReset(forgotPasswordDto.getEmail());
+        
+        return "redirect:/login?resetPasswordEmailSent=true";
     }
     
     @PostMapping("/logout")

@@ -1,6 +1,7 @@
 package bg.softuni.website.services;
 
 import bg.softuni.website.models.dtos.RegisterDto;
+import bg.softuni.website.models.dtos.ResetPasswordDto;
 import bg.softuni.website.models.entities.ActivationToken;
 import bg.softuni.website.models.entities.Role;
 import bg.softuni.website.models.entities.UserEntity;
@@ -9,6 +10,7 @@ import bg.softuni.website.models.events.UserActivationUpponRegistrationEvent;
 import bg.softuni.website.repositories.ActivationTokenRepository;
 import bg.softuni.website.repositories.RoleRepository;
 import bg.softuni.website.repositories.UserRepository;
+import jakarta.transaction.Transactional;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
@@ -28,16 +30,18 @@ public class UserService {
     private ModelMapper modelMapper;
     private PasswordEncoder passwordEncoder;
     private ApplicationEventPublisher applicationEventPublisher;
+    private EmailService emailService;
     
     
     @Autowired
-    public UserService(UserRepository userRepository, RoleRepository roleRepository, ActivationTokenRepository activationTokenRepository, ModelMapper modelMapper, PasswordEncoder passwordEncoder, ApplicationEventPublisher applicationEventPublisher) {
+    public UserService(UserRepository userRepository, RoleRepository roleRepository, ActivationTokenRepository activationTokenRepository, ModelMapper modelMapper, PasswordEncoder passwordEncoder, ApplicationEventPublisher applicationEventPublisher, EmailService emailService) {
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
         this.activationTokenRepository = activationTokenRepository;
         this.modelMapper = modelMapper;
         this.passwordEncoder = passwordEncoder;
         this.applicationEventPublisher = applicationEventPublisher;
+        this.emailService = emailService;
     }
     
     public void registerUser(RegisterDto registerDto) {
@@ -75,5 +79,59 @@ public class UserService {
         
     }
     
+    public boolean doPasswordReset(String email) {
+        try {
+            UserEntity user = userRepository.findByEmail(email).orElse(null);
+            if (user == null) {
+                return false;
+            }
+            
+            String token = UUID.randomUUID().toString();
+            ActivationToken activationToken = new ActivationToken();
+            activationToken.setToken(token);
+            activationToken.setUser(user);
+            activationToken.setExpiryDate(LocalDateTime.now().plusHours(24));
+            this.activationTokenRepository.saveAndFlush(activationToken);
+            
+            this.emailService.sendResetPasswordEmail(user, token);
+            return true;
+            
+        } catch (Exception e) {
+            return false;
+        }
+    }
+    
+    public boolean match(String token) {
+        try {
+            ActivationToken activationToken = this.activationTokenRepository
+                    .findByToken(token)
+                    .orElseThrow(() -> new IllegalArgumentException("Invalid activation token"));
+            
+            return true;
+        } catch (IllegalArgumentException e) {
+            return false;
+        }
+    }
+    
+    @Transactional
+    public boolean updateUserPassword(ResetPasswordDto resetPasswordDto) {
+        
+        try {
+            ActivationToken activationToken = this.activationTokenRepository
+                    .findByToken(resetPasswordDto.getToken())
+                    .orElseThrow(() -> new IllegalArgumentException("Invalid activation token"));
+            
+            UserEntity user = this.userRepository
+                    .findByEmail(activationToken.getUser().getEmail())
+                    .orElseThrow(() -> new IllegalArgumentException("Invalid user"));
+            
+            user.setPassword(this.passwordEncoder.encode(resetPasswordDto.getPassword()));
+            this.userRepository.saveAndFlush(user);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+        
+    }
 }
 

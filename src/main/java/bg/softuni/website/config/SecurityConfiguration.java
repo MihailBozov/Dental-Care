@@ -39,7 +39,10 @@ public class SecurityConfiguration {
                         .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
                         
                         //  allow anyone to see the homepage, register page and logout page
-                        .requestMatchers("/", "/login", "/register", "/logout", "/treatments", "/login-error").permitAll()
+                        .requestMatchers("/", "/login**", "/register", "/logout", "/treatments", "/login-error").permitAll()
+                        
+                        .requestMatchers("/reset-password/**").permitAll()
+                        .requestMatchers("login/forgot-password").permitAll()
                         
                         //  allow who can see what
                         .requestMatchers("/users/**").hasAnyRole(UserRole.ADMIN.name(), UserRole.MANAGER.name(), UserRole.DENTIST.name(), UserRole.DENTAL_ASSISTANT.name())
