@@ -1,0 +1,17 @@
+package bg.softuni.website.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+
+@Configuration
+public class ExecutorConfig {
+    
+    @Bean
+    public ScheduledExecutorService getScheduledExecutorService() {
+        int poolSize = 5;
+        return Executors.newScheduledThreadPool(poolSize);
+    }
+}

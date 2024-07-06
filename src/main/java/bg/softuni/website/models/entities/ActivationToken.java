@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Entity
 @Table(name = "activation-token")
@@ -25,4 +26,9 @@ public class ActivationToken {
     
     @Basic
     private LocalDateTime expiryDate;
+    
+    public ActivationToken() {
+        this.token = UUID.randomUUID().toString();
+        this.expiryDate = LocalDateTime.now().plusHours(24);
+    }
 }

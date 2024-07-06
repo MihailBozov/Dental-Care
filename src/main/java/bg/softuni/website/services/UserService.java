@@ -17,9 +17,7 @@ import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.Optional;
-import java.util.UUID;
 
 @Service
 public class UserService {
@@ -31,10 +29,10 @@ public class UserService {
     private PasswordEncoder passwordEncoder;
     private ApplicationEventPublisher applicationEventPublisher;
     private EmailService emailService;
-    
+    private ActivationTokenService activationTokenService;
     
     @Autowired
-    public UserService(UserRepository userRepository, RoleRepository roleRepository, ActivationTokenRepository activationTokenRepository, ModelMapper modelMapper, PasswordEncoder passwordEncoder, ApplicationEventPublisher applicationEventPublisher, EmailService emailService) {
+    public UserService(UserRepository userRepository, RoleRepository roleRepository, ActivationTokenRepository activationTokenRepository, ModelMapper modelMapper, PasswordEncoder passwordEncoder, ApplicationEventPublisher applicationEventPublisher, EmailService emailService, ActivationTokenService activationTokenService) {
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
         this.activationTokenRepository = activationTokenRepository;
@@ -42,6 +40,7 @@ public class UserService {
         this.passwordEncoder = passwordEncoder;
         this.applicationEventPublisher = applicationEventPublisher;
         this.emailService = emailService;
+        this.activationTokenService = activationTokenService;
     }
     
     public void registerUser(RegisterDto registerDto) {
@@ -52,17 +51,11 @@ public class UserService {
         userEntity.getRoles().add(role);
         this.userRepository.saveAndFlush(userEntity);
         
-        String token = UUID.randomUUID().toString();
-        ActivationToken activationToken = new ActivationToken();
-        activationToken.setToken(token);
-        activationToken.setUser(userEntity);
-        activationToken.setExpiryDate(LocalDateTime.now().plusHours(24));
-        this.activationTokenRepository.saveAndFlush(activationToken);
-        
-        this.applicationEventPublisher.publishEvent(new UserActivationUpponRegistrationEvent("User Service", registerDto, token));
+        ActivationToken activationToken = this.activationTokenService.createActivationToken(userEntity);
+        this.applicationEventPublisher.publishEvent(new UserActivationUpponRegistrationEvent("User Service", registerDto, activationToken.getToken()));
     }
     
-    public Optional<UserEntity> matchToken(String token) {
+    public Optional<UserEntity> matchUserWithToken(String token) {
         try {
             ActivationToken activationToken = activationTokenRepository
                     .findByToken(token)
@@ -73,8 +66,9 @@ public class UserService {
             userRepository.saveAndFlush(user);
             activationTokenRepository.delete(activationToken);
             return Optional.of(user);
+       
         } catch (Exception e) {
-            return null;
+            return Optional.empty();
         }
         
     }
@@ -86,14 +80,8 @@ public class UserService {
                 return false;
             }
             
-            String token = UUID.randomUUID().toString();
-            ActivationToken activationToken = new ActivationToken();
-            activationToken.setToken(token);
-            activationToken.setUser(user);
-            activationToken.setExpiryDate(LocalDateTime.now().plusHours(24));
-            this.activationTokenRepository.saveAndFlush(activationToken);
-            
-            this.emailService.sendResetPasswordEmail(user, token);
+            ActivationToken activationToken = this.activationTokenService.createActivationToken(user);
+            this.emailService.sendResetPasswordEmail(user, activationToken.getToken());
             return true;
             
         } catch (Exception e) {
