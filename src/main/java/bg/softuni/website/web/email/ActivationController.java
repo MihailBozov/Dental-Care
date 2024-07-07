@@ -27,7 +27,7 @@ public class ActivationController {
     
     @GetMapping("/activate-account/{token}")
     public String activateAccount(@PathVariable("token") String token) {
-        Optional<UserEntity> matchUserWithToken = this.userService.matchUserWithToken(token);
+        Optional<UserEntity> matchUserWithToken = this.userService.matchTokensActivateUser(token);
         
         if (matchUserWithToken.isPresent()) {
             return "redirect:/?emailConfirmed=true&name=" + matchUserWithToken.get().getFirstName();
@@ -38,7 +38,7 @@ public class ActivationController {
     
     @GetMapping("/reset-password/{token}")
     public String resetPassword(@PathVariable String token) {
-        if (this.userService.match(token)) {
+        if (this.userService.matchToken(token)) {
             return "redirect:/?reset-password=true&token=" + token;
         }
         return "error/404";

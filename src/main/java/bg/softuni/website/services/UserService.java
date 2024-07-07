@@ -55,7 +55,7 @@ public class UserService {
         this.applicationEventPublisher.publishEvent(new UserActivationUpponRegistrationEvent("User Service", registerDto, activationToken.getToken()));
     }
     
-    public Optional<UserEntity> matchUserWithToken(String token) {
+    public Optional<UserEntity> matchTokensActivateUser(String token) {
         try {
             ActivationToken activationToken = activationTokenRepository
                     .findByToken(token)
@@ -89,7 +89,7 @@ public class UserService {
         }
     }
     
-    public boolean match(String token) {
+    public boolean matchToken(String token) {
         try {
             ActivationToken activationToken = this.activationTokenRepository
                     .findByToken(token)

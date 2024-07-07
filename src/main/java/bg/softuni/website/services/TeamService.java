@@ -5,7 +5,10 @@ import bg.softuni.website.models.entities.UserEntity;
 import bg.softuni.website.models.enums.UserRole;
 import bg.softuni.website.repositories.TeamRepository;
 import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -13,9 +16,9 @@ import java.util.List;
 
 @Service
 public class TeamService {
-    
-    private ModelMapper modelMapper;
-    private TeamRepository teamRepository;
+    private final Logger logger = LoggerFactory.getLogger(TeamService.class);
+    private final ModelMapper modelMapper;
+    private final TeamRepository teamRepository;
     
     @Autowired
     public TeamService(ModelMapper modelMapper, TeamRepository teamRepository) {
@@ -23,7 +26,9 @@ public class TeamService {
         this.teamRepository = teamRepository;
     }
     
+    @Cacheable("team")
     public List<TeamDto> getAllTeamMembers() {
+        logger.warn("getAllTeamMembers() is annotated with @Cacheable and is executed !");
         List<UserEntity> userEntities = this.teamRepository.findAllTeamMembers();
         List<TeamDto> members = new ArrayList<>();
         

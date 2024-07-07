@@ -3,6 +3,8 @@ package bg.softuni.website.config;
 import bg.softuni.website.models.enums.UserRole;
 import bg.softuni.website.repositories.UserRepository;
 import bg.softuni.website.services.MyUserDetailsService;
+import bg.softuni.website.util.handlers.CustomAuthenticationSuccessHandler;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
@@ -26,6 +28,13 @@ public class SecurityConfig {
     
     @Value("${remember.me.key}")
     String rememberMeKey;
+    
+    private final CustomAuthenticationSuccessHandler customAuthenticationSuccessHandler;
+    
+    @Autowired
+    public SecurityConfig(CustomAuthenticationSuccessHandler customAuthenticationSuccessHandler) {
+        this.customAuthenticationSuccessHandler = customAuthenticationSuccessHandler;
+    }
     
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -74,6 +83,7 @@ public class SecurityConfig {
                         .usernameParameter("email")
                         .passwordParameter("password")
                         .defaultSuccessUrl("/", true)
+                        .successHandler(customAuthenticationSuccessHandler)
                         .failureForwardUrl("/login-error")
                 
                 )

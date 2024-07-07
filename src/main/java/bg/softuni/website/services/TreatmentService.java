@@ -8,7 +8,11 @@ import bg.softuni.website.models.entities.Treatment;
 import bg.softuni.website.repositories.TreatmentRepository;
 import jakarta.transaction.Transactional;
 import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -19,10 +23,10 @@ import java.util.Optional;
 
 @Service
 public class TreatmentService {
-    
-    private TreatmentRepository treatmentRepository;
-    private ImageService imageService;
-    private ModelMapper modelMapper;
+    private final Logger logger = LoggerFactory.getLogger(TreatmentService.class);
+    private final TreatmentRepository treatmentRepository;
+    private final ImageService imageService;
+    private final ModelMapper modelMapper;
     
     @Autowired
     public TreatmentService(TreatmentRepository treatmentRepository, ImageService imageService, ModelMapper modelMapper) {
@@ -31,7 +35,9 @@ public class TreatmentService {
         this.modelMapper = modelMapper;
     }
     
+    @Cacheable("treatments")
     public List<TreatmentDto> getAllTreatmentDtos() {
+        logger.warn("getAllTreatmentDtos() is annotated with @Cacheable and is executed !");
         List<Treatment> allTreatments = treatmentRepository.findAll();
         List<TreatmentDto> treatmentDtos = new ArrayList<>();
         
@@ -42,6 +48,7 @@ public class TreatmentService {
         return treatmentDtos;
     }
     
+    @CacheEvict(value = "treatments", allEntries = true)
     public void newTreatment(NewTreatmentDto newTreatmentDto) throws IOException {
         String formName = "formNewTreatment";
         MultipartFile file = newTreatmentDto.getImage();
@@ -57,6 +64,7 @@ public class TreatmentService {
         this.treatmentRepository.saveAndFlush(treatment);
     }
     
+    @CacheEvict(value = "treatments", allEntries = true)
     @Transactional(rollbackOn = Exception.class)
     public boolean deleteTreatment(long id) throws IOException {
         Optional<Treatment> treatment = this.treatmentRepository.findById(id);
@@ -68,7 +76,7 @@ public class TreatmentService {
         }
         return false;
     }
-    
+    @CacheEvict(value = "treatments", allEntries = true)
     @Transactional(rollbackOn = Exception.class)
     public boolean editTreatment(EditTreatmentDto editTreatmentDto, long id) throws IOException {
         

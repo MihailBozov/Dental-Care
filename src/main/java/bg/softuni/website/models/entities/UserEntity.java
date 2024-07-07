@@ -47,6 +47,9 @@ public class UserEntity {
     @Column(name = "is_active")
     private boolean isActive;
     
+    @Column(name = "lastLogin")
+    private LocalDateTime lastLogin;
+    
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "user_health_conditions",
             joinColumns = @JoinColumn(name = "user"), 

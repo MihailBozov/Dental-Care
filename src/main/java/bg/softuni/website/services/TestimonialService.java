@@ -29,7 +29,7 @@ public class TestimonialService {
     
     @Cacheable("testimonials")
     public List<TestimonialDto> getAllTestimonials() {
-        logger.warn("getAllTestimonials() is cacheable and is executed");
+        logger.warn("getAllTestimonials() is annotated with @Cacheable and is executed !");
         List<UserEntity> userEntities = this.testimonialsRepository.findAllUsersWithTestimonials();
         List<Image> icons = this.imageRepository.findAllQuoteImagesOrdered();
         

@@ -78,6 +78,7 @@ logging:
     
     bg.softuni.website: warn
     bg.softuni.website.services: trace
+    bg.softuni.website.util: info
     org.thymeleaf.standard.processor: error
 
 image:
