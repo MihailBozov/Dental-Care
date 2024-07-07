@@ -19,13 +19,15 @@ import java.util.Optional;
 public class ImageService {
     
     private ImageRepository imageRepository;
+    private FileSystemHelper fileSystemHelper;
     
     @Value("${image.upload.formNewTreatmentDir}")
     private String formNewTreatmentUploadDir;
     
     @Autowired
-    public ImageService(ImageRepository imageRepository) {
+    public ImageService(ImageRepository imageRepository, FileSystemHelper fileSystemHelper) {
         this.imageRepository = imageRepository;
+        this.fileSystemHelper = fileSystemHelper;
     }
     
     @Transactional
@@ -39,10 +41,7 @@ public class ImageService {
                 throw new IllegalArgumentException("!!!   You Really Broke It   !!!");
         }
         
-        File directory = new File(uploadDir);
-        if (!directory.exists()) {
-            directory.mkdirs();
-        }
+        this.fileSystemHelper.createDirectoryIfNotExists(uploadDir);
         
         String fileName = file.getOriginalFilename();
         Path filePath = Paths.get(uploadDir, fileName);
@@ -79,11 +78,11 @@ public class ImageService {
             
             String fileName = newImage.getOriginalFilename();
             Path filePath = Paths.get(uploadDir, fileName);
-            Files.write(filePath, newImage.getBytes());
+            fileSystemHelper.saveFile(filePath, newImage);
             
-            Image image = oldImage.get();
+            Image image = oldImage.orElseThrow(() -> new IllegalArgumentException("Old image not present"));
             Path oldFlePath = Path.of(formNewTreatmentUploadDir, image.getName());
-            Files.delete(oldFlePath);
+            fileSystemHelper.deleteFile(oldFlePath);
             
             image.setName(newImage.getOriginalFilename());
             image.setUrl("/images/treatments/" + newImage.getOriginalFilename());
@@ -103,7 +102,7 @@ public class ImageService {
     public void deleteImage(Image image) throws IOException {
         this.imageRepository.delete(image);
         Path filePath = Path.of(formNewTreatmentUploadDir, image.getName());
-        Files.delete(filePath);
+        fileSystemHelper.deleteFile(filePath);
     }
     
 }

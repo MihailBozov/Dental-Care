@@ -20,7 +20,7 @@ public class Image {
     @Column(nullable = false, unique = true)
     private String name;
     
-    @Column(columnDefinition = "TEXT")
+    @Column(length = 2000)
     private String url;
     
     @ManyToOne()

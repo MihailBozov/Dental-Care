@@ -16,7 +16,7 @@ public class Message {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     
-    @Column(nullable = false, columnDefinition = "TEXT")
+    @Column(nullable = false, length = 5000)
     private String text;
     
     @ManyToOne

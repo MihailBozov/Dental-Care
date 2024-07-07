@@ -16,6 +16,7 @@ import java.util.Optional;
 public interface ActivationTokenRepository extends JpaRepository<ActivationToken, Long> {
     Optional<ActivationToken> findByToken(String token);
     Optional<ActivationToken> findByUserEmail(String email);
+    Optional<ActivationToken> findByUser(UserEntity user);
     
     List<ActivationToken> findAllByExpiryDateBefore(LocalDateTime now);
     

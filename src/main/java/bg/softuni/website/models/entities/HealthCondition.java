@@ -24,7 +24,7 @@ public class HealthCondition {
     @Enumerated(EnumType.STRING)
     DangerLevelName dangerLevelName;
     
-    @Column(columnDefinition = "TEXT")
+    @Column(length = 2000)
     private String description;
     
     @ManyToOne

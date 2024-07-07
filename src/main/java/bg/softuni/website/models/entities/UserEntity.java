@@ -62,6 +62,9 @@ public class UserEntity {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private List<Role> roles;
     
+    @OneToOne(mappedBy = "user", targetEntity = ActivationToken.class)
+    private ActivationToken activationToken;
+    
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "user_treatments", 
             joinColumns = @JoinColumn(name = "user_id"),

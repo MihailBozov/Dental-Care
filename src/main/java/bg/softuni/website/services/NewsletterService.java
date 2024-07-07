@@ -16,6 +16,6 @@ public class NewsletterService {
     }
     
     public void persistEmail(String newsletterEmail) {
-        this.newsletterRepository.save(new Newsletter(newsletterEmail));
+        this.newsletterRepository.saveAndFlush(new Newsletter(newsletterEmail));
     }
 }

@@ -24,11 +24,12 @@ public class ActivationTokenService {
     public ActivationToken createActivationToken(UserEntity user) {
         ActivationToken activationToken = new ActivationToken();
         activationToken.setUser(user);
+        this.activationTokenRepository.saveAndFlush(activationToken);
         scheduledExecutorService.schedule(() -> deleteActivationToken(activationToken.getId()), 24, TimeUnit.HOURS);
-        return this.activationTokenRepository.saveAndFlush(activationToken);
+        return activationToken;
     }
     
-    private void deleteActivationToken(Long id) {
+    public void deleteActivationToken(Long id) {
         Optional<ActivationToken> activationToken = this.activationTokenRepository.findById(id);
         if (activationToken.isPresent()) {
             this.activationTokenRepository.delete(activationToken.get());

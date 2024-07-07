@@ -26,7 +26,7 @@ public class EmailService {
     @Autowired
     public EmailService(TemplateEngine templateEngine,
                         JavaMailSender javaMailSender,
-                        @Value("${EMAIL}") String websiteEmail, UserRepository userRepository) {
+                        @Value("${spring.mail.username}") String websiteEmail, UserRepository userRepository) {
         this.templateEngine = templateEngine;
         this.javaMailSender = javaMailSender;
         this.websiteEmail = websiteEmail;
@@ -39,7 +39,7 @@ public class EmailService {
         MimeMessageHelper mimeMessageHelper;
         
         try {
-            mimeMessageHelper = new MimeMessageHelper(mimeMessage, true, "UTF-8");
+            mimeMessageHelper = new MimeMessageHelper(mimeMessage, "UTF-8");
             mimeMessageHelper.setTo(userEvent.getEmail());
             mimeMessageHelper.setFrom(websiteEmail);
             mimeMessageHelper.setReplyTo(websiteEmail);

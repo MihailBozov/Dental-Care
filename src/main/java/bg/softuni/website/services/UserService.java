@@ -56,25 +56,22 @@ public class UserService {
     }
     
     public Optional<UserEntity> matchTokensActivateUser(String token) {
-        try {
-            ActivationToken activationToken = activationTokenRepository
-                    .findByToken(token)
-                    .orElseThrow(() -> new IllegalArgumentException("Invalid activation token"));
-            
-            UserEntity user = activationToken.getUser();
-            user.setActive(true);
-            userRepository.saveAndFlush(user);
-            activationTokenRepository.delete(activationToken);
-            return Optional.of(user);
-       
-        } catch (Exception e) {
-            return Optional.empty();
-        }
+        
+        ActivationToken activationToken = activationTokenRepository
+                .findByToken(token)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid activation token"));
+        
+        UserEntity user = activationToken.getUser();
+        user.setActive(true);
+        userRepository.saveAndFlush(user);
+        activationTokenRepository.delete(activationToken);
+        return Optional.of(user);
+        
         
     }
     
     public boolean doPasswordReset(String email) {
-        try {
+        
             UserEntity user = userRepository.findByEmail(email).orElse(null);
             if (user == null) {
                 return false;
@@ -84,9 +81,7 @@ public class UserService {
             this.emailService.sendResetPasswordEmail(user, activationToken.getToken());
             return true;
             
-        } catch (Exception e) {
-            return false;
-        }
+        
     }
     
     public boolean matchToken(String token) {
@@ -103,23 +98,18 @@ public class UserService {
     
     @Transactional
     public boolean updateUserPassword(ResetPasswordDto resetPasswordDto) {
+       
+        ActivationToken activationToken = this.activationTokenRepository
+                .findByToken(resetPasswordDto.getToken())
+                .orElseThrow(() -> new IllegalArgumentException("Invalid activation token"));
         
-        try {
-            ActivationToken activationToken = this.activationTokenRepository
-                    .findByToken(resetPasswordDto.getToken())
-                    .orElseThrow(() -> new IllegalArgumentException("Invalid activation token"));
-            
-            UserEntity user = this.userRepository
-                    .findByEmail(activationToken.getUser().getEmail())
-                    .orElseThrow(() -> new IllegalArgumentException("Invalid user"));
-            
-            user.setPassword(this.passwordEncoder.encode(resetPasswordDto.getPassword()));
-            this.userRepository.saveAndFlush(user);
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
+        UserEntity user = this.userRepository
+                .findByEmail(activationToken.getUser().getEmail())
+                .orElseThrow(() -> new IllegalArgumentException("Invalid user"));
         
+        user.setPassword(this.passwordEncoder.encode(resetPasswordDto.getPassword()));
+        this.userRepository.saveAndFlush(user);
+        return true;
     }
 }
 

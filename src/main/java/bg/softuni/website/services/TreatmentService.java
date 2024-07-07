@@ -76,40 +76,42 @@ public class TreatmentService {
         }
         return false;
     }
+    
     @CacheEvict(value = "treatments", allEntries = true)
     @Transactional(rollbackOn = Exception.class)
     public boolean editTreatment(EditTreatmentDto editTreatmentDto, long id) throws IOException {
         
-        try {
-            Treatment treatment = getTreatment(id);
-            
-            String formName = "formNewTreatment";
-            MultipartFile file = editTreatmentDto.getImage();
-            
-            
-            Image image = this.imageService.updateImage(file, formName, Optional.of(treatment.getImage()));
-            
-            treatment.setName(editTreatmentDto.getName());
-            treatment.setDescription(editTreatmentDto.getDescription());
-            treatment.setPrice(editTreatmentDto.getPrice());
-            treatment.setImage(image);
-            
-            this.treatmentRepository.saveAndFlush(treatment);
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
+        Treatment treatment = getTreatment(id);
+        
+        String formName = "formNewTreatment";
+        MultipartFile file = editTreatmentDto.getImage();
+        
+        
+        Image image = this.imageService.updateImage(file, formName, Optional.of(treatment.getImage()));
+        
+        treatment.setName(editTreatmentDto.getName());
+        treatment.setDescription(editTreatmentDto.getDescription());
+        treatment.setPrice(editTreatmentDto.getPrice());
+        treatment.setImage(image);
+        
+        this.treatmentRepository.saveAndFlush(treatment);
+        return true;
+        
     }
     
     public Treatment getTreatment(Long id) {
-        return this.treatmentRepository.findById(id).get();
+        return this.treatmentRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Treatment with id " + id + " not found"));
     }
     
     public EditTreatmentDto getEditTreatmentDto(Long id) {
-        return this.modelMapper.map(this.treatmentRepository.findById(id), EditTreatmentDto.class);
+        Treatment treatment = this.treatmentRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Treatment with id " + id + " not found"));
+        return this.modelMapper.map(treatment, EditTreatmentDto.class);
     }
     
     public List<Treatment> getAllTreatmentsFiltered(Long id) {
-        return this.treatmentRepository.findAllByIdNot(id);
+        List<Treatment> treatments = this.treatmentRepository.findAllByIdNot(id);
+        return treatments;
     }
 }

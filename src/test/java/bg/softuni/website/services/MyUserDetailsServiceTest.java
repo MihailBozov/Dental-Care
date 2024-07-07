@@ -21,20 +21,20 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 class MyUserDetailsServiceTest {
     
-    private MyUserDetailsService myUserDetailsServiceTest;
+    private MyUserDetailsService myUserDetailsService;
     
     @Mock
     private UserRepository mockUserRepository;
     
     @BeforeEach
     void setUp() {
-        myUserDetailsServiceTest = new MyUserDetailsService(mockUserRepository);
+        myUserDetailsService = new MyUserDetailsService(mockUserRepository);
     }
     
     @Test
     void testUserNotFound() {
         Assertions.assertThrows(UsernameNotFoundException.class,
-                () -> myUserDetailsServiceTest.loadUserByUsername("sand@gmail.com"));
+                () -> myUserDetailsService.loadUserByUsername("sand@gmail.com"));
         
     }
     
@@ -46,7 +46,7 @@ class MyUserDetailsServiceTest {
                 .thenReturn(Optional.of(testUserEntity));
         
 //        Act
-        UserDetails testUserDetails =  myUserDetailsServiceTest.loadUserByUsername(testUserEntity.getEmail());
+        UserDetails testUserDetails =  myUserDetailsService.loadUserByUsername(testUserEntity.getEmail());
         
 //        Assert
         Assertions.assertNotNull(testUserDetails);
@@ -68,7 +68,7 @@ class MyUserDetailsServiceTest {
         
                 
         Assertions.assertThrows(UsernameNotFoundException.class,
-                () -> myUserDetailsServiceTest.loadUserByUsername(testUserEntity.getEmail()));
+                () -> myUserDetailsService.loadUserByUsername(testUserEntity.getEmail()));
     }
     
     
