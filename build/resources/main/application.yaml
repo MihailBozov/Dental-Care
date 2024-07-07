@@ -1,5 +1,9 @@
 spring.application.name: website
-
+  
+  spring.cache.type=simple
+  management.endpoints.web.exposure.include=*
+  management.endpoint.caches.enabled=true
+  management.metrics.enable.cache=true
 
 server:
   port: 8080
@@ -14,16 +18,18 @@ spring:
     url: jdbc:mysql://localhost:3306/website?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
     username: root
     password: 1212
-    
+  
   jpa:
+    open-in-view: on
     database-platform: org.hibernate.dialect.MySQL8Dialect
+    
     hibernate:
       ddl-auto: update
-      
+
   sql:
     init:
       mode: never
-      
+  
   mvc:
     hiddenmethod:
       filter:
@@ -33,7 +39,7 @@ spring:
     multipart:
       max-file-size: 10MB
       max-request-size: 50MB
-      
+  
   mail:
     host: smtp.gmail.com
     port: 587
@@ -42,30 +48,50 @@ spring:
     properties:
       mail.smtp.auth: true
       mail.smtp.starttls.enable: true
-    
+
 remember:
   me:
     key: ${REMEMBER_ME_KEY:topSecret}
+      
+      
+      
+spring.output.ansi.enabled: always
 
+#       OFF   ->   TRACE   ->   DEBUG   ->   INFO   ->   WARN   ->   ERROR   ->   FATAL
 logging:
+  # the name of the file where the logging will be generated (will be created automatically if it doesn't exist)
+  file.name: "C:\\Users\\MihailBozov\\Desktop\\logging.txt"
   level:
-    org.hibernate.SQL: DEBUG
-    org.hibernate.orm.jdbc.bind: TRACE
-    org.springframework.security: TRACE
+    # root is the default logging level for all packages  
+    root: warn
+    org.hibernate.SQL: warn
+    org.hibernate.orm.jdbc.bind: warn
     
+    org.springframework.jpa: warn
+    org.springframework.validation: warn
+    org.springframework.web: warn
+    org.springframework.security: warn
+    org.springframework.cache: warn
+    org.springframework.thymeleaf: off
+    org.thymeleaf.springsecurity6: off
+    org.springframework.mail: warn
     
+    bg.softuni.website: warn
+    bg.softuni.website.services: trace
+    org.thymeleaf.standard.processor: error
+
 image:
   upload:
     formNewTreatmentDir: "C:\\Users\\MihailBozov\\IdeaProjects\\website\\src\\main\\resources\\static\\images\\treatments"
     
     
-#image:
-#  upload:
-#    dir: "C:\\Users\\MihailBozov\\IdeaProjects\\website\\src\\main\\resources\\static\\images"
-#    
+    #image:
+    #  upload:
+    #    dir: "C:\\Users\\MihailBozov\\IdeaProjects\\website\\src\\main\\resources\\static\\images"
+    #    
     
-#formNewTreatment:
-#  upload:
-#    dir: "C:\\Users\\MihailBozov\\IdeaProjects\\website\\src\\main\\resources\\static\\images\\treatments"
+    #formNewTreatment:
+    #  upload:
+    #    dir: "C:\\Users\\MihailBozov\\IdeaProjects\\website\\src\\main\\resources\\static\\images\\treatments"
 
     

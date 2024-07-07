@@ -5,7 +5,11 @@ import bg.softuni.website.models.entities.Image;
 import bg.softuni.website.models.entities.UserEntity;
 import bg.softuni.website.repositories.ImageRepository;
 import bg.softuni.website.repositories.TestimonialsRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -13,6 +17,7 @@ import java.util.List;
 
 @Service
 public class TestimonialService {
+   private Logger logger = LoggerFactory.getLogger(TestimonialService.class);
     private TestimonialsRepository testimonialsRepository;
     private ImageRepository imageRepository;
     
@@ -22,10 +27,12 @@ public class TestimonialService {
         this.imageRepository = imageRepository;
     }
     
-    
+    @Cacheable("testimonials")
     public List<TestimonialDto> getAllTestimonials() {
+        logger.warn("getAllTestimonials() is cacheable and is executed");
         List<UserEntity> userEntities = this.testimonialsRepository.findAllUsersWithTestimonials();
         List<Image> icons = this.imageRepository.findAllQuoteImagesOrdered();
+        
         List<TestimonialDto> testimonialDtos = new ArrayList<>();
         for (UserEntity userEntity : userEntities) {
             TestimonialDto testimonialDto = new TestimonialDto();
@@ -39,5 +46,11 @@ public class TestimonialService {
             testimonialDtos.add(testimonialDto);
         }
         return testimonialDtos;
+    }
+    
+
+    @CacheEvict(value = "testimonials", allEntries = true)
+    public void deleteTestimonial(Long id) {
+        this.testimonialsRepository.deleteById(id);
     }
 }

@@ -18,13 +18,10 @@ public class ActivationTokenCleanUpSchedule {
         this.activationTokenRepository = activationTokenRepository;
     }
     
-    //    @Scheduled(fixedRate = 1000 * 60 * 60 * 24)
+    //    @Scheduled(fixedRate = 1000 * 60 * 60 * 24, initialDelay = 1000 * 60 * 60 * 24)
     @Scheduled(cron = "00 00 02 * * ?", zone = "Europe/Sofia") // It will be executed at 2 a.m every day
     public void deleteExpiredTokens() {
         LocalDateTime now = LocalDateTime.now();
-        List<ActivationToken> expiredTokens = this.activationTokenRepository.findAllByExpiryDateBefore(now);
-        if (!expiredTokens.isEmpty()) {
-            activationTokenRepository.deleteAll(expiredTokens);
-        }
+      this.activationTokenRepository.deleteExpiredTokens(now);
     }
 }
