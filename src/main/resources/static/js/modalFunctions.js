@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     showEditTreatmentErrors()
     showResult()
     showForgotPasswordErrors()
-    resetPasswordFormErrors()
+    showResetPasswordFormErrors()
 });
 
 
@@ -60,7 +60,7 @@ function showResult() {
     } else if (resetPassword === 'true') {
         $('#reset_password_modal').modal('show');
         const  token = urlParams.get('token')
-        if (token != null && token.trim() !== '') {
+        if (token !== null && token.trim() !== '') {
             const element = document.querySelector('#reset_password_form .token')
             element.value = token;
         }
@@ -81,7 +81,7 @@ function showResult() {
 
 
 
-function getDeleteForm(button) {
+function getDeleteTreatmentForm(button) {
     $('#confirmationModal').modal('show');
 
     let confirmButton = document.querySelector('#continueWithTheSubmitting');
@@ -89,7 +89,7 @@ function getDeleteForm(button) {
 }
 
 
-function getEditForm(button) {
+function getEditTreatmentForm(button) {
     $('#editTreatmentModal').modal('show');
 
     const id = button.getAttribute('data-id');
@@ -109,7 +109,7 @@ function getEditForm(button) {
     submitEdited.addEventListener('click', () => editForm.submit());
 }
 
-function forgotPasswordFormSend() {
+function forgotPasswordFormSubmit() {
     const forgotPasswordForm = document.querySelector('#forgot_password_form');
     forgotPasswordForm.submit();
 }
@@ -126,13 +126,13 @@ function showForgotPasswordErrors() {
     }
 }
 
-function resetPasswordFormSend() {
+function resetPasswordFormSubmit() {
     const resetPasswordForm = document.querySelector('#reset_password_form');
     resetPasswordForm.submit();
 }
 
 
-function resetPasswordFormErrors() {
+function showResetPasswordFormErrors() {
     let element = document.querySelector('#reset_password_modal .reset_results');
     let hasContent = element && element.textContent.trim() !== '';
     if (hasContent) {
