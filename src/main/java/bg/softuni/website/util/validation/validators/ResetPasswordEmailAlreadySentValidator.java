@@ -26,6 +26,9 @@ public class ResetPasswordEmailAlreadySentValidator implements ConstraintValidat
     public boolean isValid(String email, ConstraintValidatorContext constraintValidatorContext) {
         Optional<ActivationToken> activationToken = this.activationTokenRepository.findByUserEmail(email);
         Optional<UserEntity> user = this.userRepository.findByEmail(email);
+        if (user.isEmpty()) {
+            return false;
+        }
         return activationToken.isEmpty() && user.get().isActive();
     }
 }
