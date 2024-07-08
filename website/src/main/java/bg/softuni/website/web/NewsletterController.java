@@ -23,6 +23,7 @@ public class NewsletterController {
                              RedirectAttributes redirectAttributes) {
         
         if (bindingResult.hasErrors()) {
+            System.out.println(bindingResult.getAllErrors().getFirst().toString());
             redirectAttributes.addFlashAttribute("newsletterDto", newsletterDto);
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.newsletterDto", bindingResult);
             return "redirect:/";

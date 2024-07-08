@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class PolicyController {
     
+    
     @GetMapping("/policies")
     public String info(Model model) {
         model.addAttribute("currentPage", "policiesPage");

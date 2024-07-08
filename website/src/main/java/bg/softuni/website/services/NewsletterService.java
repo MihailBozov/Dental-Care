@@ -18,4 +18,8 @@ public class NewsletterService {
     public void persistEmail(String newsletterEmail) {
         this.newsletterRepository.saveAndFlush(new Newsletter(newsletterEmail));
     }
+    
+    public void deleteNewsletterEmail(String newsletterEmail) {
+        this.newsletterRepository.deleteNewsletterByNewsletterEmail(newsletterEmail);
+    }
 }

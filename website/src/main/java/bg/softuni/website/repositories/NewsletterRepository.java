@@ -11,4 +11,6 @@ public interface NewsletterRepository extends JpaRepository<Newsletter, Long> {
     
     
     Optional<Newsletter> findByNewsletterEmail(String emailReceived);
+    
+    void deleteNewsletterByNewsletterEmail(String newsletterEmail); 
 }

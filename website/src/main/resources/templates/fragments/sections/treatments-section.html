@@ -41,7 +41,7 @@
 
         <div class="treatment_unit" th:each="treatment : ${allTreatments}">
             <a href="#" class="unit_link"></a>
-            <img class="treatment_icon" th:src="${treatment.getImage().getUrl()}" alt="">
+            <img class="treatment_icon" th:if="${treatment.getImage() != null}" th:src="${treatment.getImage().getUrl()}" alt="">
 
             <form sec:authorize="hasAnyRole('ADMIN', 'MANAGER', 'DENTIST', 'DENTAL_ASSISTANT')"
                   th:if="${currentPage} == 'treatmentsPage'"
