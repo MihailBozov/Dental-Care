@@ -77,7 +77,7 @@ logging:
     org.springframework.mail: warn
     
     bg.softuni.website: warn
-    bg.softuni.website.services: trace
+    bg.softuni.website.services: info
     bg.softuni.website.util: info
     org.thymeleaf.standard.processor: error
 
