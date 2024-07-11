@@ -1,0 +1,42 @@
+
+.hero_section {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4em;
+    max-width: 1300px;
+    padding: 1rem;
+}
+
+.hero_text {
+    flex: 1;
+    z-index: 0;
+}
+
+.hero_image {
+    flex: 1;
+}
+
+.hero_title {
+    text-align: center;
+}
+
+
+
+.hero_text span{
+    color: var(--w_ocean);
+}
+
+/*@media screen and (max-width: 800px) {*/
+/*    */
+/*    .hero_section {*/
+/*        padding: 0;*/
+/*    }*/
+/*    */
+/*    .hero_image {*/
+/*        !*display: none;*!*/
+/*    }*/
+/*    */
+/*}*/

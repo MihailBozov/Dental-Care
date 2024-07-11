@@ -24,15 +24,9 @@ html, body {
 
 }
 
+
 .background_window image {
     filter: invert(100%);
 }
 
-.hero_text {
-    z-index: 0;
-}
-
-.hero_text span{
-    color: var(--w_ocean);
-}
 

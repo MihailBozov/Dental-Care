@@ -136,6 +136,24 @@ svg.new_icon {
     stroke-width: 1px;
 }
 
+@media screen and (max-width: 660px) {
+    .treatment_container {
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .treatmentSection {
+        padding: 0;
+    }
+    
+}
+
+@media  screen and (max-width: 550px){
+    .treatment_container {
+        padding: 1em 0;
+    }
+}
 
 
 

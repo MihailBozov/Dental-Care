@@ -8,7 +8,7 @@
     box-shadow: var(--w_shadow-gray-light);
 }
 
-.testimonials_section:hover{
+.testimonials_section:hover {
     background-color: var(--w_tone-white);
 }
 
@@ -24,7 +24,7 @@
 }
 
 .testimonials_section .subtitle {
-    
+
     font-size: 1rem;
     line-height: 1.5;
     color: var(--w_black-light);
@@ -63,7 +63,7 @@
     transform: var(--w_transform-scale-1);
     border: var(--w_border-ocean-1);
     box-shadow: var(--w_shadow-gray);
-    
+
 }
 
 .author_details {
@@ -72,7 +72,7 @@
 
 .testimonial_card .author_image {
     max-width: 100px;
-    border: 5px solid var(--w_white);
+    border: 4px solid var(--w_white);
     border-radius: 50%;
     position: absolute;
     top: 0;
@@ -121,4 +121,32 @@
 .stars {
     font-size: 1.3em;
     color: var(--w_gold);
+}
+
+@media screen and (max-width: 660px) {
+    .testimonials_container {
+        justify-items: center;
+        align-content: center;
+        margin: 0 auto;
+    }
+
+    .author_image {
+        max-width: 200px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .testimonials_container {
+        padding: 1em 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .testimonials_section {
+        padding: 0;
+    }
+
+    .treatment_unit {
+        max-width: 100dvw;
+    }
 }
