@@ -54,13 +54,15 @@ remember:
     key: ${REMEMBER_ME_KEY:topSecret}
       
       
+google:
+  api:
+    key: ${API_KEY}
       
-spring.output.ansi.enabled: always
 
 #       OFF   ->   TRACE   ->   DEBUG   ->   INFO   ->   WARN   ->   ERROR   ->   FATAL
 logging:
   # the name of the file where the logging will be generated (will be created automatically if it doesn't exist)
-  file.name: "C:\\Users\\MihailBozov\\Desktop\\logging.txt"
+#  file.name: "C:\\Users\\MihailBozov\\Desktop\\logging.txt"
   level:
     # root is the default logging level for all packages  
     root: warn
@@ -83,7 +85,7 @@ logging:
 
 image:
   upload:
-    formNewTreatmentDir: "C:\\Users\\MihailBozov\\IdeaProjects\\website\\src\\main\\resources\\static\\images\\treatments"
+    formNewTreatmentDir: "C:\\Users\\MihailBozov\\IdeaProjects\\Dental-Care\\website\\src\\main\\resources\\static\\images\\treatments"
     
     
     #image:

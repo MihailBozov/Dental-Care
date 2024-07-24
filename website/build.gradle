@@ -30,9 +30,11 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-mail'
     
     implementation group: 'org.modelmapper', name: 'modelmapper', version: '3.2.0'
-
+    
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+
+    implementation 'com.google.apis:google-api-services-driveactivity:v2-rev20210319-1.32.1'
 
     runtimeOnly 'com.mysql:mysql-connector-j'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'

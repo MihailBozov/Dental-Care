@@ -5,464 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94277fae-0a14-4697-8274-61bd3ee1b828" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.7/checksums/checksums.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.7/checksums/md5-checksums.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.7/checksums/sha1-checksums.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.7/executionHistory/executionHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.7/executionHistory/executionHistory.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.7/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.7/fileHashes/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.7/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.7/fileHashes/resourceHashesCache.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.7/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELP.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/application.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/data.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/bootstrap/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/bootstrap/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/css/imports.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/css/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/css/teamList.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/css/testimonialsList.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/css/treatmentsList.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/images/doctor.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/images/icons/brackets.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/images/icons/clean.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/images/icons/cleansing.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/images/icons/crown.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/images/icons/dentMachine.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/images/icons/diagnostic.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/images/icons/implant.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/images/icons/quotes_white_end.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/images/icons/quotes_white_start.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/images/icons/rootCanal.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/images/icons/sawing.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/images/main/heroImg.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/images/main/hero_background.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/images/main/hero_background_green.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/images/main/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/images/main/pattern.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/images/profile/Emma_img.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/images/profile/Kale_img.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/images/profile/Yanica_img.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/images/profile/da_Daniel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/images/profile/da_Evelyn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/images/profile/dr_Cassandra.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/images/profile/dr_Isabella.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/images/profile/dr_James.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/images/profile/dr_Sophia.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/DELETEdoctors.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/DELETEhero.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/DELETEtestimonials.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/DELETEtreatments.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/aboutUs.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/appointment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/fragments/footer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/fragments/head.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/fragments/hero.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/fragments/hero_background.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/fragments/navs/navAdmin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/fragments/navs/navGuest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/fragments/navs/navManager.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/fragments/navs/navUser.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/fragments/teamList.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/fragments/testimonialsList.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/fragments/treatmentsList.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/fragments/window_background.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/location.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/TreatmentsController.class.uniqueId0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/WebsiteApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/config/BeanConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/config/BeanConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/config/CacheConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/config/ExecutorConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/config/MailConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/config/MailConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/config/SecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/config/SecurityConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/config/WebMvcConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/models/dtos/EditTreatmentDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/models/dtos/ForgotPasswordDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/models/dtos/LoginDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/models/dtos/NewTreatmentDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/models/dtos/NewsletterDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/models/dtos/RegisterDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/models/dtos/RegistrationDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/models/dtos/ResetPasswordDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/models/dtos/TeamDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/models/dtos/TeamMemberCardDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/models/dtos/TestimonialDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/models/dtos/TreatmentDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/models/entities/ActivationToken.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/models/entities/DangerLevel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/models/entities/HealthCondition.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/models/entities/Image.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/models/entities/ImageCategory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/models/entities/Message.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/models/entities/NewsLetter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/models/entities/Role.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/models/entities/Testimonial.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/models/entities/Treatment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/models/entities/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/models/entities/UserEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/models/enums/DangerLevel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/models/enums/DangerLevelName.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/models/enums/ImageCategoryName.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/models/enums/UserRole.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/models/enums/UserRoles.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/models/events/UserActivationUpponRegistrationEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/models/events/UserRegisteredEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/repositories/ActivationTokenRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/repositories/DangerLevelRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/repositories/ImageCategoryRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/repositories/ImageRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/repositories/NewsletterRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/repositories/RoleRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/repositories/TeamRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/repositories/TestimonialsRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/repositories/TreatmentRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/repositories/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/seeders/DangerLevelSeeder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/seeders/ImageCategorySeeder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/seeders/RoleSeeder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/services/ActivationTokenService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/services/AuthService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/services/EmailService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/services/FileSystemHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/services/ImageService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/services/MyUserDetailsService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/services/NewsletterService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/services/TeamService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/services/TestimonialService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/services/TreatmentService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/services/UserActivationService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/services/UserEventService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/services/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/services/schedulers/ActivationTokenCleanUpSchedule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/sessions/UserSession.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/util/exception/ObjectNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/util/handlers/CustomAuthenticationSuccessHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/util/validation/CheckEmailExistence.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/util/validation/CheckLoginEmailExistence.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/util/validation/CheckLoginPassword.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/util/validation/CheckPassword.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/util/validation/EditUniqueTreatmentImageName.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/util/validation/EditUniqueTreatmentName.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/util/validation/EmailExists.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/util/validation/FileNotEmpty.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/util/validation/MatchPasswords.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/util/validation/MatchRegisterPasswords.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/util/validation/ResetPasswordEmailAlreadySent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/util/validation/ResetPasswordsMatch.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/util/validation/UniqueEmail.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/util/validation/UniqueNewsletterEmail.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/util/validation/UniqueRegisterEmail.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/util/validation/UniqueTreatmentImageName.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/util/validation/UniqueTreatmentName.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/util/validation/validators/CheckEmailExistenceValidator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/util/validation/validators/CheckLoginEmailExistenceValidator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/util/validation/validators/CheckLoginPasswordValidator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/util/validation/validators/CheckPasswordValidator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/util/validation/validators/EditUniqueTreatmentImageNameValidator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/util/validation/validators/EditUniqueTreatmentNameValidator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/util/validation/validators/EmailExistsValidator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/util/validation/validators/FileNotEmptyValidator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/util/validation/validators/MatchPasswordsValidator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/util/validation/validators/MatchRegisterPasswordsValidator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/util/validation/validators/ResetPasswordEmailAlreadySentValidator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/util/validation/validators/ResetPasswordsMatchValidator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/util/validation/validators/UniqueEmailValidator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/util/validation/validators/UniqueNewsletterEmailValidator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/util/validation/validators/UniqueRegisterEmailValidator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/util/validation/validators/UniqueTreatmentImageNameValidator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/util/validation/validators/UniqueTreatmentNameValidator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/web/AuthController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/web/ControllerAdv.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/web/HomeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/web/InfoController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/web/LocationController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/web/NewsletterController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/web/PolicyController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/web/TeamController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/web/TestimonialController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/web/TreatmentsController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/web/email/ActivationController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/web/exception/GlobalExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bg/softuni/website/web/exceptionHandlers/GlobalExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/bootstrap/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/bootstrap/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/all-units.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/authentication.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/core/fonts.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/core/imports.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/core/theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/core/variables.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/error.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/error/404.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/footer.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/icons/delete-icon.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/icons/edit-icon.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/imports.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/info.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/modalDialog.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/nav.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/newTreatment.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/policies.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/popups/confirm.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/popups/email-confirmation.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/popups/email-confirmed.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/popups/failure.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/popups/modalDialog.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/popups/password-forgot-dialog.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/popups/password-reset-done-modal.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/popups/password-reset-email-sent.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/popups/password-reset-modal.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/popups/success.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/sections/teamSection.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/sections/testimonialsSection.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/sections/treatmentsSection.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/success.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/teamList.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/teamSection.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/testimonialsList.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/testimonialsSection.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/treatmentsList.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/treatmentsSection.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/favicon.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/doctor.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/error/400.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/error/401.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/error/402.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/error/403.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/error/404.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/error/405.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/error/406.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/error/409.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/error/410.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/error/415.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/error/429.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/error/451.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/error/500.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/error/501.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/error/502.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/error/503.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/error/504.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/error/505.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/error/506.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/error/507.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/error/broken.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/icons/add_new.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/icons/brackets.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/icons/clean.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/icons/cleansing.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/icons/crown.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/icons/delete.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/icons/dentMachine.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/icons/diagnostic.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/icons/implant.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/icons/quotes_white_end.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/icons/quotes_white_start.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/icons/rootCanal.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/icons/sawing.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/icons/success.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/icons/vase_left.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/main/favicon.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/main/heroImg.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/main/hero_background.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/main/hero_background_green.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/main/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/main/logo_footer.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/main/pattern.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/pictures/doctor.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/profile/Emma_img.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/profile/Kale_img.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/profile/Yanica_img.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/profile/da_Daniel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/profile/da_Evelyn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/profile/dr_Cassandra.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/profile/dr_Isabella.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/profile/dr_James.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/profile/dr_Sophia.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/profiles/Emma_img.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/profiles/Kale_img.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/profiles/Yanica_img.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/profiles/da_Daniel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/profiles/da_Evelyn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/profiles/dr_Cassandra.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/profiles/dr_Isabella.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/profiles/dr_James.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/profiles/dr_Sophia.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/treatments/1200-25390555-catapult-ballista-trebuchet.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/treatments/160496128_3955727187803734_2990156283777374125_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/treatments/275288273_5034647269927847_462336549640323746_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/treatments/3-HandDrawn-Sep to Jan-276.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/treatments/Colors-schemes.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/treatments/Colors-trems-+.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/treatments/Natrure-Water-Cycle-NOAA.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/treatments/Nature-91weXX9-aML._AC_SL1500_.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/treatments/Picture1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/treatments/big_594925a62b662.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/treatments/brackets.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/treatments/chemical glassware.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/treatments/clean.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/treatments/cleansing.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/treatments/coffee.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/treatments/crown.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/treatments/hero with bg.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/treatments/implant.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/treatments/logo favicon.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/treatments/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/treatments/main-qimg-24cfb7777acbd5c9c1e2606c63249ce.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/treatments/rootCanal.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/footerScroll.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/modalFunctions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/DELETEdoctors.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/DELETEhero.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/DELETEtestimonials.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/DELETEtreatments.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/aboutUs.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/aboutUsPage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/appointment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/email/registration-confirm-email.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/email/reset-password-email.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/400.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/401.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/402.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/403.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/405.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/406.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/409.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/410.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/415.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/429.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/451.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/500.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/501.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/502.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/503.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/504.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/505.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/506.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/507.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/errors-controller-based/not-found-global.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/addTreatment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/addTreatmentSection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/footer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/head.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/hero.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/hero_background.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/navigation.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/navs/navAdmin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/navs/navDoctor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/navs/navGuest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/navs/navManager.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/navs/navUser.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/paymentsInfoSection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/policies/payments-policies-section.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/policies/paymentsPoliciesSection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/policies/returns-and-exchanges-section.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/policies/returnsAndExchangesPoliciesSection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/policies/shipping-policies-section.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/policies/shippingPoliciesSection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/policies/terms-and-conditions-title.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/policies/termsAndConditionsTitle.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/popups/add-treatment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/popups/confirm-delete.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/popups/confirm.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/popups/confirmDelete.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/popups/edit-treatment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/popups/email-confirmation-sent.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/popups/email-confirmed.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/popups/failure.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/popups/password-forgot.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/popups/password-reset-done-modal.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/popups/password-reset-email-sent.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/popups/password-reset-modal.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/popups/success.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/returnsAndExchangesSection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/sections/team-section.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/sections/testimonials-section.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/sections/treatments-section.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/shippingInfoSection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/success.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/team-section.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/teamList.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/teamSection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/termsAndConditionsTitle.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/testimonials-section.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/testimonialsList.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/testimonialsSection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/treatments-section.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/treatmentsList.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/treatmentsSection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/window-background.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/window_background.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/infoPage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/location.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/locationPage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login-page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/loginPage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/payments-page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/paymentsPage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/policies-page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/policiesPage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register-page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/registerPage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/returns-and-exchanges-page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/returnsAndExchangePage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/shipping-policies-page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/shippingInfoPage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/shippingPoliciesPage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/team-page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/teamPage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/testimonials-page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/testimonialsPage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/treatments-page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/treatmentsPage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/bg/softuni/website/WebsiteApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/bg/softuni/website/services/ActivationTokenServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/bg/softuni/website/services/EmailServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/bg/softuni/website/services/FileSystemHelperTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/bg/softuni/website/services/ImageServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/bg/softuni/website/services/MyUserDetailsServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/bg/softuni/website/services/NewsletterServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/bg/softuni/website/services/TeamServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/bg/softuni/website/services/TestimonialServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/bg/softuni/website/services/TreatmentServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/bg/softuni/website/services/UserEventServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/bg/softuni/website/services/UserServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/bg/softuni/website/services/schedulers/ActivationTokenCleanUpScheduleTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/bg/softuni/website/web/AuthControllerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/application.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/treatments/test.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/website/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/website/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/src/main/resources/static/images/treatments/1200-25390555-catapult-ballista-trebuchet.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/src/main/resources/templates/fragments/sections/team-section.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/src/main/resources/templates/fragments/sections/team-section.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/src/main/resources/templates/fragments/sections/treatments-section.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/src/main/resources/templates/fragments/sections/treatments-section.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -474,13 +23,25 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2ixexrqk5TFtSCmDkviyJ8kVBpA" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
@@ -490,7 +51,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/MihailBozov/IdeaProjects/Dental_Care/website",
+    "last_opened_file_path": "C:/Users/MihailBozov/IdeaProjects/Dental-Care",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -512,6 +73,8 @@
       <option name="presentableId" value="Default" />
       <updated>1720436908159</updated>
       <workItem from="1720436909989" duration="41000" />
+      <workItem from="1721842955303" duration="21000" />
+      <workItem from="1721843002702" duration="18000" />
     </task>
     <servers />
   </component>
