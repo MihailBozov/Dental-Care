@@ -12,18 +12,18 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Getter
 @Setter
-@EditUniqueTreatmentImageName(message = "Oops, it looks like there is a file with that name already")
-@EditUniqueTreatmentName(message = "Oops, that treatment already exists")
+@EditUniqueTreatmentImageName(message = "{treatment.image.name.must.be.unique}")
+@EditUniqueTreatmentName(message = "{treatment.already.exists}")
 public class EditTreatmentDto {
     
     private long id;
     
-    @NotBlank(message = "Oops, the name of the treatment cannot be null")
+    @NotBlank(message = "{treatment.name.cannot.be.blank}")
     private String name;
     
     private String description;
     
-    @Positive(message = "Oops, the price must be a positive number")
+    @Positive(message = "{treatment.price.must.be.positive.number}")
     private double price;
     
     UserEntity createdByUserEntity;

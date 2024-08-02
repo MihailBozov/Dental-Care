@@ -9,13 +9,13 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@ResetPasswordsMatch(message = "Oops! Your passwords do not match.")
+@ResetPasswordsMatch(message = "{passwords.dont.match}")
 public class ResetPasswordDto {
     
     private String token;
-    @Pattern(regexp = "^\\S+$", message = "Oops! Your password cannot contain whitespaces")
-    @Size(min = 4, message = "Oops! Your password is too short. Should be at least 4 characters.")
-    @Size(max = 30, message = "Oops! Your password is too long. Should be less than 30 characters.")
+    @Pattern(regexp = "^\\S+$", message = "{password.cannot.contain.whitespaces}")
+    @Size(min = 4, message = "{password.too.short}")
+    @Size(max = 30, message = "{password.too.long}")
     private String password;
     
     private String confirmPassword;

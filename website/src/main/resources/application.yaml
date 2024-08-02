@@ -71,11 +71,11 @@ logging:
     
     org.springframework.jpa: warn
     org.springframework.validation: warn
-    org.springframework.web: warn
-    org.springframework.security: warn
+    org.springframework.web: debug
+    org.springframework.security: debug
     org.springframework.cache: warn
-    org.springframework.thymeleaf: off
-    org.thymeleaf.springsecurity6: off
+    org.springframework.thymeleaf: warn
+    org.thymeleaf.springsecurity6: warn
     org.springframework.mail: warn
     
     bg.softuni.website: warn

@@ -79,3 +79,10 @@ a[class="all_policies"] {
     transition: 0.4s ease;
 
 }
+
+@media screen and (max-width: 500px){
+    .policy_section {
+        padding: 0;
+        margin: 0;
+    }
+}
