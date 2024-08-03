@@ -19,7 +19,7 @@
 }
 
 .registration_form small {
-    font-family: 'Fredoka', sans-serif;
+    font-family: 'Fredoka', 'Overpass',  sans-serif;
     
     padding: 5px;
     font-size: 0.8rem;
@@ -113,6 +113,11 @@
     line-height: 1.6em;
     font-family: 'Fredoka', sans-serif;
     color: var(--w_black-light);
+}
+
+.login_form small {
+    font-family: 'Fredoka', 'Overpass',  sans-serif;
+    
 }
 
 

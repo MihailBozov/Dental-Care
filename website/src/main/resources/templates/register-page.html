@@ -11,7 +11,7 @@
       th:object="${registerDto}"
       class="registration_form">
     <div id="form_register_container" class=" container justify-content-center form_container align-items-center">
-        <h2 class="text-secondary pb-3">Make a registration</h2>
+        <h2 class="text-secondary pb-3" th:text="#{register.title}">Make a registration</h2>
 
         <div class="row flex-wrap">
 
@@ -25,7 +25,7 @@
                            placeholder="First Name"
                            th:errorclass="is-invalid"
                            th:field="*{firstName}">
-                    <label for="floating_first_name">First Name</label>
+                    <label for="floating_first_name"th:text="#{placeholder.first.name}">First Name</label>
 
                     <div th:if="${#fields.hasErrors('firstName')}" class="invalid-feedback">
                         <small class="d-inline-block bg-danger text-light rounded mt-1"
@@ -53,7 +53,7 @@
                         </small>
                     </div>
 
-                    <label for="floating_last_name">Last Name</label>
+                    <label for="floating_last_name" th:text="#{placeholder.last.name}">Last Name</label>
                 </div>
             </div>
         </div>
@@ -67,7 +67,7 @@
                    placeholder="Email"
                    th:errorclass="is-invalid"
                    th:field="*{email}">
-            <label for="floating_email_address">Email</label>
+            <label for="floating_email_address" th:text="#{placeholder.email}">Email</label>
 
             <div th:if="${#fields.hasErrors('email')}" class="invalid-feedback">
                 <small class="d-inline-block bg-danger text-light rounded mt-1"
@@ -86,7 +86,7 @@
                    placeholder="password"
                    th:errorclass="is-invalid"
                    th:field="*{password}">
-            <label for="floating_password">Password</label>
+            <label for="floating_password" th:text="#{placeholder.password}">Password</label>
             <div th:if="${#fields.hasErrors('password')}" class="invalid-feedback">
                 <small class="d-inline-block bg-danger text-light rounded mt-1"
                        th:text=" ${#fields.errors('password').getFirst()}">
@@ -102,11 +102,11 @@
                    id="floating_confirm_password"
                    placeholder="Confirm password"
                    th:field="*{confirmPassword}">
-            <label for="floating_confirm_password">Confirm password</label>
+            <label for="floating_confirm_password" th:text="#{placeholder.confirm.password}">Confirm password</label>
             <div th:if="${#fields.hasGlobalErrors()}">
                 <small class="d-inline-block bg-danger text-light rounded mt-1"
                        th:each="error : ${#fields.globalErrors()}"
-                       th:if="${error.toString().equals('Oops! Your passwords do not match.')}"
+                       th:if="${error.toString().equals('Oops! Your passwords do not match.') || error.toString().equals('Паролите ви не съвпадат.')}"
                        th:text="${error}">
                 </small>
             </div>
@@ -114,7 +114,7 @@
         
         
             <button  th:type="submit" th:name="submit" th:value="true" data-mdb-button-init data-mdb-ripple-init
-                    class="register_btn btn btn-primary">Register
+                    class="register_btn btn btn-primary" th:text="#{register.button}">Register
             </button>
         
 

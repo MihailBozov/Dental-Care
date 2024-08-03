@@ -17,7 +17,7 @@
            th:value="${_csrf.token}"/>
 
     <div id="container_login_form" class="container justify-content-center align-items-center">
-        <h2 class="text-secondary mb-4">Login</h2>
+        <h2 class="text-secondary mb-4" th:text="#{login.title}">Login</h2>
 
         <div class="form-floating input-group mb-3">
             <div class="form-floating">
@@ -26,10 +26,12 @@
                        class="form-control"
                        id="inputEmail"
                        placeholder="Email"
+                       th:placeholder="#{placeholder.email}"
                        aria-label="Recipient's email"
                        aria-describedby="basic-addon1"
-                       th:value="${email}">
-                <label for="inputEmail">Email</label>
+                       th:value="${email}"
+                       >
+                <label for="inputEmail" th:text="#{placeholder.email}">Email</label>
             </div>
             <span class="input-group-text" id="basic-addon1">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
@@ -49,7 +51,7 @@
                        placeholder="Password"
                        aria-label="Recipient's username"
                        aria-describedby="basic-addon2">
-                <label for="loginPassword">Password</label>
+                <label for="loginPassword" th:text="#{placeholder.password}">Password</label>
             </div>
             <span class="input-group-text" id="basic-addon2">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
@@ -60,7 +62,7 @@
 
 
         <div th:if="${bad_credentials}" class="mb-4">
-            <small class="d-inline-block bg-danger text-light rounded">
+            <small class="d-inline-block bg-danger text-light rounded" th:text="#{invalid.username.or.password}">
                 Oops! That doesn't look like a valid email or password. Please try again
             </small>
         </div>
@@ -71,13 +73,13 @@
                    class="form-check-input"
                    name="remember-me"
                    id="remember-me">
-            <label class="form-check-label" for="remember-me">Remember me</label>
+            <label class="form-check-label" for="remember-me" th:text="#{remember.me}">Remember me</label>
         </div>
 
-        <button type="submit" class="login_button form-group btn btn-primary">Login</button>
+        <button type="submit" class="login_button form-group btn btn-primary" th:text="#{login.button}">Login</button>
 
         <div class="d-inline-flex gap-1 py-2 mb-1 forgot_password_toggle">
-            <a class="" data-bs-toggle="collapse" role="button" onclick="showForgotPasswordModal()" aria-controls="forgot_password_modal">
+            <a class="" data-bs-toggle="collapse" role="button" onclick="showForgotPasswordModal()" aria-controls="forgot_password_modal" th:text="#{forgot.password}">
                 Forgot password
             </a>
         </div>

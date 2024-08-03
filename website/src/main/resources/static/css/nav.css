@@ -14,7 +14,7 @@
 
 .navbar ul input:not(.btn),
 .navbar ul a:not(.btn) {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', 'Arial', sans-serif;
     font-size: 1em;
     font-weight: 400;
     border-bottom: 3px solid transparent;
@@ -25,3 +25,11 @@
 .navbar ul a:hover:not(.btn) {
     border-bottom: 3px solid var(--w_ocean);
 }
+
+.lang_select {
+    border: var(--w_border-ocean-1);
+    padding: 0.3em 0.6em;
+    border-radius: 0.3em;
+}
+
+

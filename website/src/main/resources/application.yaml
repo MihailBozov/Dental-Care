@@ -5,6 +5,7 @@ spring.application.name: website
   management.endpoint.caches.enabled=true
   management.metrics.enable.cache=true
 
+
 server:
   port: 8080
   
@@ -57,6 +58,8 @@ remember:
 google:
   api:
     key: ${API_KEY}
+    
+
       
 
 #       OFF   ->   TRACE   ->   DEBUG   ->   INFO   ->   WARN   ->   ERROR   ->   FATAL
