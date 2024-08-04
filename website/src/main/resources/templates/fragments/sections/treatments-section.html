@@ -1,9 +1,9 @@
 <section class="treatmentSection"
          xmlns:th="http://www.thymeleaf.org"
          xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-    <h2 th:if="${currentPage == 'homePage'}">Some of our <span>Treatments</span></h2>
-    <h2 th:if="${currentPage != 'homePage'}">Our <span>Treatments</span></h2>
-    <div class="subtitle">From routine cleanings and preventive care to advanced restorative and cosmetic
+    <h2 th:if="${currentPage == 'homePage'}" th:utext="#{treatments.home.title}">Some of our <span>Treatments</span></h2>
+    <h2 th:if="${currentPage != 'homePage'}" th:utext="#{treatments.treatments.title}">Our <span>Treatments</span></h2>
+    <div class="subtitle" th:text="#{treatments.description}">From routine cleanings and preventive care to advanced restorative and cosmetic
         procedures,
         our dedicated team is committed to providing exceptional care tailored to your individual needs.
     </div>
@@ -80,7 +80,7 @@
 
     </div>
 
-    <a href="/treatments" class="all_units" th:if="${currentPage == 'homePage'}">All Treatments →</a>
+    <a href="/treatments" class="all_units" th:if="${currentPage == 'homePage'}" th:text="#{treatments.all}">All Treatments →</a>
 
     <th:block th:include="~{fragments/popups/edit-treatment}"></th:block>
     <th:block th:include="~{fragments/popups/failure}"></th:block>

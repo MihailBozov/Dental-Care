@@ -1,7 +1,7 @@
 <section class="testimonials_section" xmlns:th="http://www.thymeleaf.org">
-    <h2 th:if="${currentPage == 'homePage'}">Hear from Our <span>Clients</span></h2>
-    <h2 th:if="${currentPage != 'homePage'}">Our <span>Clients</span></h2>
-    <div class="subtitle">We are dedicated to offering the highest quality dental care to our patients. Read on to hear what our clients have to say about their experiences with us.
+    <h2 th:if="${currentPage == 'homePage'}" th:utext="#{testimonials.home.title}">Hear from Our <span>Clients</span></h2>
+    <h2 th:if="${currentPage != 'homePage'}" th:utext="#{testimonials.testimonials.title}">Our <span>Clients</span></h2>
+    <div class="subtitle" th:text="#{testimonials.description}">We are dedicated to offering the highest quality dental care to our patients. Read on to hear what our clients have to say about their experiences with us.
     </div>
 
     <div class="testimonials_container">
@@ -23,5 +23,5 @@
             </div>
         </div>
     </div>
-    <a href="/testimonials" class="all_units" th:if="${currentPage == 'homePage'}">All Testimonials →</a>
+    <a href="/testimonials" class="all_units" th:if="${currentPage == 'homePage'}" th:text="#{testimonials.all}">All Testimonials →</a>
 </section>
