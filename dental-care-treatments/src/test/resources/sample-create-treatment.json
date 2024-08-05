@@ -1,0 +1,6 @@
+{
+  "name": "Test name",
+  "description": "Test description",
+  "price": 100,
+  "createdByUserEntityId": "Test user"
+}
