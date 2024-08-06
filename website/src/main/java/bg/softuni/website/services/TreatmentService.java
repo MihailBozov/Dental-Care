@@ -27,43 +27,44 @@ public class TreatmentService {
     private final TreatmentRepository treatmentRepository;
     private final ImageService imageService;
     private final ModelMapper modelMapper;
-    
+
     @Autowired
     public TreatmentService(TreatmentRepository treatmentRepository, ImageService imageService, ModelMapper modelMapper) {
         this.treatmentRepository = treatmentRepository;
         this.imageService = imageService;
         this.modelMapper = modelMapper;
     }
-    
+
     @Cacheable("treatments")
     public List<TreatmentDto> getAllTreatmentDtos() {
         logger.warn("getAllTreatmentDtos() is annotated with @Cacheable and is executed !");
         List<Treatment> allTreatments = treatmentRepository.findAll();
         List<TreatmentDto> treatmentDtos = new ArrayList<>();
-        
+
         for (Treatment treatment : allTreatments) {
             TreatmentDto treatmentDto = this.modelMapper.map(treatment, TreatmentDto.class);
             treatmentDtos.add(treatmentDto);
         }
         return treatmentDtos;
     }
-    
+
     @CacheEvict(value = "treatments", allEntries = true)
     public void newTreatment(NewTreatmentDto newTreatmentDto) throws IOException {
         String formName = "formNewTreatment";
         MultipartFile file = newTreatmentDto.getImage();
-        
+
         Image image = this.imageService.saveImage(file, formName);
-        
+
         Treatment treatment = this.modelMapper.map(newTreatmentDto, Treatment.class);
         treatment.setImage(image);
+        
         //TODO
 //        treatment.setCreatedByUserEntity(userSession.getUser());
         treatment.setImage(image);
-        
+
         this.treatmentRepository.saveAndFlush(treatment);
     }
-    
+
     @CacheEvict(value = "treatments", allEntries = true)
     @Transactional(rollbackOn = Exception.class)
     public boolean deleteTreatment(long id) throws IOException {
@@ -76,40 +77,40 @@ public class TreatmentService {
         }
         return false;
     }
-    
+
     @CacheEvict(value = "treatments", allEntries = true)
     @Transactional(rollbackOn = Exception.class)
     public boolean editTreatment(EditTreatmentDto editTreatmentDto, long id) throws IOException {
-        
+
         Treatment treatment = getTreatment(id);
-        
+
         String formName = "formNewTreatment";
         MultipartFile file = editTreatmentDto.getImage();
-        
-        
+
+
         Image image = this.imageService.updateImage(file, formName, Optional.of(treatment.getImage()));
-        
+
         treatment.setName(editTreatmentDto.getName());
         treatment.setDescription(editTreatmentDto.getDescription());
         treatment.setPrice(editTreatmentDto.getPrice());
         treatment.setImage(image);
-        
+
         this.treatmentRepository.saveAndFlush(treatment);
         return true;
-        
+
     }
-    
+
     public Treatment getTreatment(Long id) {
         return this.treatmentRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Treatment with id " + id + " not found"));
     }
-    
+
     public EditTreatmentDto getEditTreatmentDto(Long id) {
         Treatment treatment = this.treatmentRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Treatment with id " + id + " not found"));
         return this.modelMapper.map(treatment, EditTreatmentDto.class);
     }
-    
+
     public List<Treatment> getAllTreatmentsFiltered(Long id) {
         List<Treatment> treatments = this.treatmentRepository.findAllByIdNot(id);
         return treatments;

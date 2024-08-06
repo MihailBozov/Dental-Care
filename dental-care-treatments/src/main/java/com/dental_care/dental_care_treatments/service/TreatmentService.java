@@ -26,7 +26,7 @@ import java.util.Optional;
 
 @Service
 public class TreatmentService {
-    private final Logger logger = LoggerFactory.getLogger(TreatmentService.class);
+
     private final TreatmentRepository treatmentRepository;
     private final ModelMapper modelMapper;
     private final WebClient webClient;
@@ -39,7 +39,6 @@ public class TreatmentService {
     }
     
     public List<TreatmentDto> getAllTreatmentDtos() {
-        logger.warn("getAllTreatmentDtos() is annotated with @Cacheable and is executed !");
         List<Treatment> allTreatments = treatmentRepository.findAll();
         List<TreatmentDto> treatmentDtos = new ArrayList<>();
         
@@ -68,7 +67,7 @@ public class TreatmentService {
         return false;
     }
     
-
+    
     @Transactional(rollbackOn = Exception.class)
     public boolean editTreatment(EditTreatmentDto editTreatmentDto, long id) throws IOException {
         
@@ -86,16 +85,19 @@ public class TreatmentService {
         
     }
     
+    
     public Treatment getTreatment(Long id) {
         return this.treatmentRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Treatment with id " + id + " not found"));
     }
+    
     
     public EditTreatmentDto getEditTreatmentDto(Long id) {
         Treatment treatment = this.treatmentRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Treatment with id " + id + " not found"));
         return this.modelMapper.map(treatment, EditTreatmentDto.class);
     }
+    
     
     public List<Treatment> getAllTreatmentsFiltered(Long id) {
         List<Treatment> treatments = this.treatmentRepository.findAllByIdNot(id);

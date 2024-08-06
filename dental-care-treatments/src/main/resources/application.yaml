@@ -5,6 +5,11 @@ server:
 spring:
   application:
     name: dental-care-treatments
+    
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
   
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver

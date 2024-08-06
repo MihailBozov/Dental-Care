@@ -60,6 +60,9 @@ google:
     key: ${API_KEY}
     
 
+treatments:
+  api:
+    baseUrl: "http://localhost:8081"
       
 
 #       OFF   ->   TRACE   ->   DEBUG   ->   INFO   ->   WARN   ->   ERROR   ->   FATAL
